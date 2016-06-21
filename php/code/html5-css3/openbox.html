@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../JQ/jquery-1.8.3.min.js"></script>
+	<style type="text/css">
+		div{
+			border:1px solid green;
+			width:300px;
+			height:300px;
+			margin:auto;
+			position:relative;
+			border-radius:50%;
+			perspective:10000px;
+		}
+		.img1{
+			width:300px;
+			height:300px;
+			position:absolute;
+			top:0px;
+			left:0px;
+			border-radius:50%;
+			box-shadow:3px 3px 5px tomato;
+		}
+		.img2{
+			width:300px;
+			height:300px;
+			position:absolute;
+			top:0px;
+			left:0px;
+			border-radius:50%;
+			transition:all 1s;
+			transform-origin:left;
+			box-shadow:0px 0px 10px 10px black;
+		}
+		div:hover img.img2{
+			transform:rotateY(-180deg);
+		}
+		.img3{
+			width:300px;
+			height:300px;
+			position:absolute;
+			top:0px;
+			left:0px;
+			border-radius:50%;
+		}
+		.img4{
+			width:300px;
+			height:300px;
+			position:absolute;
+			top:0px;
+			left:0px;
+			border-radius:50%;
+			transition:all 1s;
+			transform-origin:bottom;
+		}
+		div:hover img.img4{
+			transform:rotateX(180deg);
+		}
+	</style>
+</head>
+<body>
+		<div style="margin:0px 0px 0px 800px">
+			<img class="img1" src="../../image/1.jpg"/>
+			<img class="img2" src="../../image/a.jpg"/>
+		</div>
+		<div style="margin:-300px 0px 0px 0px">
+			<img class="img3" src="../../image/1.jpg"/>
+			<img class="img4" src="../../image/a.jpg"/>
+		</div>
+	<script>
+	
+	</script>
+</body>
+</html>

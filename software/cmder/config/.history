@@ -1,0 +1,51 @@
+d
+d:
+node
+cd jszhou\nodejs
+cd ..
+cd..
+cd nodejs
+cmder /REGISTER ALL
+node console
+ipconfig /all
+node -v
+node
+vim node.js
+node console
+ipconfig /all
+node -v
+node
+vim node.js
+node getGroup.js
+node getGroup.js
+npm install webpack -g 
+cnpm install webpack -g
+npm install webpack -g
+node
+vim node.js
+node console
+ipconfig /all
+node -v
+node
+vim node.js
+node getGroup.js
+node getGroup.js
+npm install webpack -g 
+cnpm install webpack -g
+npm install webpack -g
+webpack ./js/app.js ./build/bundle.js
+npm install webpack-dev-server -g
+webpack --watch
+webpack
+webpack-dev-server
+webpack --watch
+webpack
+webpack-dev-server
+ode arrayUniqe.js
+node arrayUniqe.js
+node unique.js
+npm install -save weui
+npm install -save weui -g
+ping htttp://www.baidu.com
+node getGroup.js
+ping http://www.meijingxiu.cn

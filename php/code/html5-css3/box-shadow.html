@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题</title>
+		<style type="text/css">
+			body{
+				margin:0px;
+				padding:0px;
+			}
+			.pointer{
+				margin:10px auto 50px;
+				width:1px;
+				height:4px;
+				background:red;
+				box-shadow:1px 1px red, 2px 2px red, 3px 3px red, 4px 4px red, 5px 5px red, 
+               -1px 1px red, -2px 2px red, -3px 3px red, -4px 4px red, -5px 5px red; 
+			}
+			.loading {
+				margin:200px auto 50px;
+				width: 10px;
+				height:10px;
+				border:1px solid red;
+				border-radius: 100%;                      /* 圆角 */
+				box-shadow: 0 -141px 0 11px #333,           /* 上, 1px 扩展 */
+							141px 0px 0 5px #333,                /* 右 */    
+							0 141px 0 7px #333,                  /* 下 */
+							-141px 0 0 9px #333,                 /* 左 */
+                              
+							-100px -100px 0 10px #333,        /* 左上, 0.5px扩展 */
+							100px -100px 0 12px #333,        /* 右上, 1.5px扩展 */                    
+							100px 100px 0 6px #333,                 /* 右下 */
+							-100px 100px 0 8px #333;                /* 左下 */
+			}
+			.spin {
+				-webkit-transform: rotate(360deg);
+				-webkit-animation: spin 5s linear infinite; 
+			}
+			@-webkit-keyframes spin {
+				from {-webkit-transform: rotate(0deg);}
+				to {-webkit-transform: rotate(360deg);}
+			}
+			.spin {
+				transform: rotate(360deg);
+				animation: spin 10s linear infinite;
+			}
+			@keyframes spin {
+				from {transform: rotate(0deg);}
+				to {transform: rotate(360deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="pointer"></div>
+		<div class="loading spin"></div>
+	</body>
+</html>

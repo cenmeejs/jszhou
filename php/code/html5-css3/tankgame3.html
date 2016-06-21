@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body onkeydown="move()">
+        <canvas id="tanmap" width="400px" height="400px" style="background:black"></canvas>
+        <script>
+            //Tank父类
+            function Tank(x,y,speed,direct,color){
+                this.x=x;
+                this.y=y;
+                this.speed=speed;
+                this.direct=direct;
+                this.color=color;
+                //上移
+                this.moveUp=function(){
+                    this.y-=this.speed;
+                    this.direct=0;
+                }
+                //右移
+                this.moveRight=function(){
+                    this.x+=this.speed;
+                    this.direct=1;
+                }
+                //下移
+                this.moveDown=function(){
+                    this.y+=this.speed;
+                    this.direct=2;
+                }
+                //左移
+                this.moveLeft=function(){
+                    this.x-=this.speed;
+                    this.direct=3;
+                }
+            }
+            var canvas1 = document.getElementById("tanmap");
+            var cxt = canvas1.getContext("2d");
+            var herocolor = new Array("#ba9658","#fef26e");
+            var enemycolor = new Array("#00a2b5","#00fefe");
+            
+
+            //Hero类
+            function Hero(x,y,speed,direct,color){
+                this.tank=Tank;
+                this.tank(x,y,speed,direct,color);//对象冒充
+            }
+            var hero = new Hero(200,300,3,0,herocolor)
+
+            
+
+            //EnemyTank类
+            function EnemyTank(x,y,speed,direct,color){
+                this.tank=Tank;
+                this.tank(x,y,speed,direct,color);
+            }
+            var enemyTanks = new Array();
+            for(var i=0;i<3;i++){
+                var enemyTank = new EnemyTank((i+1)*50,0,1,2,enemycolor);//声明
+                enemyTanks[i] = enemyTank;
+            }
+           
+            
+
+            FlashTankMap()
+            //刷新画布
+            function FlashTankMap(){
+                cxt.clearRect(0,0,400,400);//清除画布
+                drawTank(hero);//重新画坦克
+                for(var i=0;i<3;i++){//画敌方坦克
+                    drawTank(enemyTanks[i]);
+                }
+            }
+
+
+
+            //画坦克
+            function drawTank(tank){
+                switch(tank.direct){
+                    case 0:
+                    case 2:
+                    cxt.fillStyle=tank.color[0];
+                    cxt.fillRect(tank.x,tank.y,5,30);
+                    cxt.fillRect(tank.x+15,tank.y,5,30);
+                    cxt.fillRect(tank.x+6,tank.y+5, 8, 20);
+                    cxt.fillStyle=tank.color[1];
+                    cxt.beginPath();
+                    cxt.arc(tank.x+10, tank.y+15, 4, 0,2*Math.PI, true)
+                    cxt.closePath();
+                    cxt.fill();
+                    cxt.strokeStyle=tank.color[1];
+                    cxt.lineWidth = 2;
+                    cxt.beginPath();
+                    cxt.moveTo(tank.x+10, tank.y+15);
+                    if(tank.direct==0){
+                        cxt.lineTo(tank.x+10, tank.y);
+                    }else if(tank.direct==2){
+                        cxt.lineTo(tank.x+10, tank.y+30);
+                    }
+                    cxt.closePath();
+                    cxt.stroke();
+                    break;
+
+                    case 1:
+                    case 3:
+                    cxt.fillStyle=tank.color[0];
+                    cxt.fillRect(tank.x,tank.y,30,5);
+                    cxt.fillRect(tank.x,tank.y+15,30,5);
+                    cxt.fillRect(tank.x+5,tank.y+6, 20, 8);
+                    cxt.fillStyle=tank.color[1];
+                    cxt.beginPath();
+                    cxt.arc(tank.x+15, tank.y+10, 4, 0,2*Math.PI, true)
+                    cxt.closePath();
+                    cxt.fill();
+                    cxt.strokeStyle=tank.color[1];
+                    cxt.lineWidth = 2;
+                    cxt.beginPath();
+                    cxt.moveTo(tank.x+15, tank.y+10);
+                    if(tank.direct==1){
+                        cxt.lineTo(tank.x+30, tank.y+10);
+                    }else if(tank.direct==3){
+                        cxt.lineTo(tank.x, tank.y+10);
+                    }
+                    cxt.closePath();
+                    cxt.stroke();
+                    break;
+
+                }
+            }
+
+
+           //上下左右移动
+           function move(){
+                var code = event.keyCode;
+                switch(code){
+                    case 87:
+                    case 38:
+                    hero.moveUp();
+                    break;
+                    case 68:
+                    case 39:
+                    hero.moveRight();
+                    break;
+                    case 83:
+                    case 40:
+                    hero.moveDown();
+                    break;
+                    case 65:
+                    case 37:
+                    hero.moveLeft();
+                    break;
+                }
+                FlashTankMap();
+           }
+
+
+        </script>
+    </body>
+</html>

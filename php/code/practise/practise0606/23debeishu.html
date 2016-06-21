@@ -1,0 +1,20 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题</title>
+	</head>
+	<body>
+		<button onclick="fun1()">查看1000以内23的倍数</button>
+		<script type="text/javascript">
+			function fun1(){
+				for(var i=1;i<1001;i++){
+					var sundata = i%23;
+					if(sundata==0){
+						document.write(i+"<br/>")
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

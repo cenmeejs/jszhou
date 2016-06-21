@@ -1,0 +1,61 @@
+﻿<html>
+<head>
+<title>图片轮播</title>
+<meta charset="utf-8"/>
+<style type="text/css">
+.div1{
+width:600px;
+height:500px;
+border:1px solid silver;
+margin:20px;
+position:relative;
+}
+.div1 img{
+width:600px;
+height:500px;
+display:none;
+position:absolute;
+top:0px;
+left:0px;
+z-index:-1;
+}
+.ul1{
+width:250px;
+height:60px;
+margin-left:330px;
+margin-top:420px;
+}
+ul,li{
+list-style-type:none;
+margin:0px;
+padding:0px;
+}
+.ul1 li{
+width:50px;
+height:50px;
+float:left;
+margin-left:10px;
+border-radius:25px;
+background:yellow;
+}
+li:hover{
+background:red;
+}
+li:hover img{
+display:block;
+}
+
+
+</style>
+</head>
+<body>
+<div class="div1">
+<ul class="ul1">
+<li><img src="../image/a.jpg" style="display:block;"/></li>
+<li><img src="../image/b.jpg"/></li>
+<li><img src="../image/c.jpg"/></li>
+<li><img src="../image/d.jpg"/></li>
+</ul>
+</div>
+</body>
+</html>

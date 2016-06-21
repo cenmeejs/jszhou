@@ -1,0 +1,28 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript" src=""></script>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<script>
+		function rhom(n){
+			for(var i=1;i<=n;i++){
+				for(var t=1;t<=2*(n-i);t++){
+					document.write("&nbsp;");
+				}
+				for(var t=1;t<=2*i-1;t++){
+					document.write("*&nbsp;");
+				}
+				document.write("<br>");
+			}
+		}
+		rhom(4);
+	</script>
+</body>
+</html>

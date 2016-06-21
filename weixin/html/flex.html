@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <style>
+        h3{
+            text-align:center;
+            color:#04BE02;
+            margin-top:600px;
+        }
+        .flex{
+            display:-webkit-flex;
+            display:-webkit-box;
+            display:-ms-flexbox;
+            display:flex;
+            width:400px;
+            height:320px;
+            margin:0 auto;
+            border:1px solid #04BE02;
+        }
+        .flex-direction-item{
+            width:80px;
+            height:80px;
+            font-size:18px;
+            text-align:center;
+            line-height:80px;
+            color:#fff;
+        }
+        .flex-direction-item:first-child{
+            background:#f00;
+        }
+        .flex-direction-item:nth-child(2){
+            background:#0f0;
+        }
+        .flex-direction-item:nth-child(3){
+            background:#00f;
+        }
+        .flex-direction-item:nth-child(4){
+            background:#ffff00;
+        }
+        .flex-direction-item:nth-child(5){
+            background:#00ffff;
+        }
+        .flex-direction-item:nth-child(6){
+            background:#ff00ff;
+        }
+        .flex-direction-item:nth-child(7){
+            background:#000000;
+        }
+        /*flex-direction开始*/
+        .flex-direction-row{
+            -webkit-flex-direction:row;
+            -ms-flex-direction:row;
+            flex-direction:row;
+        }
+        .flex-direction-row-reverse{
+            -webkit-flex-direction:row-reverse;
+            -ms-flex-direction:row-reverse;
+            flex-direction:row-reverse;
+        }
+        .flex-direction-column{
+            -webkit-flex-direction:column;
+            -ms-flex-direction:column;
+            flex-direction:column;
+        }
+        .flex-direction-column-reverse{
+            -webkit-flex-direction:column-reverse;
+            -ms-flex-direction:column-reverse;
+            flex-direction:column-reverse;
+        }
+        /*flex-direction结束*/
+        /*flex-wrap开始*/
+        .flex-wrap-nowrap{
+            -webkit-flex-wrap:nowrap;
+            -ms-flex-wrap:nowrap;
+            flex-wrap:nowrap;
+        }
+        .flex-wrap-wrap{
+            -webkit-flex-wrap:wrap;
+            -ms-flex-wrap:wrap;
+            flex-wrap:wrap;
+        }
+        .flex-wrap-wrap-reverse{
+            -webkit-flex-wrap:wrap-reverse;
+            -ms-flex-wrap:wrap-reverse;
+            flex-wrap:wrap-reverse;
+        }
+        /*flex-wrap结束*/
+        /*flex-flow开始*/
+        .flex-flow-row-nowrap{
+            -webkit-flex-flow:row nowrap;
+            flex-flow:row nowrap;
+        }
+        .flex-flow-row-wrap{
+            -webkit-flex-flow:row wrap;
+            flex-flow:row wrap;
+        }
+        .flex-flow-row-wrap-reverse{
+            -webkit-flex-flow:row wrap-reverse;
+            flex-flow:row wrap-reverse;
+        }
+        .flex-flow-row-reverse-nowrap{
+            -webkit-flex-flow:row-reverse nowrap;
+            flex-flow:row-reverse nowrap;
+        }
+        .flex-flow-row-reverse-wrap{
+            -webkit-flex-flow:row-reverse wrap;
+            flex-flow:row-reverse wrap;
+        }
+        .flex-flow-row-reverse-wrap-reverse{
+            -webkit-flex-flow:row-reverse wrap-reverse;
+            flex-flow:row-reverse wrap-reverse;
+        }
+        .flex-flow-column-nowrap{
+            -webkit-flex-flow:column nowrap;
+            flex-flow:column nowrap;
+        }
+        .flex-flow-column-wrap{
+            -webkit-flex-flow:column wrap;
+            flex-flow:column wrap;
+        }
+        .flex-flow-column-wrap-reverse{
+            -webkit-flex-flow:column wrap-reverse;
+            flex-flow:column wrap-reverse;
+        }
+        .flex-flow-column-reverse-nowrap{
+            -webkit-flex-flow:column-reverse nowrap;
+            flex-flow:column-reverse nowrap;
+        }
+        .flex-flow-column-reverse-wrap{
+            -webkit-flex-flow:column-reverse wrap;
+            flex-flow:column-reverse wrap;
+        }
+        .flex-flow-column-reverse-wrap-reverse{
+            -webkit-flex-flow:column-reverse wrap-reverse;
+            flex-flow:column-reverse wrap-reverse;
+        }
+        /*flex-flow结束*/
+    </style>
+</head>
+<body>
+    <h3>flex-direction:row</h3>
+    <div class="flex flex-direction-row">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-direction:row-reverse</h3>
+    <div class="flex flex-direction-row-reverse">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-direction:column</h3>
+    <div class="flex flex-direction-column">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-direction:column-reverse</h3>
+    <div class="flex flex-direction-column-reverse">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-wrap:nowrap</h3>
+    <div class="flex flex-wrap-nowrap">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-wrap:wrap</h3>
+    <div class="flex flex-wrap-wrap">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-wrap:wrap-reverse</h3>
+    <div class="flex flex-wrap-wrap-reverse">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-flow:row nowrap</h3>
+    <div class="flex flex-flow-row-nowrap">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-flow:row wrap</h3>
+    <div class="flex flex-flow-row-wrap">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-flow:row wrap-reverse</h3>
+    <div class="flex flex-flow-row-wrap-reverse">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-flow:row-reverse nowrap</h3>
+    <div class="flex flex-flow-row-reverse-nowrap">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-flow:row-reverse wrap</h3>
+    <div class="flex flex-flow-row-reverse-wrap">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-flow:row-reverse wrap-reverse</h3>
+    <div class="flex flex-flow-row-reverse-wrap-reverse">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-flow:column nowrap</h3>
+    <div class="flex flex-flow-column-nowrap">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-flow:column wrap</h3>
+    <div class="flex flex-flow-column-wrap">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-flow:column wrap-reverse</h3>
+    <div class="flex flex-flow-column-wrap-reverse">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-flow:column-reverse nowrap</h3>
+    <div class="flex flex-flow-column-reverse-nowrap">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-flow:column-reverse wrap</h3>
+    <div class="flex flex-flow-column-reverse-wrap">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+    <h3>flex-flow:column-reverse wrap-reverse</h3>
+    <div class="flex flex-flow-column-reverse-wrap-reverse">
+        <div class="flex-direction-item">1</div>
+        <div class="flex-direction-item">2</div>
+        <div class="flex-direction-item">3</div>
+        <div class="flex-direction-item">4</div>
+        <div class="flex-direction-item">5</div>
+        <div class="flex-direction-item">6</div>
+        <div class="flex-direction-item">7</div>
+    </div>
+</body>
+</html>

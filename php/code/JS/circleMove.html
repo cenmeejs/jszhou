@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>无标题</title>
+		<style type="text/css">
+			div{
+				position: absolute;
+				border: 1px solid #f00;
+				border-radius: 50%;	
+			}
+			#c-wrap{
+				width: 542px;
+				height: 542px;
+				left: 479px;
+				top: 79px;
+
+			}
+			#circle{
+				width: 500px;
+				height: 500px;
+				top: 20px;
+				left: 20px;
+			}
+			#c-inner{
+				width: 458px;
+				height: 458px;
+				left: 20px;
+				top: 20px;
+			}
+			#dian{
+				width: 40px;
+				height: 40px;
+				top:80px;
+				left: 730px;
+				background: #000;
+				border: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="c-wrap">
+			<div id="circle">
+				<div id="c-inner"></div>
+			</div>
+		</div>
+		<div id="dian"></div>
+
+		<script>
+			var x=730,
+				y=80,
+				deg=0;
+			(function circleMove(){
+				var hudu=Math.PI*(deg>=360?deg=0:++deg)/180,
+					cx=Math.abs(Math.sin(hudu)*250),
+					cy=Math.abs(Math.cos(hudu)*250);
+				deg<=180?(x=730+cx,deg<=90?(y=330-cy):(y=330+cy)):(x=730-cx,deg<=270?(y=330+cy):(y=330-cy));
+				
+				/*	if(deg>0&&deg<=90){
+					x=730+cx;
+					y=330-cy;
+				}else if(deg>90&&deg<=180){
+					x=730+cx;
+					y=330+cy;
+				}else if(deg>180&&deg<=270){
+					x=730-cx;
+					y=330+cy;
+				}else if(deg>270&&deg<=360){
+					x=730-cx;
+					y=330-cy;
+				}*/
+				
+				dian.style.left=x+"px";
+				dian.style.top=y+"px";
+				setTimeout(circleMove,30);
+			}())
+		</script>
+	</body>
+</html>

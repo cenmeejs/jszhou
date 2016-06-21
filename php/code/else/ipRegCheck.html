@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+		var regStr = /^((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)$/;//((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){4}
+		
+		var ipStr = "255.255.001.253";
+		var result = regStr.test(ipStr);
+		alert(result);
+		</script>
+	</body>
+</html>

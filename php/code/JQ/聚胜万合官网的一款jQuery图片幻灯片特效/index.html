@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+<title>聚胜万合官网的一款jQuery图片幻灯片特效 - jquery特效分享</title>
+<link rel="stylesheet" type="text/css" href="css/style_20121023.css">
+<script src="../jquery-1.8.3.min.js"></script>
+<link href="css/screen.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="centerDiv">
+		<div id="wrap">
+			<div id="page">
+
+      <section>
+        		<div id="viewport-shadow" class="trans">
+					<a href="#" id="prev" title="go to the next slide" class="trans">
+					</a>
+					<a href="#" id="next" title="go to the next slide" class="trans">
+					</a>
+					<div id="viewport">
+						<div id="box">
+              <figure class="slide">
+                			<a href="http://www.jqshare.com/" target="_blank">
+							<img src="images/focus_1.jpg"></a>
+              </figure>
+              <figure class="slide">
+                			<a href="http://www.jqshare.com/" target="_blank">
+							<img src="images/focus_2.jpg"></a>
+              </figure>
+              <figure class="slide">
+                			<a href="http://www.jqshare.com/" target="_blank">
+							<img src="images/focus_3.jpg"></a>
+              </figure>
+			  <figure class="slide">
+                			<img src="images/focus_4.jpg">
+              </figure>
+			  <figure class="slide">
+                			<img src="images/focus_5.jpg">
+              </figure>
+            			</div>
+					</div>
+					<div id="time-indicator">
+					</div>
+				</div>
+
+        <footer>
+          <nav class="slider-controls">
+            	<ul id="controls">
+					<li>
+					<a class="goto-slide current" href="#" data-slideindex="0">
+					</a></li>
+					<li><a class="goto-slide" href="#" data-slideindex="1"></a>
+					</li>
+					<li><a class="goto-slide" href="#" data-slideindex="2"></a>
+					</li>
+					<li><a class="goto-slide" href="#" data-slideindex="3"></a>
+					</li>
+					<li><a class="goto-slide" href="#" data-slideindex="4"></a>
+					</li>
+				</ul>
+          </nav>
+        </footer>
+      </section>
+
+	  		</div>
+			<script src="js/box-slider-all.jquery.min.js"></script>
+			<script>
+
+		  $(function () {
+
+        var $box = $('#box')
+          , $indicators = $('.goto-slide')
+          , $effects = $('.effect')
+          , $timeIndicator = $('#time-indicator')
+          , slideInterval = 5000;
+
+        var switchIndicator = function ($c, $n, currIndex, nextIndex) {
+          $timeIndicator.stop().css('width', 0);
+          $indicators.removeClass('current').eq(nextIndex).addClass('current');
+        };
+
+        var startTimeIndicator = function () {
+          $timeIndicator.animate({width: '891px'}, slideInterval);
+        };
+
+        // initialize the plugin with the desired settings
+        $box.boxSlider({
+            speed: 1000
+          , autoScroll: true
+          , timeout: slideInterval
+          , next: '#next'
+          , prev: '#prev'
+          , pause: '#pause'
+          , effect: 'scrollHorz'
+          , blindCount: 15
+          , onbefore: switchIndicator
+          , onafter: startTimeIndicator
+        });
+
+        startTimeIndicator();
+
+        // pagination isn't built in simply because it's easy to
+        // roll your own with the plugin API methods
+        $('#controls').on('click', '.goto-slide', function (ev) {
+          $box.boxSlider('showSlide', $(this).data('slideindex'));
+          ev.preventDefault();
+        });
+
+        $('#effect-list').on('click', '.effect', function (ev) {
+          var $effect = $(this);
+
+          $box.boxSlider('option', 'effect', $effect.data('fx'));
+          $effects.removeClass('current');
+          $effect.addClass('current');
+
+          switchIndicator(null, null, 0, 0);
+          ev.preventDefault();
+        });
+
+		  });
+
+		</script>
+			<div style="text-align:center;clear:both;font-size:12px;">
+            	<p><a href="http://www.jqshare.com" target="_blank">jQuery特效</a>分享网站整理</p>
+				<p>欢迎大家进群讨论前端技术知识！jQuery分享交流群:<strong>171845447</strong></p>
+				<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. </p><br>
+				<p>来源：站长素材</p>
+			</div>
+		</div>
+	</div>
+	<!-- centerDiv end--></div>
+
+</body>
+
+</html>

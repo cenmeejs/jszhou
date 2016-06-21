@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>toString的用法</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+            //ECMAScript定义所有对象都有toString()方法；Boolean值、数字和字符串的原始值的有趣之处在于它们是伪对象；
+            var numData = 30;
+            var boolData = true;
+            var strData = "abc"
+            
+            //Number类型的toString()方法的默认模式
+            console.log(numData.toString());//"30"
+            console.log(boolData.toString());//"true"
+            console.log(strData.toString());//"abc"
+            
+            //Number类型的toString()方法的基模式：可以把数字转换为其他进制的字符串
+            console.log(numData.toString(2));//"11110"
+            console.log(numData.toString(8));//"36"
+            console.log(numData.toString(16));//1e
+            
+            //转换后的数据类型
+            console.log(typeof numData.toString());//string
+            console.log(typeof boolData.toString());//string
+            console.log(typeof strData.toString());//string
+            
+            //伪对象的属性和方法
+            console.log(numData.length);//undefined
+			console.log(numData.valueOf())//30
+            console.log(boolData.length);//undefined
+			console.log(boolData.valueOf())//true
+            console.log(strData.length);//3
+        </script>
+	</body>
+</html>

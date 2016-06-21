@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+	<canvas id="tanmap" width="400px" height="400px" style="background:black"></canvas>
+	<script>
+	   var canvas1 = document.getElementById("tanmap");
+       var cxt = canvas1.getContext("2d");
+       var herox = 30;
+       var heroy = 30;
+       cxt.fillStyle="#ba9658";
+       cxt.fillRect(herox,heroy,5,30);
+       cxt.fillRect(herox+15,heroy,5,30);
+       cxt.fillRect(herox+6,heroy+5, 8, 20);
+       cxt.fillStyle="#fef26e";
+       cxt.arc(herox+10, heroy+15, 4, 0,2*Math.PI, true)
+       cxt.fill();
+       cxt.strokeStyle="#fef26e";
+       cxt.lineWidth = 2;
+       cxt.beginPath();
+       cxt.moveTo(herox+10, heroy+15);
+       cxt.lineTo(herox+10, heroy);
+       cxt.closePath();
+       cxt.stroke();
+	</script>
+</body>
+</html>

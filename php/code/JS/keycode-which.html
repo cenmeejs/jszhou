@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>onkeypress</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		请输入数字：<input type="text" onkeypress="return key(event)">
+		<script>
+			function key(e){
+				//IE6,7,8只支持event.keyCode
+				//firefox只支持event.which
+				//chrome,opera同时支持event.keyCode和event.which
+				var codeData = e.which||e.keyCode;
+				if(codeData<48||codeData>57){
+					alert("你输入的不是数字");
+					return false;
+				};
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题</title>
+<script type="text/javascript" src="./jquery-1.8.3.min.js"></script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+请在此页面内点击任意鼠标按键
+<div id="msg"></div>
+<script>
+$(document).bind("keydown mousedown", function(event){
+    var msg = '';
+    if( event.type == "mousedown" ){ // 鼠标按下事件
+        var map = {"1": "左", "2":"中", "3":"右"};
+        msg = '你按下了鼠标[' + map[event.which] + ']键';
+    }else{ // 键盘按下事件
+        if(event.which >= 65 && event.which <= 90){
+            msg = '你按下了键盘[' + String.fromCharCode(event.which) + ']键';
+        }
+    }
+    if(msg){
+        $("#msg").prepend( msg + '<br>');
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+    ServerAdmin admin@system
+    DocumentRoot "D:/"
+    ServerName jsd.cn
+    ErrorLog 'logs/dummy-host.example.com-error_log'
+    CustomLog 'logs/dummy-host.example.com-access_log' common
+	
+	<Directory "D:/">
+    order allow,deny
+    allow from all
+    </Directory> 
+</VirtualHost>

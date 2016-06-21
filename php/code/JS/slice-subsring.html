@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>slice and substring</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*与 concat() 方法一样，slice() 和 substring() 方法都不改变 String 对象自身的值。它们只返回原始的 String 值，保持 String 对象不变。*/
+
+
+			/*参数为正时，slice()和substring()的用法相同；参数为负数时，slice() 方法会用字符串的长度加上参数，substring()方法则将其作为0处理（也就是说将忽略它），且substring() 总把较小的数字作为起始位,较大的数作为结束位*/
+
+			
+			//var a = "hello world"
+			//alert(a.slice(8));//rld
+			//alert(a.substring(8));//rld
+			//alert(a.slice(3,7));//lo w
+			//alert(a.substring(3,7));//lo w
+			//alert(a.slice(3,-3));//lo wo
+			//alert(a.substring(3,-3));//hel,相当于substring(0,3)
+			//alert(a.substring(8,3));//lo wo
+
+		</script>
+	</body>
+</html>

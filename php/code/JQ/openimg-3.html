@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+        <style type="text/css">
+            *{
+                margin:0px;
+                padding:0px;
+            }
+            html{
+                width:100%;
+                height:100%;
+                position:relative;
+                overflow: hidden;
+            }
+            body{
+                width:100%;
+                height:100%;
+                margin:auto;
+            }
+            .outset{
+                position:absolute;
+                width:100%;
+                height:100%;
+                z-index: 0;
+                top:0px;
+                left:0px;
+                background-size:cover;
+            }
+            .bg1{
+                background:url(../../image/a.jpg) no-repeat 50% 50%;
+                z-index:1;
+                background-size:cover;
+            }
+            .bg2{
+                background:url(../../image/b.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .bg3{
+                background:url(../../image/c.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .bg4{
+                background:url(../../image/d.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .bg5{
+                background:url(../../image/e.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .bg6{
+                background:url(../../image/f.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .bg7{
+                background:url(../../image/g.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .bg8{
+                background:url(../../image/h.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .bg9{
+                background:url(../../image/i.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .bg10{
+                background:url(../../image/j.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .bg11{
+                background:url(../../image/k.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .bg12{
+                background:url(../../image/h.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .ag1{
+                background:url(../../image/1.jpg) no-repeat 50% 50%;
+                z-index:1;
+                background-size:cover;
+            }
+            .ag2{
+                background:url(../../image/2.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .ag3{
+                background:url(../../image/3.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .ag4{
+                background:url(../../image/4.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .ag5{
+                background:url(../../image/5.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .ag6{
+                background:url(../../image/6.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .ag7{
+                background:url(../../image/7.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .ag8{
+                background:url(../../image/8.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .ag9{
+                background:url(../../image/9.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .ag10{
+                background:url(../../image/10.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .ag11{
+                background:url(../../image/11.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .ag12{
+                background:url(../../image/12.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            ul{
+                position:absolute;
+                width:100%;
+                height:66px;
+                bottom:50px;
+                left:0;
+                z-index:10;
+                background:rgba(255,255,255,0);
+                left:50%;
+                -webkit-transform: translate(-50%,0);
+                   -moz-transform: translate(-50%,0);
+                    -ms-transform: translate(-50%,0);
+                     -o-transform: translate(-50%,0);
+                        transform: translate(-50%,0);
+            }
+            li{
+                position:relative;
+                float:left;
+                width:100px;
+                height:50px;
+                border:8px solid rgba(0, 0, 0, 0);
+                list-style:none;
+                background:blue;
+                background-size:cover;
+            }
+            .btn1,.btn2{
+                position:absolute;
+                display: block;
+                width:200px;
+                height:200px;
+                font-size:200px;
+                z-index:11;
+                line-height:200px;
+                background:rgba(36, 59, 93, 0);
+                top:50%;
+                cursor:pointer;
+                color:#243B5D;
+                -webkit-transform: translate(0, -50%);
+                   -moz-transform: translate(0, -50%);
+                    -ms-transform: translate(0, -50%);
+                     -o-transform: translate(0, -50%);
+                        transform: translate(0, -50%);
+            }
+            .btn1{
+                left:-110px;
+            }
+            .btn2{
+                right:-110px;
+            }
+            span.btn1:hover,span.btn2:hover{
+                background:rgba(36, 59, 93, .7);
+            }
+        </style>
+    </head>
+    <body>
+    </body>
+        <div class="outset bg1"></div>
+        <div class="outset bg2"></div>
+        <div class="outset bg3"></div>
+        <div class="outset bg4"></div>
+        <div class="outset bg5"></div>
+        <div class="outset bg6"></div>
+        <div class="outset bg7"></div>
+        <div class="outset bg8"></div>
+        <div class="outset bg9"></div>
+        <div class="outset bg10"></div>
+        <div class="outset bg11"></div>
+        <div class="outset bg12"></div>
+        <ul>
+            <li class="bg1"></li>
+            <li class="bg2"></li>
+            <li class="bg3"></li>
+            <li class="bg4"></li>
+            <li class="bg5"></li>
+            <li class="bg6"></li>
+            <li class="bg7"></li>
+            <li class="bg8"></li>
+            <li class="bg9"></li>
+            <li class="bg10"></li>
+            <li class="bg11"></li>
+            <li class="bg12"></li>
+        </ul>
+        <span class="btn1">〈</span>
+        <span class="btn2">〉</span>
+        <script type="text/javascript">
+            $(function(){
+                var a=1,med,bool=0;
+                //给小图片加边框
+                function clear1(){
+                    $("li")
+                    .eq(a)
+                    .css({"border":"8px solid #F8D118","width":"120px","height":"70px","margin-top":"-20px"})
+                    .siblings("li")
+                    .css({"border":"8px solid rgba(0, 0, 0, 0)","width":"100px","height":"50px","margin-top":"0"}); 
+                    clearInterval(oauto);
+                    $("div").stop(true,true);
+                }
+                //理清图片层次
+                function clear2(){
+                    $("div").eq(med).css({"z-index":"5"}).siblings("div").css({"z-index":"0"});
+                    $("div").eq(a).css({"z-index":"6"});
+                    clearInterval(oauto);
+                    oauto = setInterval(auto,4000);
+                    a==11?setTimeout(bian,3000):a++;
+                }
+                //换一套图片  
+                function bian(){
+                    $("div").each(function(){
+                        if(bool==0){
+                            var medData = $(this).attr("class").replace(/b/g,"a"); 
+                        }else{
+                            var medData = $(this).attr("class").replace(/a/g,"b"); 
+                        }
+                        $(this).attr("class",medData);
+                    });
+                    $("li").each(function(){
+                        if(bool==0){
+                            var medData = $(this).attr("class").replace(/b/g,"a"); 
+                        }else{
+                            var medData = $(this).attr("class").replace(/a/g,"b"); 
+                        }
+                        $(this).attr("class",medData);
+                    });
+                    a=0;
+                    bool==0?bool=1:bool=0;
+                }
+                //点击（小图片）轮播
+                for(var s=0;s<12;s++){
+                    $("li").eq(s).click(function(){
+                        a==0?med=11:med=a-1;
+                        a=$(this).index("li");
+                        clear1();
+                        if(a==0||a==5||a==10){
+                            $("div").eq(a).css({"height":"0","top":"400px","z-index":"6"}).
+                            animate({height:"100%",top:"0"},2000,clear2());
+                        }else if(a==1||a==6||a==11){
+                            $("div").eq(a).css({"z-index":"6",height:"0",width:"0",top:"400px",left:"700px"}).
+                            animate({height:"100%",width:"100%",top:"0",left:"0"},2000,clear2());
+                        }else if(a==2||a==7){
+                            $("div").eq(a).css({"left":"-100%","z-index":"6"}).
+                            animate({left:"0"},2000,clear2());
+                        }else if(a==3||a==8){
+                            $("div").eq(a).css({"top":"100%","z-index":"6"}).
+                            animate({top:"0"},2000,clear2());
+                        }else if(a==4||a==9){
+                            $("div").eq(a).css({"z-index":"6","height":"500%","width":"500%","top":"-200%","left":"-200%"}).
+                            animate({width:"100%",height:"100%",top:"0",left:"0"},2000,clear2());
+                        };
+                    });
+                };
+                //自动轮播（绑定点击事件）
+                var oauto = setInterval(auto,4000);
+                function auto(){
+                    $("li").eq(a).trigger("click");
+                }
+                //左右点击轮播（绑定点击事件）
+                $("span").click(function(){
+                    var i = $(this).index("span");
+                    $("li").eq(i==0?(a==1||a==0?a+10:a-2):a).trigger("click");
+                });
+            })
+        </script>
+</html>

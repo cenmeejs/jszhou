@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>待付款订单</title>
+    <link rel="stylesheet" href="../common/weui.css"/>
+    <link rel="stylesheet" href="../css/mjx.css">
+    <script src="../common/jweixin-1.1.0.js"></script>
+    <script src="../common/zepto.js"></script>
+    <script src="../common/weui.js"></script>
+    <script src="../js/mjx.js"></script>
+</head>
+<body>
+    <div class="common_body_wrap">
+        <header class="common_header">
+            <a href="javascript:history.go(-1);" class="common_header_back"></a>
+            <span>待付款订单</span>
+            <a href="./userCenter.html" class="common_header_userCenter"></a>
+        </header>
+        <form class="common_wrap_bg" action="qrcodePay.html" method="get" id="js_surepay_form">
+            <div class="weui_cells_title">待付款订单列表</div>
+            <div class="weui_cells weui_cells_checkbox">
+                <label class="weui_cell weui_check_label js_check_label" for="s11">
+                    <div class="weui_cell_hd">
+                        <input type="checkbox" value="订到号1" class="weui_check js_check" name="hobby" id="s11">
+                        <i class="weui_icon_checked"></i>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>景区产品名称（成人票） <span class="scenic_product_price">2</span> 张</p>
+                    </div>
+                    <div class="weui_cell_ft scenic_product_price">￥<span class="js_order_price">200.00</span></div>
+                </label>
+                <label class="weui_cell weui_check_label js_check_label" for="s12">
+                    <div class="weui_cell_hd">
+                        <input type="checkbox" value="订到号2" class="weui_check js_check" name="hobby" id="s12">
+                        <i class="weui_icon_checked"></i>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>景区产品名称（儿童票） <span class="scenic_product_price">2</span> 张</p>
+                    </div>
+                    <div class="weui_cell_ft scenic_product_price">￥<span class="js_order_price">160.00</span></div>
+                </label>
+                <label class="weui_cell weui_check_label js_check_label" for="s13">
+                    <div class="weui_cell_hd">
+                        <input type="checkbox" value="订到号3" class="weui_check js_check" name="hobby" id="s13">
+                        <i class="weui_icon_checked"></i>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>景区产品名称（成人票） <span class="scenic_product_price">1</span> 张</p>
+                    </div>
+                    <div class="weui_cell_ft scenic_product_price">￥<span class="js_order_price">100.00</span></div>
+                </label>
+            </div>
+            <div class="weui_cells_title">总计（元）：<span class="scenic_product_price js_total_price">0.00</span></div>
+            <div class="weui_btn_area">
+                <a class="weui_btn weui_btn_primary js_surepay_btn" href="javascript:void 0;">确定付款</a>
+            </div>
+
+        </form>
+        <footer class="common_footer_wrap">
+            <div class="common_footer_btnWrap">
+                <a href="javascript:void 0;" class="common_footer_btn">景区介绍</a>
+                <a href="./lists.html" class="common_footer_btn">购买门票</a>
+                <a href="./userCenter.html" class="common_footer_btn">个人中心</a>
+            </div>
+            <a href="http://www.meijingxiu.cn" class="common_footer_mjx">
+                <img src="../imgs/mjx_logo.png" alt="" class="common_footer_mjxlogo">
+                <div class="common_footer_mjxtip">美景秀提供技术支持</div>
+            </a>
+        </footer>
+    </div>
+    <script>
+        $(function(){
+            //复选框状态改变
+            var js_check = $('.js_check');
+            js_check.change(function(){
+                var js_order_price = +$(this).parents('.js_check_label').find('.js_order_price').text(),
+                    js_total_price = $('.js_total_price'),
+                    total = +js_total_price.text();
+                if($(this).get()[0].checked){
+                    total += js_order_price;
+                }else{
+                    total -= js_order_price;
+                }
+                js_total_price.text(Number(total).toFixed(2));
+            });
+            //点击确定付款按钮
+            $('.js_surepay_btn').click(function(){
+                $('#js_surepay_form').submit();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="description" content="IE6下png背景透明后background-position不起作用的解决方法" />
+<meta name="description" content="张鑫旭web前端学习之css,jQuery学习实例页面" />
+<meta name="keywords" content="张鑫旭,鑫空间-鑫生活,博客,web前端,jquery,demo页面,学习,png, pngfix, ie png fix, jQuery, Plugin" />
+<meta name="author" content="张鑫旭,zhangxixnu" />
+<title>IE6下png背景透明后background-position不起作用的解决方法</title>
+<link rel="shortcut icon" href="http://www.zhangxinxu.com/zxx_ico.png" />
+<style type="text/css">
+body{padding:0; margin:0; font-size:84%; background:#eeeeee; color:#333333; font-family:'宋体',Verdana, Geneva, sans-serif;}
+a{color:#34538b; text-decoration:underline;}a:hover{color:#F30; text-decoration:underline;}
+.l{float:left;}.r{float:right;}img{border:0; max-width:100%;}
+ul,li{padding:0; margin:0; list-style-type:none;}
+.zxx_out_box{width:80%; border-left:1px solid white; border-right:1px solid white; margin:0 auto;}
+.zxx_in_box{min-height:550px; _height:550px; border-left:1px solid #cccccc; border-right:1px solid #cccccc; background:white; padding:1em 2.5em 0;}
+.zxx_header{padding:10px 20px 5px; border-bottom:1px solid #cccccc; overflow:hidden; zoom:1;}
+.zxx_logo{float:left;}
+.zxx_author_time{float:right; margin-top:34px; color:#787878; font-family:"Courier New", Courier, monospace;}
+.zxx_title{font-size:1.6em; text-align:center; margin:20px 0;}
+.zxx_main_con{padding:0 20px 20px;}
+.zxx_footer{padding-bottom:25px; text-align:center;}
+.zxx_main_con .zxx_test_list{padding:1em; font-size:1.1em; border-bottom:1px dashed #cccccc; line-height:1.4; overflow:hidden; zoom:1;}
+.zxx_test_btn{float:left; margin-right:1em; padding-bottom:0.5em;}
+.zxx_test_btn li{width:160px; height:40px; position:relative; overflow:hidden;}
+.zxx_test_btn li a:hover{border:0;}
+.margin_pos_1 .just_a_flag{margin:0;}/*事实上，调用png插件后，img标签处于display:none的状态，而被一个span标签所代替，而这个span标签的一些样式属性与img一致，所以这里的just_a_flag是需要的，因为标签类型换了，而class并没有改换。在IE6下，这里的效果其实等同于.margin_pos_1 span.just_a_flag或者是.margin_pos_1 span，但是考虑到兼容性，这里使用一个起标志作用的class是非…不可的*/
+.margin_pos_1:hover .just_a_flag{margin:-40px 0 0;}
+.margin_pos_2 .just_a_flag{margin:0 0 0 -160px;}.margin_pos_2:hover .just_a_flag{margin:-40px 0 0 -160px;}
+.margin_pos_3 .just_a_flag{margin-left:-320px;}.margin_pos_3:hover .just_a_flag{margin:-40px 0 0 -320px;}
+.margin_pos_4 .just_a_flag{margin-left:-480px;}.margin_pos_4:hover .just_a_flag{margin:-40px 0 0 -480px;}
+.abs_pos_1 .just_a_flag{position:absolute; left:0; top:0;}.abs_pos_1:hover .just_a_flag{top:-40px;}
+.abs_pos_2 .just_a_flag{position:absolute; left:-160px; top:0;}.abs_pos_2:hover .just_a_flag{top:-40px;}
+.abs_pos_3 .just_a_flag{position:absolute; left:-320px; top:0;}.abs_pos_3:hover .just_a_flag{top:-40px;}
+.abs_pos_4 .just_a_flag{position:absolute; left:-480px; top:0;}.abs_pos_4:hover .just_a_flag{top:-40px;}
+.zxx_code{display:block; padding:10px; margin:5px 0; background:#eeeeee; border:1px dashed #cccccc; clear:both; zoom:1;}
+.zxx_code xmp{margin:0; color:#00F; font-size:12px; white-space:pre-wrap; word-wrap:break-word;}
+</style>
+<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
+<script type="text/javascript" src="../js/jquery.pngFix.pack.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.zxx_png_trans').pngFix( );
+	});
+</script>
+</head>
+
+<body>
+	<div class="zxx_out_box">
+    	<div class="zxx_in_box">
+        	<div class="zxx_header">
+                <a href="http://www.zhangxinxu.com/">
+               		<img class="l" src="http://www.zhangxinxu.com/wordpress/wp-content/themes/default/images/index_logo.gif" />
+                </a>
+                <span class="zxx_author_time">by zhangxinxu 2009-08-23 13:06</span>
+            </div>
+            <h3 class="zxx_title">背景集合图片在页面上的定位，实现类background-position效果</h3>
+            <div class="zxx_main_con">
+            	<div class="zxx_test_list">
+                    <img src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" /><br /><br />
+                    <strong>图片素材</strong><br />
+                    这里的png图片并没有接受jQuery的png透明js的透明处理，可以在<strong>IE6浏览器</strong>下看到透明部分显示为蓝蓝的背景色。<br />
+                    此图片将用在在页面上进行定位，实现类似于css中background-position的效果。
+                </div>
+                <div class="zxx_test_list zxx_png_trans">
+                    <ul class="zxx_test_btn">
+                    	<li>
+                        	<a class="margin_pos_1" href="javascript:void(0);">
+                            	<img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+                            </a>
+                        </li>
+                        <li>
+                        	<a class="margin_pos_2" href="javascript:void(0);">
+                            	<img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+                            </a>
+                        </li>
+                        <li>
+                        	<a class="margin_pos_3" href="javascript:void(0);">
+                            	<img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+                            </a>
+                        </li>
+                        <li>
+                        	<a class="margin_pos_4" href="javascript:void(0);">
+                            	<img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+                            </a>
+                        </li>
+                    </ul>
+                    <strong>margin定位</strong><br />
+                    其实margin:-40px 0 0 -160px;与background-position:-160px -40px;实现的原理是一致的，而差别就在于background-position会自动让区域外的图片部分不显示，所以我们要做的很简单，就是给margin定位的父标签（或父父标签）给它定个高宽，然后overflow:hidden让高度宽度之外的区域不显示就行了。<br />
+                    另外有不得不说的：如果您使用jQuery png透明插件的话，切不可通过img标签对图片进行定位。原因在于您找不到img标签，例如这里的jQuery插件就是将img标签替换成了span，让img链接图片变成span的背景图片再应用css 滤镜实现背景透明的。下面css代码部分的注释有一些解释并提供了解决方法。
+                    <div class="zxx_code">
+                    	<xmp><ul class="zxx_test_btn">
+    <li>
+        <a class="margin_pos_1" href="javascript:void(0);">
+            <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+        </a>
+    </li>
+    <li>
+        <a class="margin_pos_2" href="javascript:void(0);">
+            <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+        </a>
+    </li>
+    <li>
+        <a class="margin_pos_3" href="javascript:void(0);">
+            <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+        </a>
+    </li>
+    <li>
+        <a class="margin_pos_4" href="javascript:void(0);">
+            <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+        </a>
+    </li>
+</ul></xmp>
+                    </div>
+                    <div class="zxx_code">
+                    	<xmp>.zxx_test_btn{float:left; margin-right:1em; padding-bottom:0.5em;}
+.zxx_test_btn li{width:160px; height:40px; position:relative; overflow:hidden;}
+.zxx_test_btn li a:hover{border:0;}
+.margin_pos_1 .just_a_flag{margin:0;}/*事实上，调用png插件后，img标签处于display:none的状态，而被一个span标签所代替，而这个span标签的一些样式属性与img一致，所以这里的just_a_flag是需要的，因为标签类型换了，而class并没有改换。在IE6下，这里的效果其实等同于.margin_pos_1 span.just_a_flag或者是.margin_pos_1 span，但是考虑到兼容性，这里使用一个起标志作用的class是非…不可的*/
+.margin_pos_1:hover .just_a_flag{margin:-40px 0 0;}
+.margin_pos_2 .just_a_flag{margin:0 0 0 -160px;}.margin_pos_2:hover .just_a_flag{margin:-40px 0 0 -160px;}
+.margin_pos_3 .just_a_flag{margin-left:-320px;}.margin_pos_3:hover .just_a_flag{margin:-40px 0 0 -320px;}
+.margin_pos_4 .just_a_flag{margin-left:-480px;}.margin_pos_4:hover .just_a_flag{margin:-40px 0 0 -480px;}</xmp>
+                    </div> 
+                </div>
+                <div class="zxx_test_list zxx_png_trans">
+                	<ul class="zxx_test_btn">
+                    	<li>
+                        	<a class="abs_pos_1" href="javascript:void(0);">
+                            	<img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+                            </a>
+                        </li>
+                        <li>
+                        	<a class="abs_pos_2" href="javascript:void(0);">
+                            	<img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+                            </a>
+                        </li>
+                        <li>
+                        	<a class="abs_pos_3" href="javascript:void(0);">
+                            	<img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+                            </a>
+                        </li>
+                        <li>
+                        	<a class="abs_pos_4" href="javascript:void(0);">
+                            	<img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+                            </a>
+                        </li>
+                    </ul>
+                    <strong>position定位</strong><br />
+                    相对于margin定位，position的绝对定位与background-position的定位更接近些。position:absolute;left:-160px;top:-40px;与background-position:-140px -40px;本质上是一样的，都是定位。差别就在于background-position指背景定位，所以标签区域外的背景图片是看不见的，而使用absolute绝对定位要设置其上一级标签（或上上级标签）溢出部分隐藏，也就是overflow:hidden 。<br />
+                    另外有一点需要说明：原来的jQuery png背景透明插件是不支持absolute绝对定位的，我自己对其插件js做了适当的修改，使其支持此方法。所以使用网上其他地方的jQuery png透明插件会没有这个效果。
+                    <div class="zxx_code">
+                    	<xmp><ul class="zxx_test_btn">
+    <li>
+        <a class="abs_pos_1" href="javascript:void(0);">
+            <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+        </a>
+    </li>
+    <li>
+        <a class="abs_pos_2" href="javascript:void(0);">
+            <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+        </a>
+    </li>
+    <li>
+        <a class="abs_pos_3" href="javascript:void(0);">
+            <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+        </a>
+    </li>
+    <li>
+        <a class="abs_pos_4" href="javascript:void(0);">
+            <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+        </a>
+    </li>
+</ul></xmp>
+                    </div>
+                    <div class="zxx_code">
+                    	<xmp>.zxx_test_btn{float:left; margin-right:1em; padding-bottom:0.5em;}
+.zxx_test_btn li{width:160px; height:40px; position:relative; overflow:hidden;}
+.zxx_test_btn li a:hover{border:0;}
+.abs_pos_1 .just_a_flag{position:absolute; left:0; top:0;}.abs_pos_1:hover .just_a_flag{top:-40px;}
+.abs_pos_2 .just_a_flag{position:absolute; left:-160px; top:0;}.abs_pos_2:hover .just_a_flag{top:-40px;}
+.abs_pos_3 .just_a_flag{position:absolute; left:-320px; top:0;}.abs_pos_3:hover .just_a_flag{top:-40px;}
+.abs_pos_4 .just_a_flag{position:absolute; left:-480px; top:0;}.abs_pos_4:hover .just_a_flag{top:-40px;}</xmp>
+                    </div>
+                </div>
+            </div>
+            <div class="zxx_footer">
+            	&copy;<a href="http://www.zhangxinxu.com/">张鑫旭-鑫空间-新生活</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>无标题</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<script>
+			/*document.write('<div id="div1">aaa</div><div id="div2">bbb</div><div id="div3">ccc</div>');
+			for(var i=1;i<4;i++){
+				document.getElementById("div"+i).addEventListener("click",function(){alert(i);});
+			}*/
+			/*document.write('<div id="div1">aaa</div><div id="div2">bbb</div><div id="div3">ccc</div>');
+			for(var i=1;i<4;i++){
+				!function(i){
+					document.getElementById("div"+i).addEventListener("click",function(){
+						alert(i);
+					});
+					alert(i);
+				}(i);
+			}*/
+			//alert(i);
+
+			function outer(){
+				var a=9;
+				var func=new Function("console.log(typeof a);")
+				func();
+			}
+			outer();
+		</script>
+	</body>
+</html>

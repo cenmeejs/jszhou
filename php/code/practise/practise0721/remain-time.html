@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body style="text-align:center;color:tomato;font-size:30px;">
+    <script type="text/javascript">
+    function remainTime(){
+        var nowDate=new Date();
+        var midDate=new Date(2015,8,27,0,0,0,0);
+        //alert(nowDate);
+        //alert(midDate);
+        var remainMil=midDate.getTime()-nowDate.getTime();
+        var rSecond=Math.floor(remainMil/1000%60);
+        var rMinute=Math.floor(remainMil/1000/60%60);
+        var rHour=Math.floor(remainMil/1000/60/60%24);
+        var rdate=Math.floor(remainMil/1000/60/60/24);
+        document.getElementsByTagName("body")[0].innerHTML="距离中秋节还有"+rdate+"天"+rHour+"小时"+rMinute+"分钟"+rSecond+"秒"
+    }
+    setInterval(remainTime, 500)
+    </script>
+</body>
+</html>

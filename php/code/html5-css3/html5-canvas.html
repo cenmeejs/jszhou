@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<canvas width="500px" height="500px" style="border:1px solid;" id="can1">你的浏览器不支持canvas</canvas>
+	<script>
+		var canvas = document.getElementById("can1");
+		var cxt = canvas.getContext("2d")
+		//画直线
+		cxt.moveTo(20,20);
+		cxt.lineTo(20,90);
+		cxt.stroke();
+		//画矩形
+		cxt.fillStyle="red";
+		cxt.fillRect(40,20,70,70)
+		cxt.strokeRect(130,20,70,70)
+		//画三角形
+		cxt.beginPath();
+		cxt.moveTo(220,20);
+		cxt.lineTo(220,90);
+		cxt.lineTo(250,90);
+		cxt.closePath();
+		//cxt.stroke();
+		cxt.fillStyle="blue"
+		cxt.fill();
+		//画圆
+		cxt.beginPath();
+		cxt.arc(300,50,20,0,1.5*Math.PI,false)
+		cxt.closePath();
+		cxt.fillStyle="tomato"
+		cxt.fill();
+		cxt.beginPath();
+		cxt.arc(350,50,20,0,2*Math.PI,true)
+		cxt.closePath();
+		cxt.fillStyle="black"
+		cxt.fill();
+		//画图片
+		var img1 = new Image();
+		img1.src = "../../image/a.jpg"
+		img1.onload = function(){
+			cxt.drawImage(img1,20,100,300,300);
+		};
+		//写字
+		var text = "传智播客php";
+		cxt.font = "30px 宋体";
+		cxt.fillStyle = "black";
+		cxt.fillText(text, 200,450);
+
+	</script>
+</body>
+</html>

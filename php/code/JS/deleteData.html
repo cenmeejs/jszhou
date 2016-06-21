@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>一<button>删除一</button></li>
+        <li>二<button>删除二</button></li>
+        <li>三<button>删除三</button></li>
+        <li>四<button>删除四</button></li>
+        <li>五<button>删除五</button></li>
+        <li>六<button>删除六</button></li>
+		<li>一<button>删除一</button></li>
+        <li>二<button>删除二</button></li>
+        <li>三<button>删除三</button></li>
+        <li>四<button>删除四</button></li>
+        <li>五<button>删除五</button></li>
+        <li>六<button>删除六</button></li>
+		<li>一<button>删除一</button></li>
+        <li>二<button>删除二</button></li>
+        <li>三<button>删除三</button></li>
+        <li>四<button>删除四</button></li>
+        <li>五<button>删除五</button></li>
+        <li>六<button>删除六</button></li>
+		<li>一<button>删除一</button></li>
+        <li>二<button>删除二</button></li>
+        <li>三<button>删除三</button></li>
+        <li>四<button>删除四</button></li>
+        <li>五<button>删除五</button></li>
+        <li>六<button>删除六</button></li>
+		<li>一<button>删除一</button></li>
+        <li>二<button>删除二</button></li>
+        <li>三<button>删除三</button></li>
+        <li>四<button>删除四</button></li>
+        <li>五<button>删除五</button></li>
+        <li>六<button>删除六</button></li>
+    </ul>
+	<script>
+		document.addEventListener("click",fun1,false);
+		function fun1(e){
+			var tg=window.event.target||e.target;
+			if(tg.tagName.toLowerCase()=="button"){
+				tg.parentNode.parentNode.removeChild(tg.parentNode);
+			}
+		}
+	</script>
+</body>
+</html>

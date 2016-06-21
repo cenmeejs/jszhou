@@ -1,0 +1,55 @@
+<html>
+	<body>
+		<pre style="font-size:20px;color:red;">
+			1.css3:border-image:
+				{source,slice,width,outset,repeat;}
+
+			2.element hidden:
+				{text-indent(negative),position(negative),visibility,display,opacity(0),font-size(0),height(0);}
+			
+			3.:nth-child and :nth-of-type:
+				{3-n(n>=0):The first three child elements;}
+				
+			4.addEventListener(type,listener,useCapture):
+				{removeEventListener,attachEvent(IE),detachEvent;}
+				
+			5.html DOM tree:
+				{elements that are not free of nested:h1,h2,h3,h4,h5,h6,caption,p,hr,dt;}
+			
+			6.arrow:
+				{border:transparent;width/height:0px;}
+				
+			7.css,js,jq,auto carousel:
+			
+			8.css,js,jq dropdown list:
+			
+			9.negative margin:
+				{static:top/left,right/buttom;float:-100%,-width;(2015-06-21)}
+			
+			10.flexbox:
+			{display:flex/inline-flex;flex-direction,flex-wrap,flex-flow,justify-content,align-items,align-content,order,flex-grow,flex-shink,flex-basis,flex,align-self;(2015-06-21)}
+			
+			11.background-positon percentage:
+				{positionX/Y = (container w/h - image w/h)*percentageX/Y(2015-06-22)}
+				
+			12.box-shadow:(copy self)
+				{inset,X-offset,Y-offset,blur-radius,spread-distance,color(2015-06-22)}
+		</pre>
+		<script>
+			var tag;
+			tag = setInterval(fun1,10)
+			function fun1(){
+				var strdata = document.getElementsByTagName("pre")[0].innerHTML.match(/\{.+\}/);
+				if(!strdata){
+					clearInterval(tag);
+				}
+				var repdata = "<span style='font-size:15px;color:black;'>"+strdata+"</span>";
+				var changedata = repdata.replace(/\{/,"");
+				var chadata = changedata.replace(/\}/,"");
+				var endata = document.getElementsByTagName("pre")[0].innerHTML.replace(/\{.+\}/,chadata);
+				document.getElementsByTagName("pre")[0].innerHTML = endata;
+			}
+		</script>
+	</body>
+
+</html>

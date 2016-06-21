@@ -1,0 +1,24 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var flagdata=0;
+			for(var i=2;i<101;i++){
+				flagdata = 0
+				for(var j=2;j<i;j++){
+					var yudata = i%j
+					if(yudata==0){
+						flagdata = 1
+					}
+				}
+				if(flagdata==0){
+					document.write(i+"&nbsp;");
+				}
+			}
+		</script>
+	</body>
+</html>

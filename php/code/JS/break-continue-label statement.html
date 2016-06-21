@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题</title>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<div id="aa"></div>
+<script>
+	var iNum1 = 0,iNum2=0,iNum3 = 0,iNum4=0;
+	
+	//contiune+标签语句
+	outermost1:
+	for (var i=0; i<10; i++) {
+		for (var j=0; j<10; j++) {
+			if (i == 5 && j == 5) {
+				continue outermost1;
+			}
+			iNum1++;
+		}
+	}
+	
+	
+	for (var i=0; i<10; i++) {
+		for (var j=0; j<10; j++) {
+			if (i == 5 && j == 5) {
+				continue;
+			}
+			iNum2++;
+		}
+	}
+	
+	//break+标签语句
+	outermost2:
+	for (var i=0; i<10; i++) {
+		for (var j=0; j<10; j++) {
+			if (i == 5 && j == 5) {
+				break outermost2;
+			}
+			iNum3++;
+		}
+	}
+	
+	
+	for (var i=0; i<10; i++) {
+		for (var j=0; j<10; j++) {
+			if (i == 5 && j == 5) {
+				break;
+			}
+			iNum4++;
+		}
+	}
+	document.getElementById("aa").innerHTML="iNum1:"+iNum1+";iNum2:"+iNum2+";iNum3:"+iNum3+";iNum4:"+iNum4+";"
+</script>
+</body>
+</html>

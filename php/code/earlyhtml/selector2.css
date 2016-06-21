@@ -1,0 +1,15 @@
+﻿a:link{
+color:red;
+font-size:24px;
+font-family:华文新魏字体;
+text-decoration:none
+}
+a:hover{
+color:green;
+font-size:40px;
+font-family:宋体;
+text-decoration:underline;
+}
+a:visited{
+color:blue;
+}

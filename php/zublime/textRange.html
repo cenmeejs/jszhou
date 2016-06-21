@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box" >点击textarea</div>
+	<textarea onclick=show()  rows="6" cols="33">sdfsdfsdfsdfsdfsdfsdf</textarea>   
+	<script type="text/javascript">  
+	/*function doit(){ 
+		 var rng = event.srcElement.createTextRange();
+		 rng.moveToPoint(event.x,event.y);   
+		 rng.moveEnd("character",event.srcElement.value.length)   
+		 box.innerText = "光标位置：" + (event.srcElement.value.length - rng.text.length) 
+	} */ 
+	function show(){
+		var r="";
+		if(document.selection){
+		r=document.selection.createRange().text;
+		}else if(window.getSelection()){
+		r=window.getSelection();
+		}else{
+		r="浏览器不支持！";
+		}
+		if(r==""){
+		alert("还未选择内容！");
+		}else{
+		alert(r);
+		}
+	}
+	</script>  
+</body>
+</html>

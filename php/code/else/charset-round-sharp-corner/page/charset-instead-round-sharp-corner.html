@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="description" content="使用字符代替圆角尖角研究" />
+<meta name="description" content="张鑫旭web前端学习之css" />
+<meta name="keywords" content="张鑫旭,鑫空间-鑫生活,博客,web前端,css,js,demo页面,学习" />
+<meta name="author" content="张鑫旭,zhangxixnu" />
+<title>使用字符代替圆角尖角研究</title>
+<link rel="shortcut icon" href="http://www.zhangxinxu.com/zxx_ico.png" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" />
+<style type="text/css">
+.zxx_test_list p{padding:2px 0 5px 20px;}
+.f_st{font-family:'宋体';}
+.f_ar{font-family:Arial, Helvetica, sans-serif;}
+.f_lu{font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+.f_ti{font-family:"Times New Roman", Times, serif;}
+.f_ver{font-family:Verdana, Geneva, sans-serif;}
+.quarter_round{display:inline-block; width:8px; height:8px; overflow:hidden; font-family:'宋体';}
+.quarter_round span{display:inline-block; font-size:16px; line-height:1;}
+.quarter_round .lt{}
+.quarter_round .rt{margin-left:-7px;}
+.quarter_round .lb{margin-top:-6px;}
+.quarter_round .rb{margin:-6px 0 0 -7px;}
+.sharp_square{width:333px; height:110px; background:#a0b3d6; position:relative; color:#a0b3d6;}/*IE6下有个奇偶bug，为避免1像素误差，高宽为偶数*/
+.sharp_square .quarter_round{position:absolute;}
+.sharp_square .quarter_round span{background:white;}
+.sharp_square .round_lt{left:-1px; top:0px;}
+.sharp_square .round_rt{right:-1px; top:0px;}
+.sharp_square .round_lb{left:-1px; bottom:0px;}
+.sharp_square .round_rb{right:-1px; bottom:0px;}
+/*round square with corner*/
+.sharp_top_corner{line-height:1; position:absolute; font-size:16px; top:-12px; right:80px;}
+.content_square{color:#fff; padding:20px; font-size:14px;}
+.content_square span{background:#316AC5;}
+/*sina weibo*/
+.square_out_border{width:472px; border:1px solid #dadada; background:#f8f8f8; position:relative; color:#dadada;}
+.square_inner_border{border:1px solid #ffffff; padding:20px; font-size:14px; color:#333333;}/*字体大小，行高使用偶数，避免高度为奇数造成IE6下有1像素的错位bug*/
+.square_out_border .quarter_round{position:absolute; z-index:1;}
+.square_out_border .quarter_round span{background:#f8f8f8;}
+.square_out_border .round_lt{left:-1px; top:-1px;}
+.square_out_border .round_rt{right:-1px; top:-1px;}
+.square_out_border .round_lb{left:-1px; bottom:-1px;} 
+.square_out_border .round_rb{right:-1px; bottom:-1px;}
+
+.square_top_corner{line-height:1; height:15px; font-size:30px; position:absolute; top:-15.99px; right:80px;}
+.square_top_corner2{line-height:1; font-size:30px; color:#f8f8f8; position:absolute; top:2px; right:0;}
+.square_out_border .quarter_round2{color:#f8f8f8; z-index:2;}
+.square_out_border .quarter_round2 span{background:none;}
+.square_out_border .round_lt2{left:0px; top:0px;}
+.square_out_border .round_rt2{right:0px; top:0px;}
+.square_out_border .round_lb2{left:0px; bottom:0px;}
+.square_out_border .round_rb2{right:0px; bottom:0px;}
+</style>
+</head>
+
+<body>
+<div class="zxx_out_box">
+    <div class="zxx_in_box">
+        <div class="zxx_header">
+            <a href="http://www.zhangxinxu.com/">
+                <img class="l" src="http://www.zhangxinxu.com/wordpress/wp-content/themes/default/images/index_logo.gif" />
+            </a>
+            <span class="zxx_author_time">by zhangxinxu 2009-11-05 13:12</span>
+        </div> 
+        <h3 class="zxx_title">使用字符代替圆角尖角研究</h3>
+        <div class="zxx_main_con">
+        	<div class="zxx_test_list">
+            	<h4>一、字体与字符显示的关系</h4>
+                <p>这里左右方向的尖角，字体为宋体：<span class="f_st">&lt;&gt; <br />不受字体影响型：＜＞</span></p>
+                <p>这里左右方向的尖角，字体为Arial：<span class="f_ar">&lt;&gt; <br />不受字体影响型：＜＞</span></p>
+                <p>这里左右方向的尖角，字体为Lucida Sans Unicode：<span class="f_lu">&lt;&gt; <br />不受字体影响型：＜＞</span></p>
+                <p>这里左右方向的尖角，字体为Times New Roman：<span class="f_ti">&lt;&gt; <br />不受字体影响型：＜＞</span></p>
+                <p class="dot">这里左右方向的尖角，字体为Verdana：<span class="f_ver">&lt;&gt; <br />不受字体影响型：＜＞</span></p>
+                
+                <p class="mt10">这里上下方向的尖角，字体为宋体，小尖角：<span class="f_st">ˇ^ <br />不受字体影响型：∧∨</span></p>
+                <p>这里上下方向的尖角，字体为Arial，小尖角：<span class="f_ar">ˇ^ <br />不受字体影响型：∧∨</span></p>
+                <p>这里上下方向的尖角，字体为Lucida Sans Unicode，小尖角：<span class="f_lu">ˇ^ <br />不受字体影响型：∧∨</span></p>
+                <p>这里上下方向的尖角，字体为Times New Roman，小尖角：<span class="f_ti">ˇ^ <br />不受字体影响型：∧∨</span></p>
+                <p class="dot">这里上下方向的尖角，字体为Verdana，小尖角：<span class="f_ver">ˇ^ <br />不受字体影响型：∧∨</span></p>
+                
+                <p class="mt10">这里是45度尖角，字体为宋体：<span class="f_st">∠</span></p>
+                <p>这里是45度尖角边形实体，字体为Arial：<span class="f_ar">∠</span></p>
+                <p>这里是45度尖角，字体为Lucida Sans Unicode：<span class="f_lu">∠</span></p>
+                <p>这里是45度尖角，字体为Times New Roman：<span class="f_ti">∠</span></p>
+                <p class="dot">这里是45度尖角，字体为Verdana：<span class="f_ver">∠</span></p>
+                
+                <p class="mt10">这里是实体尖角，字体为宋体：<span class="f_st">► ◄ ▲▼</span></p>
+                <p>这里是实体尖角，字体为Arial：<span class="f_ar">► ◄ ▲▼</span></p>
+                <p>这里是实体尖角，字体为Lucida Sans Unicode：<span class="f_lu">► ◄ ▲▼</span></p>
+                <p>这里是实体尖角，字体为Times New Roman：<span class="f_ti">► ◄ ▲▼</span></p>
+                <p class="dot">这里是实体尖角，字体为Verdana：<span class="f_ver">► ◄ ▲▼</span></p>
+                
+                <p class="mt10">这里是实体圆，由于大小有限，表现类似一个六边形实体，字体为宋体：<span class="f_st">●</span></p>
+                <p>这里是实体圆，由于大小有限，表现类似一个六边形实体，字体为Arial：<span class="f_ar">●</span></p>
+                <p>这里是实体圆，由于大小有限，表现类似一个六边形实体，字体为Lucida Sans Unicode：<span class="f_lu">●</span></p>
+                <p>这里是实体圆，由于大小有限，表现类似一个六边形实体，字体为Times New Roman：<span class="f_ti">●</span></p>
+                <p class="dot">这里是实体圆，由于大小有限，表现类似一个六边形实体，字体为Verdana：<span class="f_ver">●</span></p>
+                
+                <p class="mt10">这里是一个空心的圆形，字体为宋体：<span class="f_st">○</span></p>
+                <p>这里是一个空心的圆形，字体为Arial：<span class="f_ar">○</span></p>
+                <p>这里是一个空心的圆形，字体为Lucida Sans Unicode：<span class="f_lu">○</span></p>
+                <p>这里是一个空心的圆形，字体为Times New Roman：<span class="f_ti">○</span></p>
+                <p class="dot">这里是一个空心的圆形，字体为Verdana：<span class="f_ver">○</span></p>
+                
+                <p class="mt10">这里是四分之一圆弧，字体为宋体：<span class="f_st">╰ ╯╭ ╮</span></p>
+                <p>这里是四分之一圆弧，字体为Arial：<span class="f_ar">╰ ╯╭ ╮</span></p>
+                <p>这里是四分之一圆弧，字体为Lucida Sans Unicode：<span class="f_lu">╰ ╯╭ ╮</span></p>
+                <p>这里是四分之一圆弧，字体为Times New Roman：<span class="f_ti">╰ ╯╭ ╮</span></p>
+                <p>这里是四分之一圆弧，字体为Verdana：<span class="f_ver">╰ ╯╭ ╮</span></p>
+            </div>
+            <div class="zxx_test_list">
+            	<h4>二、实现四分之一实体圆</h4>
+                <p class="mt10">以四分之一实体圆填充四个角实现含有背景色的圆角效果。</p>
+                <p>
+                    <span class="quarter_round"><span class="lt">●</span></span>
+                    <span class="quarter_round"><span class="rt">●</span></span>
+                    <span class="quarter_round"><span class="lb">●</span></span>
+                    <span class="quarter_round"><span class="rb">●</span></span>
+                </p>
+                <div class="zxx_code">
+                	<div class="mb10"><strong>css代码：</strong></div>
+                    <xmp>.quarter_round{display:inline-block; width:8px; height:8px; overflow:hidden; font-family:'宋体';}
+.quarter_round span{display:inline-block; font-size:16px; line-height:1;}
+.quarter_round .lt{}
+.quarter_round .rt{margin-left:-7px;}
+.quarter_round .lb{margin-top:-6px;}
+.quarter_round .rb{margin:-6px 0 0 -7px;}</xmp>
+                </div>
+                <div class="zxx_code">
+                	<div class="mb10"><strong>HTML代码：</strong></div>
+                    <xmp><span class="quarter_round"><span class="lt">●</span></span>
+<span class="quarter_round"><span class="rt">●</span></span>
+<span class="quarter_round"><span class="lb">●</span></span>
+<span class="quarter_round"><span class="rb">●</span></span></xmp>
+                </div>
+        	</div>
+            <div class="zxx_test_list">
+            	<h4>三、实现实色背景的圆角矩形</h4>
+                <p class="mt10">以四分之一实体圆填充四个角实现含有背景色的圆角效果。</p>
+                <div class="ml20">
+                	<div class="sharp_square">
+                        <span class="quarter_round round_lt"><span class="lt">●</span></span>
+                        <span class="quarter_round round_rt"><span class="rt">●</span></span>
+                        <span class="quarter_round round_lb"><span class="lb">●</span></span>
+                        <span class="quarter_round round_rb"><span class="rb">●</span></span>
+                    </div>
+                </div>
+        	</div>
+            <div class="zxx_test_list">
+            	<h4>四、实现含有尖角指示的实色背景的圆角矩形</h4>
+                <p class="mt10">以四分之一实体圆填充四个角，添加尖角符，实现带尖角的实色圆角矩形。</p>
+                <div class="ml20">
+                	<div class="sharp_square mt20">
+                    	<span class="sharp_top_corner">▲</span>
+                        <span class="quarter_round round_lt"><span class="lt">●</span></span>
+                        <span class="quarter_round round_rt"><span class="rt">●</span></span>
+                        <span class="quarter_round round_lb"><span class="lb">●</span></span>
+                        <span class="quarter_round round_rb"><span class="rb">●</span></span>
+                        <div class="content_square"><span>以四分之一实体圆填充四个角，添加尖角符，实现带尖角的实色圆角矩形。</span></div>
+                    </div>
+                </div>
+        	</div>
+            <div class="zxx_test_list">
+            	<h4>五、实现新浪微博针对博文评论的含尖角的双边框圆角矩形效果</h4>
+                <p class="mt10">以四分之一实体圆填充四个角，重复一次，1像素错位。添加尖角符，2像素上下错位，矩形双层标签，实现最终的双边框效果。</p>
+                <div class="ml20">
+                	<div class="square_out_border mt20">
+                    	<span class="square_top_corner">◆<span class="square_top_corner2">◆</span></span>
+                        <span class="quarter_round round_lt"><span class="lt">●</span></span>
+                        <span class="quarter_round round_rt"><span class="rt">●</span></span>
+                        <span class="quarter_round round_lb"><span class="lb">●</span></span>
+                        <span class="quarter_round round_rb"><span class="rb">●</span></span>
+                        <div class="square_inner_border">
+                        	以四分之一实体圆填充四个角，重复一次，1像素错位。添加尖角符，2像素上下错位，矩形双层标签，实现最终的双边框效果。
+                        </div>
+                        <span class="quarter_round quarter_round2 round_lt2"><span class="lt">●</span></span>
+                        <span class="quarter_round quarter_round2 round_rt2"><span class="rt">●</span></span>
+                        <span class="quarter_round quarter_round2 round_lb2"><span class="lb">●</span></span>
+                        <span class="quarter_round quarter_round2 round_rb2"><span class="rb">●</span></span>
+                    </div>
+                </div>
+        	</div>
+   		</div>
+        <div class="zxx_footer">
+            Copyright &copy; by <a href="http://www.zhangxinxu.com/">张鑫旭-鑫空间-鑫生活</a>
+            |
+            <a href="http://www.zhangxinxu.com/wordpress/?p=332">本文相关文章</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gbk"/>
+</head>
+<body onkeydown="test()">
+<h1>小球上下移动</h1>
+<!--坦克大战的战场-->
+<canvas id="xiaoqiu" width="400px" height="300px" style="background-color:black"></canvas>
+<script type="text/javascript">
+	
+//得到画布
+var canvas1=document.getElementById("xiaoqiu");
+//得到绘图上下文(你可以理解是画笔)
+var cxt=canvas1.getContext("2d");
+
+
+
+//画出红色小球
+var ballX=30;
+var ballY=30;
+function drawBall(){
+//画圆必须要用beginPath、closePath，否则清屏没有效果
+cxt.beginPath();
+cxt.fillStyle="FF0000";
+cxt.arc(ballX,ballY,10,0,360,true);
+cxt.closePath();
+cxt.fill();
+
+}
+drawBall();
+//现在我按 w d s a让小球上 右 下 左移动小球
+//说明：当我们按下键时触发一个事件，onkeydown
+function test()
+{
+
+//画前先清屏
+cxt.clearRect(0,0,400,300);
+//说明，按下键后事件会产生一个event对象，传达给事件处理函数
+var code=event.keyCode;
+switch(code)
+{
+case 87:
+ballY--;break;
+case 68:
+ballX++;break;
+case 83:
+ballY++;break;
+case 65:
+ballX--;break;
+}//switch
+drawBall();
+
+}//test()
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

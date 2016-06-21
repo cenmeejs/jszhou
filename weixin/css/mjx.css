@@ -1,0 +1,267 @@
+@charset "utf-8";
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+}
+.common_body_wrap{
+    width:100%;
+    height:100%;
+    overflow-y:auto;
+    position:relative;
+    background:#f8f8f8;
+}
+.common_wrap_bg{
+    background:#fff;
+    overflow:hidden;
+}
+/*公共header开始*/
+.common_header{
+    width:100%;
+    height:40px;
+    text-align:center;
+    line-height:40px;
+    position:relative;
+    background:#f8f8f8;
+}
+.common_header_back{
+    width:40px;
+    height:40px;
+    background:url(../imgs/back.png) center no-repeat;
+    position:absolute;
+    left:0;
+    top:0;
+}
+.common_header_userCenter{
+    width:40px;
+    height:40px;
+    background:url(../imgs/userCenter.png) center no-repeat;
+    position:absolute;
+    right:10px;
+    top:0;
+}
+.common_hidden{
+    display:none !important;
+}
+/*公共header结束*/
+/*公共footer开始*/
+.common_footer_wrap{
+    width:100%;
+    height:150px;
+    background:#f8f8f8;
+    margin-top:50px;
+}
+.common_footer_btnWrap{
+    width:80%;
+    height:12px;
+    border-bottom:1px solid #E5E5E5;
+    padding:30px 0 15px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content:space-around;
+    margin:0 10%;
+}
+.common_footer_btn{
+    font-size:12px;
+    line-height:12px;
+    color:#333;
+}
+.common_footer_mjx{
+    display:block;
+    width:30%;
+    margin:15px 35% 15px;
+    font-size:12px;
+}
+.common_footer_mjxlogo{
+    display:block;
+    width:70%;
+    margin:0 15% 5px;
+}
+.common_footer_mjxtip{
+    width:100%;
+    font-size:12px;
+    text-align:center;
+    line-height:12px;
+    color:#888;
+}
+/*公共footer结束*/
+/*景区产品列表开始*/
+.cells_margin{
+    margin:0;
+    background:#fff;
+}
+.scenic_product_img{
+    width:80px;
+    height:80px;
+    display:inline-block;
+}
+.scenic_product_wrap,
+.allorder_product_wrap{
+    margin-left:10px;
+    display:inline-block;
+}
+.scenic_product_title,
+.allorder_product_title{
+    color:#424242;
+    margin-bottom:5px;
+}
+.scenic_product_detail{
+    font-size:13px;
+    color:#aaa;
+    padding:0 0 3px 1px;
+}
+.scenic_product_price{
+    font-size:14px;
+    color:#FF6F6D;
+}
+.lists_buy_btn{
+    position:absolute;
+    right:90px;
+    bottom:5px;
+}
+.lists_detail_btn{
+    position:absolute;
+    right:20px;
+    bottom:5px;
+}
+/*景区产品列表结束*/
+/*景区产品详情开始*/
+.detail_body_wrap{
+    width:100%;
+    height:calc(100% - 65px);
+    overflow-y: auto;
+    position:relative;
+    background:#f8f8f8;
+}
+.lunbo-container{
+    width:100%;
+    overflow:hidden;
+}
+.lunbo-wrapper{
+    width:300%;
+    overflow:hidden;
+}
+.lunbo-slide{
+    width:33.3%;
+    float:left;
+}
+.lunbo_img{
+    width:100%;
+}
+.product_detail img{
+    width:100%
+}
+.product_detail p{
+    text-indent:2em;
+    font-size:14px;
+    line-height:24px;
+    color:#646464;
+}
+.order_num_btn{
+    width:30px;
+    height:30px;
+    font-size:20px;
+    display:inline-block;
+    border:1px solid #646464;
+    text-align:center;
+    line-height:26px;
+    cursor:pointer;
+}
+.order_num_input{
+    width:60px;
+    height:28px;
+    display:inline-block;
+    text-align:center;
+    border:1px solid #646464;
+    line-height:30px;
+}
+/*景区产品详情结束*/
+/*付款开始*/
+.qrcode_pay_imgWrap{
+    text-align:center;
+}
+.qrcode_pay_img{
+    width:200px;
+    height:200px;
+    margin:20px 0;
+}
+.qrcode_pay_tip{
+    font-size:13px;
+    color:red;
+    text-align:center
+}
+/*付款结束*/
+/*个人中心开始*/
+.user_banner_wrap{
+    width:100%;
+    height:150px;
+    background:#33cccc;
+    margin-bottom:20px;
+    position:relative;
+}
+.user_banner_touxiang{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    margin:25px 0 0 25px;
+    float:left;
+}
+.user_banner_username{
+    width:100px;
+    height:100px;
+    margin:25px 0 0 25px;
+    float:left;
+    font-size:25px;
+    color:#fff;
+    line-height:90px;
+}
+.user_tabbar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+/*个人中心结束*/
+/*所有订单开始*/
+.allorder_label{
+    font-size:13px;
+    color:#646464;
+}
+.allorder_num_wrap{
+    font-size:13px;
+    padding:0 0 3px 1px;
+}
+.allorder_num{
+    font-size:13px;
+    color:#FF6F6D;
+    margin-right:50px;
+}
+.allorder_pay_btn{
+    position:absolute;
+    right:20px;
+    bottom:5px;
+}
+/*所有订单结束*/
+/*下单页面开始*/
+.order_mid_bg{
+    width:100%;
+    height:20px;
+    background:#f8f8f8;
+}
+.order_getTicketer_list{
+    font-size:13px;
+    color:#848484;
+}
+.order_getTicketer_name{
+    font-size:16px;
+    color:#000;
+    margin-right:10px;
+}
+/*下单页面结束*/

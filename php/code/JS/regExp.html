@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>无标题</title>
+		<script src=""></script>
+		<link rel="stylesheet" href="">
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<script>
+			//非捕获组(?:x),表示不返回该组匹配的内容，但x会计入返回结果
+			var str1="abc";
+			var arr1 = str1.match(/a(?:b)c/);
+			for(x1 in arr1){
+				console.log(x1+":"+arr1[x1]);
+			}
+
+			//先行断言x(?=y),x只有在y前才匹配，y不会被计入返回结果
+			var str2="def";
+			var arr2 = str2.match(/d(?=e)/);
+			for(x2 in arr2){
+				console.log(x2+":"+arr2[x2]);
+			}
+
+			//后行断言x(?!y)，x只有不在y前匹配，y不会被计入返回结果
+			var str3="df";
+			var arr3 = str3.match(/d(?!e)/);
+			for(x3 in arr3){
+				console.log(x3+":"+arr3[x3]);
+			}
+			
+			//如果正则模式是一个空字符串，则匹配所有字符串，但exec方法返回空字符串
+			var arr4=new RegExp('').exec('abc');
+			console.log(new RegExp('').test('abc'));
+			for(x4 in arr4){
+				console.log(x4+":"+arr4[x4]);
+			}
+			console.log(typeof arr4[0]);
+		</script>
+	</body>
+</html>

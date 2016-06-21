@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Untitled Document</title>
+    
+</head>
+<body>
+    <script type="text/javascript">   
+        /*
+         * param1 Array 
+         * param2 Array
+         * return true or false
+         */
+        function arraysSimilar(arr1, arr2){
+            var result;
+            if(arr1.length!=arr2.length){
+                 result= false;
+            }else if(arr1.length==arr2.length){
+                var numberCount = 0,
+                    stringCount = 0,
+                    booleanCount = 0,
+                    undefinedCount = 0,
+                    functionCount = 0,
+                    nullCount = 0,
+                    dateCount = 0,
+                    windowCount = 0;
+                for(var i = 0,max=arr1.length;i<max;i++){
+                    if((typeof arr1[i])==="number"){
+                        numberCount++;  
+                    }else if((typeof arr1[i])==="string"){
+                        stringCount++;  
+                    }else if((typeof arr1[i])==="boolean"){
+                        booleanCount++;  
+                    }else if((typeof arr1[i])==="function"){
+                        functionCount++;  
+                    }else if((typeof arr1[i])==="undefined"){
+                        undefinedCount++;  
+                    }else if(Object.prototype.toString.apply(arr1[i])==="[object Date]"){
+                        dateCount++;  
+                    }else if(arr1[i]===null){
+                        nullCount++;  
+                    }else if(arr2[i]===window){
+                        windowCount++; 
+                    };
+                };
+
+                for(var i = 0,max=arr2.length;i<max;i++){
+                    if((typeof arr2[i])==="number"){
+                        numberCount--;  
+                    }else if((typeof arr2[i])==="string"){
+                        stringCount--;   
+                    }else if((typeof arr2[i])==="boolean"){
+                        booleanCount--;   
+                    }else if((typeof arr2[i])==="function"){
+                        functionCount--;   
+                    }else if((typeof arr2[i])==="undefined"){
+                        undefinedCount--;  
+                    }else if(Object.prototype.toString.apply(arr2[i])==="[object Date]"){
+                        dateCount--;  
+                    }else if(arr2[i]===null){
+                        nullCount--; 
+                    }else if(arr2[i]===window){
+                        windowCount--; 
+                    };
+                };
+            };
+            if(
+                numberCount == 0&&
+                stringCount == 0&&
+                booleanCount == 0&&
+                undefinedCount == 0&&
+                functionCount == 0&&
+                nullCount == 0&&
+                dateCount == 0&&
+                windowCount == 0
+            ){
+                result= true;
+            }else{result= false;}
+            return result;
+        };
+        alert(arraysSimilar([1,true,null],[null,false,100]))
+    </script>
+</body>
+</html>

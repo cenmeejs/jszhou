@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        请输入n个数字用空格隔开<input id="ipt" type="text" style="display:block;width:100%;"></input><br>
+        最大值<span id="max"></span>最小值<span id="min"></span>
+        <script type="text/javascript">
+            function maxMin(){
+                var arrData = document.getElementById("ipt").value.match(/(\s*\d+\s*)|(\s*-\d+\s*)/g);
+				arrData.sort(duibi);
+				function duibi(a,b){
+					return a-b;
+				}
+                /*for(var j=1;j<arrData.length;j++){
+                    if(Number(arrData[0])<Number(arrData[j])){
+                        $temp = arrData[0];
+                        arrData[0]=arrData[j];
+                        arrData[j]=$temp;
+                    };
+                };*/
+                document.getElementById("max").innerHTML=arrData[arrData.length-1];
+                /*for(var j=1;j<arrData.length;j++){
+                    if(Number(arrData[0])>Number(arrData[j])){
+                        $temp = arrData[0];
+                        arrData[0]=arrData[j];
+                        arrData[j]=$temp;
+                    };
+                };*/
+                document.getElementById("min").innerHTML=arrData[0];
+                //setTimeout(maxMin, 500);
+            };
+            setInterval(maxMin, 500);
+           //maxMin();
+        </script>
+    </body>
+</html>

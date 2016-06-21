@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .mjx-label-wrap{
+            width:100%;
+            height:40px;
+            border:1px solid #ccc;
+            border-bottom:0;
+            position:relative;
+            padding-left:15px;
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+        .mjx-label-bottomLine{
+            position:absolute;
+            width:100%;
+            height:1px;
+            left:0;
+            bottom:0;
+            background:#40B1F7;
+        }
+        .mjx-label-item{
+            display:inline-block;
+            height:29px;
+            margin:7px 0 0 0;
+            padding:0 15px;
+            line-height:28px;
+            position:relative;
+            border-top:3px solid #fff;
+            border-left:1px solid #fff;
+            border-right:1px solid #fff;
+            border-bottom:1px solid #40B1F7;
+            cursor:pointer;
+            z-index:1;
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+        .mjx-label-active{
+            border-top:3px solid #40B1F7;
+            border-left:1px solid #40B1F7;
+            border-right:1px solid #40B1F7;
+            border-bottom:1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+<div class = "mjx-label-wrap">
+    <div class="mjx-label-bottomLine"></div>
+    <div class="mjx-label-item mjx-label-active">核销</div>
+    <div class="mjx-label-item">核销记录</div>
+</div>
+<script src="./jquery-1.11.3.min.js"></script>
+<script>
+    $(function(){
+        $('.mjx-label-item').click(function(){
+            $(this).addClass('mjx-label-active');
+            $(this).siblings().removeClass('mjx-label-active');
+        });
+    });
+</script>
+</body>
+</html>

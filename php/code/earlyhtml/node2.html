@@ -1,0 +1,23 @@
+﻿<html>
+<head>
+<title>dom练习</title>
+<meta charset="utf-8">
+</head>
+<body>
+<div style="width:800px;height:400px;border:1px solid #00ff00;"><img src="d.jpg"/><img src="e.jpg"/><img src="f.jpg"/></div>
+<button onclick="xg(1)">用圆框包起来</button>
+<button onclick="xg(2)">第二个图片用红框包起来</button>
+<button onclick="xg(3)">用红框包起来</button>
+<script type="text/javascript">
+function xg(data){
+if(data==1){
+document.getElementsByTagName("div")[0].firstChild.style.borderRadius = "30px";
+}else if(data==2){
+document.getElementsByTagName("div")[0].firstChild.nextSibling.style.border = "10px solid red";
+}else{
+document.getElementsByTagName("div")[0].lastChild.style.border = "10px solid red";
+}
+}
+</script>
+</body>
+</html>

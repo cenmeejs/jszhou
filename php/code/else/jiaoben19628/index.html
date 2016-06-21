@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<meta name="google" value="notranslate">
+<title>纯CSS代码实现内容过滤效果 - A5源码</title>
+<style>
+body {
+  margin: 0;
+  text-align: center;
+  font-family: Verdana;
+  background: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  width: 23%;
+  float: left;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: #222222;
+  padding: 0.5%;
+  margin: 0.5%;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+input[type="radio"][id="men"]:checked + label {
+  background: #6666ff;
+}
+input[type="radio"][id="men"]:checked ~ .women,
+input[type="radio"][id="men"]:checked ~ .children {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+}
+input[type="radio"][id="women"]:checked + label {
+  background: #ff4466;
+}
+input[type="radio"][id="women"]:checked ~ .men,
+input[type="radio"][id="women"]:checked ~ .children {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+}
+input[type="radio"][id="children"]:checked + label {
+  background: #66dd99;
+}
+input[type="radio"][id="children"]:checked ~ .men,
+input[type="radio"][id="children"]:checked ~ .women {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+}
+
+.tile {
+  width: 23%;
+  float: left;
+  transition: all 1s;
+  margin: 0.5%;
+  padding: 0.5%;
+  background: #6666ff;
+}
+.tile img {
+  width: 100%;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>纯CSS代码实现内容过滤效果</h1>
+<div class="container">
+  <input type="radio" id="men" name="clothing " />
+  <label for="men">男装</label>
+  <input type="radio" id="women" name="clothing "/>
+  <label for="women">女装</label>
+  <input type="radio" id="children" name="clothing "/>
+  <label for="children">童装</label>
+  <input type="radio" id="reset" name="clothing "/>
+  <label for="reset">重置</label>
+
+  <div class="tile men">
+	<img src="images/1.jpg" alt="">
+  </div>
+  <div class="tile women">
+	<img src="images/2.jpg" alt="">
+  </div>
+  <div class="tile men">
+	<img src="images/3.jpg" alt="">
+  </div>
+  <div class="tile children">
+	<img src="images/4.jpg" alt="">
+  </div>
+  <div class="tile men">
+	<img src="images/5.jpg" alt="">
+  </div>
+  <div class="tile women">
+	<img src="images/6.jpg" alt="">
+  </div>
+  <div class="tile women">
+	<img src="images/7.jpg" alt="">
+  </div>
+  <div class="tile children">
+	<img src="images/8.jpg" alt="">
+  </div>
+  <div class="tile men">
+	<img src="images/9.jpg" alt="">
+  </div>
+  <div class="tile children">
+	<img src="images/10.jpg" alt="">
+  </div>
+  <div class="tile women">
+	<img src="images/11.jpg" alt="">
+  </div>
+  <div class="tile children">
+	<img src="images/12.jpg" alt="">
+  </div>
+  <div class="tile men">
+	<img src="images/13.jpg" alt="">
+  </div>
+  <div class="tile men">
+	<img src="images/14.jpg" alt="">
+  </div>
+  <div class="tile children">
+	<img src="images/15.jpg" alt="">
+  </div>
+  <div class="tile women">
+	<img src="images/8.jpg" alt="">
+  </div>
+</div>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';clear:both;">
+
+</div>
+</body>
+</html>

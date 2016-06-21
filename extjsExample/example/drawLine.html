@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../extjs/theme-triton/resources/theme-triton-all.css">
+    <link rel="stylesheet" type="text/css" href="../extjs/charts-6/classic/triton/resources/charts-all.css">
+    <link rel="stylesheet" type="text/css" href="../extjs/font-awesome-4.4.0/css/font-awesome.css">
+    <script type="text/javascript" src="../extjs/ext-all.js"></script>
+    <script type="text/javascript" src="../extjs/charts-6/classic/charts.js"></script>
+    <script type="text/javascript" src="../extjs/ext-locale-zh_CN.js"></script>
+</head>
+<body>
+<script>
+    Ext.onReady(function(){
+        console.log(Ext.getElementById);
+        Ext.Msg.alert('提示','你好！');
+        console.log(new Ext.draw.Color(100,200,300,0.3));
+        var drawContainer = Ext.create('Ext.draw.Container', {
+            renderTo: Ext.getBody(),
+            width:205,
+            height:250,
+            closable:true,
+            sprites: [{
+                type: 'circle',
+                fillStyle: '#79BB3F',
+                r: 100,
+                x: 100,
+                y: 100
+            }]
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题</title>
+		<style type="text/css">
+			*{
+				margin:0px;
+				padding:0px;
+			}
+			#lunbo{
+				width:1440px;
+				height:356px;
+				background:url(./images/13dcefb2-cc19-4836-ac4a-f0700696bb7e.jpg) no-repeat scroll 50% 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="lunbo" onmouseover="stopflow()" onmouseout="goonflow()"></div>
+		<script>
+			var myimg = document.getElementById("lunbo");
+			/*窗口改变时图片的样子*/
+			if(!window.innerHeight){
+				var bodywidth = document.documentElement.clientWidth;
+			}else{
+				var bodywidth = window.innerWidth;
+			}
+			myimg.style.width = bodywidth+"px"
+			function widthsize(){
+				if(!window.innerHeight){
+					var inbwidth = document.documentElement.clientWidth;
+				}else{
+					var inbwidth = window.innerWidth;
+				}
+				if(inbwidth<=930){inbwidth=930;}
+				myimg.style.width = inbwidth+"px"
+			}
+			window.onresize = widthsize;
+			/*自动轮播*/
+			var tag = setInterval(firstflow,1000);
+			var imgarr = new Array()
+				imgarr[0]="./images/e5473661-2982-412b-98e2-38cca387c3d5.jpg";
+				imgarr[1]="./images/867052ca-8690-45df-8829-662fd2f126cd.jpg";
+				imgarr[2]="./images/d34d7155-8db6-4850-a779-d786933bcc9e.jpg";
+				imgarr[3]="./images/db59a809-c86f-42aa-8943-024c69df551b.jpg";
+				imgarr[4]="./images/027f7c31-bbf1-4fb2-9b8e-33313ff1c323.jpg";
+				imgarr[5]="./images/13dcefb2-cc19-4836-ac4a-f0700696bb7e.jpg";
+			var i =0;
+			function firstflow(){
+				myimg.style.backgroundImage = "url("+imgarr[i]+")";
+				if(i==imgarr.length-1){i=0;}else{i++}
+			}
+			function stopflow(){clearInterval(tag);}
+			function goonflow(){tag = setInterval(firstflow,1000);}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>图片轮播</title>
+<meta http-equiv="content-type" content="text/html,charset=utf-8">
+<style type="text/css">
+#div1{
+width:640px;
+height:480px;
+margin:0px auto;
+border:0px solid;
+position:relative;
+}
+#div1 img{
+width:640px;
+height:480px;
+}
+#ul1{
+position:absolute;
+top:390px;
+left:360px;
+padding:0px;
+}
+#ul1 li{
+width:50px;
+height:50px;
+border:0px solid;
+list-style-type:none;
+float:left;
+text-align:center;
+line-height:50px;
+border-radius:25px;
+margin-right:10px;
+background:yellow;
+}
+.yc{
+display:none;
+}
+</style>
+</head>
+<body>
+<div id="div1">
+<ul id="ul1">
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+</ul>
+<img src="../image/1.jpg"/>
+<img src="../image/2.jpg" class="yc"/>
+<img src="../image/3.jpg" class="yc"/>
+<img src="../image/4.jpg" class="yc"/>
+</div>
+<script type="text/javascript">
+var liData = document.getElementById("ul1").getElementsByTagName("li");
+var imgData = document.getElementById("div1").getElementsByTagName("img");
+var index;
+for (var i=0;i<liData.length;i++){
+liData[i].onmouseover = function(){
+                                  index = this.firstChild.nodeValue;
+
+                                  for(var j=0;j<imgData.length;j++){
+                                  if(j==index-1){
+                                  imgData[j].style.display = "block";
+								  liData[j].style.background = "red";
+                                  }else{
+                                  imgData[j].style.display = "none";
+								  liData[j].style.background = "yellow";
+                                  }
+                                  }
+                              };
+}
+
+</script>
+</body>
+</html>

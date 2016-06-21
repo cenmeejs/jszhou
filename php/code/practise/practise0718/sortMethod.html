@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>三种排序法</title>
+</head>
+<body>
+    <script type="text/javascript">
+		document.write("百度")
+		document.write("百度")
+		document.writeln("知道")
+		document.writeln("知道")
+		document.writeln("知道")
+		
+		document.write("<pre>百度")
+		document.write("百度")
+		document.writeln("知道")
+		document.writeln("知道")
+		document.writeln("知道</pre>") 
+		
+		document.writeln("<pre>Hello                          World!");
+		document.write("hello")
+		document.writeln("Hello World!</pre>")
+        //冒泡排序法：两两比较，大者靠后，然后再用大者与后面作比较；
+        function bubbleSort(){
+            var arrData= new Array(4,71,1,25,6,55,9,15)
+            for(var i=0;i<arrData.length;i++){
+                for(var j=1;j<arrData.length;j++){
+                    if(arrData[j-1]>arrData[j]){
+                        $temp = arrData[j-1];
+                        arrData[j-1]=arrData[j];
+                        arrData[j]=$temp;
+                    }
+                }
+            } 
+            document.writeln("<pre>冒泡排序法："+arrData.join());
+        }
+        bubbleSort();
+
+        
+        //选择排序法：两两比较，小者靠前，然后再用小者与后面作比较；
+        function choiceSort(){
+            var arrData= new Array(4,7,11,0,6,55,89,15)
+            for(var i=0;i<arrData.length;i++){
+                for(var j=i+1;j<arrData.length;j++){
+                    if(arrData[i]>arrData[j]){
+                        $temp = arrData[i];
+                        arrData[i]=arrData[j];
+                        arrData[j]=$temp;
+                    }
+                }
+            } 
+            document.writeln("选择排序法："+arrData.join());
+        }
+        choiceSort();
+
+
+        //快速排序法1:挖坑填数+分治法；
+        var arrData1= new Array(4,7,5,8,1,2,0,4,6,55,89,15)
+        function quickSort1(array){
+            function sort(prev, numsize){
+                var nonius = prev;
+                var j = numsize -1;
+                var flag = array[prev];
+                if ((numsize - prev) > 1) {
+                    while(nonius < j){
+                        for(; nonius < j; j--){
+                            if (array[j] < flag) {
+                                array[nonius++] = array[j];　//a[i] = a[j]; i += 1;
+                                break;
+                            };
+                        }
+                        for( ; nonius < j; nonius++){
+                            if (array[nonius] > flag){
+                                array[j--] = array[nonius];
+                                break;
+                            }
+                        }
+                    }
+                    array[nonius] = flag;
+                    sort(0, nonius);
+                    sort(nonius + 1, numsize);
+                }
+            }
+        sort(0, array.length);
+        document.writeln("快速排序法1："+array.join());
+        }
+        quickSort1(arrData1)
+		//快速排序2
+		function quickSort2(array){
+			if(array.length<=1){return array;}//return后面的语句不会执行
+			var med = Math.floor(array.length/2);
+			var medData = array.splice(med,1);
+			var left=[];
+			var right=[];
+			for(var i=0;i<array.length;i++){
+				if(array[i]<medData){
+					left.push(array[i]);
+				}else{
+					right.push(array[i])
+				}
+			}
+			return quickSort2(left).concat(medData,quickSort2(right));
+		}
+		document.writeln("快速排序法2："+quickSort2([9,3,23,12,3,6,5,34]).join()+"</pre>");
+    </script>
+</body>
+</html>

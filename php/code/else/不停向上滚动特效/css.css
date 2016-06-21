@@ -1,0 +1,35 @@
+body, div, iframe, ul, ol, dl, dt, dd, li, dl, h1, h2, h3, h4, table, th, td, form, input, button, select, textarea{margin:0; padding:0;font-style: normal;font:12px/22px "\5B8B\4F53",Arial, Helvetica, sans-serif}
+ol, ul ,li{list-style:none}
+img{border: 0; vertical-align:middle}
+body{color:#2F2F2F;background:#FFF; text-align:center}
+.clear{clear:both;height:1px;width:100%; overflow:hidden; margin-top:-1px}
+a{color:#2F2F2F;text-decoration:none} 
+a:hover,.cart a:hover,.adminorder a:hover,ul.class-goods li div span a:hover{color:#DB261B;text-decoration:underline}
+*:focus{outline: none}
+.red ,.red a{ color:#DB261B}
+.blue ,.blue a{ color:#3760A8}
+.pd5{ padding-top:5px}
+.dis{display:block}
+.undis{display:none}
+
+.mqs{ margin:10px auto; width:199px; height:479px; padding-bottom:10px;border:1px solid #DFDFDF}
+#mq{width:199px;height:60px; margin:0 auto; text-align:left;}
+#mq ul{ width:100%;}
+#mq ul li{padding:11px 10px 12px 10px; height:36px; width:179px; overflow:hidden ;text-align:left; border-bottom:1px dashed #CCCCCC }
+#mq ul li .vo1,#mq ul li .vo2{ height:18px; width:100%; overflow:hidden}
+#mq ul li .vo1 .name{ float:left; width:108px; height:18px; line-height:18px}
+#mq ul li .vo1 .name span{ float:left; color:#ED701A; width:68px; height:18px; line-height:18px;overflow:hidden;text-overflow:ellipsis;}
+#mq ul li .vo1 .name span a{ color:#ED701A}
+#mq ul li .vo1 .name em{ float:left; line-height:18px; height:18px; font-style:normal}
+#mq ul li .vo1 .time{ float:right; overflow:hidden; width:68px; text-align:right;line-height:18px; height:18px; color:#888888}
+#mq ul li .vo2{ line-height:18px;text-overflow:ellipsis}
+
+
+
+
+
+
+
+
+
+

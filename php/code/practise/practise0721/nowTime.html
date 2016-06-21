@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body id="show" style="text-align:center;color:tomato;font-size:30px;">
+        <script type="text/javascript">
+            var data1= new Date();
+            var week=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+            function check(data){
+                switch(true){
+                     case data<6:return "凌晨好";break;
+                     case data<12:return "上午好";break;
+                     case data<14:return "中午好";break;
+                     case data<18:return "下午好";break;
+                     case data<23:return "晚上好";break;
+                }
+
+            }
+            function show(){
+                var data1 = new Date();
+                var strData ="";
+                strData+=check(data1.getHours());
+                strData+=data1.getFullYear()+"年"+(parseInt(data1.getMonth())+1)+"月"+data1.getDate()+"日"+data1.getHours()+"时"+data1.getMinutes()+"分"+data1.getSeconds()+"秒";
+                strData+=week[data1.getDay()]
+                document.getElementById("show").innerHTML=strData;
+            }
+            setInterval("show()",1000);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+a:link{
+display:block;
+width:105px;
+height:37px;
+float:left;
+border:1px solid silver;
+margin-left:0px;
+text-align:center;
+background-color:#FFFFFF;
+color:black;
+text-decoration:none;
+font-size:20px;
+}
+a:hover{
+background-color: #eceef1;
+}

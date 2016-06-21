@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>23</title>
+    <!-- Javascript goes in the document HEAD -->
+    <script type="text/javascript">
+//        function altRows(id) {
+//            if (document.getElementsByTagName) {
+//
+//                var table = document.getElementById(id);
+//                var rows = table.getElementsByTagName("tr");
+//
+//                for (var i = 1; i < rows.length; i++) {
+//                    if (i % 2 == 0) {
+//                        rows[i].className = "evenrowcolor";
+//                    } else {
+//                        rows[i].className = "oddrowcolor";
+//                    }
+//                    if (i == rows.length - 1) {
+//                        rows[i].className = "sumrowcolor";
+//                    }
+//                }
+//            }
+//        }
+//
+//        window.onload = function () {
+//            altRows('alternatecolor');
+        }
+    </script>
+
+
+    <!-- CSS goes in the document HEAD or added to your external stylesheet -->
+    <style type="text/css">
+        table.altrowstable {
+            font-family: verdana, arial, sans-serif;
+            font-size: 11px;
+            color: #333333;
+            border-width: 1px;
+            border-color: #a9c6c9;
+            border-collapse: collapse;
+        }
+
+        table.altrowstable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #a9c6c9;
+            background-color: lightgreen;
+        }
+
+        table.altrowstable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #a9c6c9;
+        }
+
+        .oddrowcolor {
+            background-color: #fff;
+        }
+
+        .evenrowcolor {
+            background-color: #c3dde0;
+        }
+
+        .sumrowcolor {
+            background-color: darkorange;
+            font-weight: bold;
+        }
+        .center_wrap01{
+            width:400px;
+            margin:0 auto;
+            display:inline-block;
+        }
+        .center_wrap02{
+            margin-left:50%;
+            display:inline-block;
+            transform:translateX(-50%);
+        }
+        .center_wrap03_father{
+            display:flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="center_wrap03_father">
+<!-- Table goes in the document BODY -->
+<div>
+    <div><b>时间：2016-05</b></div>
+
+    <div>
+
+        <table class="altrowstable" id="alternatecolor">
+            <tr>
+                <th>Info Header 1</th>
+                <th>Info Header 2</th>
+                <th>Info Header 3</th>
+            </tr>
+            <tr>
+                <td>Text 1A</td>
+                <td>Text 1B</td>
+                <td>Text 1C</td>
+            </tr>
+            <tr>
+                <td>Text 2A</td>
+                <td>Text 2B</td>
+                <td>Text 2C</td>
+            </tr>
+            </tr>
+            <tr>
+                <td>Text 3A</td>
+                <td>Text 3B</td>
+                <td>Text 3C</td>
+            </tr>
+            <tr>
+                <td>Text 4A</td>
+                <td>Text 4B</td>
+                <td>Text 4C</td>
+            </tr>
+            <tr>
+                <td>Text 5A</td>
+                <td>Text 5B</td>
+                <td>Text 5C</td>
+            </tr>
+            <tr>
+                <td>总计</td>
+                <td>1000</td>
+                <td>5000</td>
+            </tr>
+        </table>
+
+    </div>
+    <embed src="http://player.youku.com/player.php/sid/XMTU2MDIzOTc2OA==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+</div>
+<!--  The table code can be found here: http://www.textfixer/resources/css-tables.php#css-table03 -->
+</body>
+</html>

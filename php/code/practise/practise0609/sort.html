@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题</title>
+</head>
+<body>
+<script>
+var numdata = new Array(7,0,2,4,-1,3);
+var newdata = new Array();
+do{
+for(var i=0;i<numdata.length;i++){
+var medata=0;
+	for(var j=0;j<numdata.length;j++){
+	if(numdata[i]>numdata[j]){
+	medata=1;
+	}
+	}
+if(medata==0){
+var sdata = numdata.slice(i,i+1);
+newdata = newdata.concat(sdata);
+numdata.splice(i,1);
+}
+}
+}while(numdata.length!=0)
+alert(newdata);
+
+</script>
+</body>
+</html>

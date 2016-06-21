@@ -1,0 +1,103 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript" src=""></script>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<script>
+		/*1.简单介绍:
+		String.replace(searchValue,replaceValue)
+			String:字符串
+			searchValue：字符串或正则表达式
+			replaceValue:字符串或者函数*/
+
+		
+		//2.用字符串匹配
+		console.log("I am loser".replace("loser","hero"));//I am hero
+		console.log('I am loser,You are loser'.replace('loser','hero'))//I am hero,You are loser
+
+		
+		//3.用正则表达式匹配
+		console.log('I am loser,You are loser'.replace(/loser/g,'hero'))//I am hero, You are hero
+
+
+		/*4.有趣的替换字符
+			replaceValue 可以是字符串。如果字符串中有几个特定字符的话，会被转换为特定字符串。
+			字符			替换文本
+			$&				与正则相匹配的字符串
+			$`				匹配字符串左边的字符
+			$'				匹配字符串右边的字符
+			$1,$2,$3,…,$n	匹配结果中对应的分组匹配结果*/
+		
+
+		//4.1使用$&字符给匹配字符加大括号
+		var sStr = '讨论一下正则表达式中replace的用法';
+		console.log(sStr.replace(/正则表达式/, '{$&}'));//讨论一下{正则表达式}中replace的用法
+
+
+		//4.2使用$`$'字符替换内容
+		console.log('abc'.replace(/b/,'$`'));//aac
+		console.log('abc'.replace(/b/,"$'"));//acc
+
+
+		//使用分组匹配组合新的字符串
+		console.log('nimojs@126.com'.replace(/(.+)(@)(.*)/,'$2$1'))
+
+
+		//5.replaceValue参数可以是一个函数,这个函数的arguments会有n+3个参数（n为正则匹配到的次数）
+		function logArguments(){
+			console.log(arguments);//["nimojs@126.com", "nimojs", "@", "126.com", 0, "nimojs@126.com"]
+			return 126;//返回值会替换掉匹配到的目标
+		};
+		console.log('nimojs@126.com'.replace(/(.+)(@)(.*)/,logArguments));//126
+		
+		/*参数分别为
+		1.匹配到的字符串（此例为nimojs@126.com,推荐修改上面代码的正则来查看匹配到的字符帮助理解)
+		2.如果正则使用了分组匹配就为多个否则无此参数。（此例的参数就分别为"nimojs", "@", "126.com"。推荐修改正则为/nimo/查看控制台中返回的arguments值）
+		3.匹配字符串的对应索引位置（此例为0）
+		4.原始字符串(此例为nimojs@126.com)*/
+
+
+		//5.1使用自定义函数将A-G字符串改为小写
+		'JAVASCRIPT'.replace(/[A-G]/g,function(){
+		    return arguments[0].toLowerCase();
+		})//JaVaScRIPT
+
+
+		
+		//5.2使用自定义函数做回调式替换将行内样式中的单引号删除
+		'<span style="font-family:\'微软雅黑\';">;demo</span>'.replace(/\'[^']+\'/g,function(){      
+		    var sResult=arguments[0];
+		    console.log(sResult);//'微软雅黑'
+		    sResult=sResult.replace(/\'/g,'');
+		    console.log(sResult);//微软雅黑
+		    return sResult;
+		})//<span style="font-family:微软雅黑;">demo</span>
+		console.log("'微软雅黑".match(/[^']+/));//["微软雅黑", index: 1, input: "'微软雅黑"]
+		console.log("432dgf,56455".match(/[^4,\D]+/));//["32", index: 1, input: "432dgf,56455"]
+		console.log("432dgf,56455".match(/[^4,\D]+/g));//["32", "56", "55"]
+		
+
+		//匹配中文之正则
+		//1.“/[\u4e00-\u9fa5]+/g”匹配中文字(两个unicode值正好是Unicode表中的汉字的头和尾)
+		console.log("432中kngii343文#@$@#$字1,.;匹vfgdg/..`1配".match(/[\u4e00-\u9fa5]+/g));//["中", "文", "字", "匹", "配"]
+
+		//2.“/[^ -~]+/g”匹配中文字(不总是准确)
+		console.log("432中kngii343文#@$@#$字1,.;匹vfgdg/..`1配".match(/[^ -~]+/g));//["中", "文", "字", "匹", "配"]
+		console.log("432中kn；’。、，#@#%@#……gii343文#@$@&……*（#$字1,.;匹vfg￥……dg/..`1配".match(/[^ -~]+/g));//["中", "；’。、，", "……", "文", "……", "（", "字", "匹", "￥……", "配"]
+		
+		//3.“/\W+/g”匹配中文字(不总是准确)
+		console.log("432中kngii343文fd字df匹vfgdg1配".match(/\W+/g));//["中", "文", "字", "匹", "配"]
+		console.log("432中kngii343文#@$@#$字1,.;匹vfgdg/..`1配".match(/\W+/g));//["中", "文#@$@#$字", ",.;匹", "/..`", "配"]
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>数组对象</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //数组的声明
+            var arrData1 = new Array(12,4,67,89);//调用构造函数Array()
+            var arrData2 = [1,4,7,90];
+            var arrData3 = {};
+            var arrData4 = Array();
+            //alert(arrData2.length);
+            //数组的属性constructor：返回对创建此对象的数组函数的引用
+            console.log(arrData1.constructor);
+            console.log(arrData2.constructor);
+            console.log(arrData3.constructor);
+            console.log(arrData4.constructor);
+            //__proto__
+            console.log(arrData1.__proto__)
+            console.log(Array.prototype.__proto__);
+            console.log(Array.__proto__);
+        </script>
+    </body>
+</html>

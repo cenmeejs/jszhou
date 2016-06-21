@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+</head>
+<body onkeydown="getCommand()">
+<h1>̹html5-坦克大战</h1>
+<canvas id="tankMap" width="400px" height="300px" style="background-color:black"></canvas>
+<span id="aa"></span>
+<script type="text/javascript">
+	var heroColor=new Array("#BA9658","#FEF26E");
+	var enemyColor=new Array("#00A2B5","#00FEFE");
+	function Bomb(x,y){
+		this.x=x;
+		this.y=y;
+		this.isLive=true;
+		this.blood=9;
+		this.bloodDown=function(){
+			if(this.blood>0){
+				this.blood--;
+			}else{
+				this.isLive=false;
+			}
+		}
+	}
+	function Bullet(x,y,direct,speed){
+		this.x=x;
+		this.y=y;
+		this.direct=direct;
+		this.speed=speed;
+		this.timer=null;
+		this.isLive=true;
+		this.run=function(){
+			if(this.x<=0||this.x>=400||this.y<=0||this.y>=300){
+				window.clearInterval(this.timer);
+				this.isLive=false;
+			}else{
+				switch(this.direct){
+					case 0:this.y-=this.speed;break;
+					case 1:this.x+=this.speed;break;
+					case 2:this.y+=this.speed;break;
+					case 3:this.x-=this.speed;break;
+				}
+			}
+			document.getElementById("aa").innerText="x="+this.x+"y="+this.y;
+		}
+	}
+	function Tank(x,y,direct,color){
+		this.x=x;
+		this.y=y;
+		this.speed=2;
+		this.isLive=true;
+		this.direct=direct;
+		this.color=color;
+		this.moveUp=function(){this.y-=this.speed;this.direct=0;};
+		this.moveRight=function(){this.x+=this.speed;this.direct=1;};
+		this.moveDown=function(){this.y+=this.speed;this.direct=2;};
+		this.moveLeft=function(){this.x-=this.speed;this.direct=3;};
+	}
+	function Hero(x,y,direct,color){
+		this.tank=Tank;
+		this.tank(x,y,direct,color);
+		this.shotEnemy=function(){
+			switch(this.direct){
+				case 0:heroBullet=new Bullet(this.x+9,this.y+0,this.direct,3);break;
+				case 1:heroBullet=new Bullet(this.x+30,this.y+9,this.direct,3);break;
+				case 2:heroBullet=new Bullet(this.x+9,this.y+30,this.direct,3);break;
+				case 3:heroBullet=new Bullet(this.x,this.y+9,this.direct,3);break;	
+			}
+			heroBullets.push(heroBullet);
+			var timer=window.setInterval("heroBullets["+(heroBullets.length-1)+"].run()",50);
+			heroBullets[(heroBullets.length-1)].timer=timer;
+		}
+	}
+	function EnemyTank (x,y,direct,color){
+		this.tank=Tank;
+		this.tank(x,y,direct,color);
+		this.count=0;
+		this.run=function(){
+			if(this.isLive){
+				switch(this.direct){
+					case 0:	if(this.y-this.speed>0){this.y-=this.speed};break;
+					case 1:	if(this.x+this.speed+30<400){this.x+=this.speed};break;
+					case 2:	if(this.y+this.speed+30<300){this.y+=this.speed};break;
+					case 3:	if(this.x-this.speed>0){this.x-=this.speed};break;
+				}
+				if(this.count>30){
+					this.direct=Math.round(Math.random()*3);
+					this.count=0;
+					switch(this.direct){
+						case 0:etBullet=new Bullet(this.x+9,this.y,this.direct,3);break;
+						case 1:etBullet=new Bullet(this.x+30,this.y+9,this.direct,3);break;
+						case 2:etBullet=new Bullet(this.x+9,this.y+30,this.direct,3);break;
+						case 3:etBullet=new Bullet(this.x,this.y+9,this.direct,3);break;
+					}
+					enemyBullets.push(etBullet);
+					var mytimer=window.setInterval("enemyBullets["+(enemyBullets.length-1)+"].run()",50);
+					enemyBullets[enemyBullets.length-1].timer=mytimer;
+				}
+				this.count++;
+			}
+		}
+	}
+	function drawHeroBullet(){
+		for(var i=0;i<heroBullets.length;i++){
+			var heroBullet=heroBullets[i];
+			if(heroBullet!=null&&heroBullet.isLive){
+				cxt.fillStyle="FEF26E";
+				cxt.fillRect(heroBullet.x,heroBullet.y,2,2);
+			}
+		}
+	}
+	function drawEnemyBullet(){
+		for(var i=0;i<enemyBullets.length;i++){
+			var etBullet=enemyBullets[i];
+			if(etBullet.isLive){
+				cxt.fillStyle="#00FEFE";
+				cxt.fillRect(etBullet.x,etBullet.y,2,2);
+			}
+		}
+	}
+	function drawTank(tank){
+		if(tank.isLive){
+			switch(tank.direct){
+				case 0:
+				case 2:
+				cxt.fillStyle=tank.color[0];
+				cxt.fillRect(tank.x,tank.y,5,30);
+				cxt.fillRect(tank.x+15,tank.y,5,30);
+				cxt.fillRect(tank.x+6,tank.y+5,8,20);
+				cxt.fillStyle=tank.color[1];
+				cxt.beginPath();
+				cxt.arc(tank.x+10,tank.y+15,4,0,2*Math.PI,true);
+				cxt.closePath();
+				cxt.fill();
+				cxt.strokeStyle=tank.color[1];
+				cxt.lineWidth=2;
+				cxt.beginPath();
+				cxt.moveTo(tank.x+10,tank.y+15);
+				if(tank.direct==0){
+					cxt.lineTo(tank.x+10,tank.y);
+				}else if(tank.direct==2){
+					cxt.lineTo(tank.x+10,tank.y+30);
+				}
+				cxt.closePath();
+				cxt.stroke();
+				break;
+				case 1:
+				case 3:
+				cxt.fillStyle=tank.color[0];
+				cxt.fillRect(tank.x,tank.y,30,5);
+				cxt.fillRect(tank.x,tank.y+15,30,5);
+				cxt.fillRect(tank.x+5,tank.y+6,20,8);
+				cxt.fillStyle=tank.color[1];
+				cxt.beginPath();
+				cxt.arc(tank.x+15,tank.y+10,4,0,2*Math.PI,true);
+				cxt.closePath();
+				cxt.fill();
+				cxt.strokeStyle=tank.color[1];
+				cxt.lineWidth=1.5;
+				cxt.beginPath();
+				cxt.moveTo(tank.x+15,tank.y+10);
+				if(tank.direct==1){
+					cxt.lineTo(tank.x+30,tank.y+10);
+				}else if(tank.direct==3){ //
+					cxt.lineTo(tank.x,tank.y+10);
+				}
+				cxt.closePath();
+				cxt.stroke();
+				break;
+			}
+		}
+	}
+	function isHitEnemyTank(){
+		for(var i=0;i<heroBullets.length;i++){
+			var heroBullet=heroBullets[i];
+			if(heroBullet.isLive){
+				for(var j=0;j<enemyTanks.length;j++){
+					var enemyTank=enemyTanks[j];
+					if(enemyTank.isLive){
+						switch(enemyTank.direct){
+							case 0:
+							case 2:
+								if(heroBullet.x>=enemyTank.x&&heroBullet.x<=enemyTank.x+20&&heroBullet.y>=enemyTank.y&&heroBullet.y<=enemyTank.y+30){
+									enemyTank.isLive=false;
+									heroBullet.isLive=false;
+									var bomb=new Bomb(enemyTank.x,enemyTank.y);
+									bombs.push(bomb);
+								}
+								break;
+							case 1:
+							case 3:
+								if(heroBullet.x>=enemyTank.x&&heroBullet.x<=enemyTank.x+30
+									&&heroBullet.y>=enemyTank.y&&heroBullet.y<=enemyTank.y+20){
+									enemyTank.isLive=false;
+									heroBullet.isLive=false;
+									var bomb=new Bomb(enemyTank.x,enemyTank.y);
+									bombs.push(bomb);
+								}
+								break;
+						}
+					}
+
+				}
+			}
+		}
+	}
+	function drawEnemyBomb(){
+		for(var i=0;i<bombs.length;i++){
+			var bomb=bombs[i];
+			if(bomb.isLive){
+				if(bomb.blood>6){
+					var img1=new Image();
+					img1.src="bomb_1.png";
+					var x=bomb.x;
+					var y=bomb.y;
+					img1.onload=function(){
+						cxt.drawImage(img1,x,y,30,30);
+					}
+				}else if(bomb.blood>3){
+					var img2=new Image();
+					img2.src="bomb_2.png";
+					var x=bomb.x;
+					var y=bomb.y;
+					img2.onload=function(){
+						cxt.drawImage(img2,x,y,30,30);
+					}
+				}else {
+					var img3=new Image();
+					img3.src="bomb_3.png";
+					var x=bomb.x;
+					var y=bomb.y;
+					img3.onload=function(){
+						cxt.drawImage(img3,x,y,30,30);
+					}
+				}
+				bomb.bloodDown();
+				if(bomb.blood<=0){
+					bombs.splice(i,1);
+				}
+			}
+		}
+	}
+	var canvas1=document.getElementById("tankMap");
+	var cxt=canvas1.getContext("2d");
+	var hero=new Hero(140,140,0,heroColor);
+	var heroBullets=new Array();
+	var enemyTanks=new Array();
+	var enemyBullets=new Array();
+	var bombs=new Array();
+	var h=3;
+	window.setInterval("if(h<20){h+=3}",5000);
+	for(var i=0;i<h;i++){
+		var enemyTank=new EnemyTank(50*Math.round(Math.random()*7),0,2,enemyColor);
+		enemyTanks[i]=enemyTank;
+		window.setInterval("enemyTanks["+i+"].run()",50);
+		var eb=new Bullet(enemyTanks[i].x+9,enemyTanks[i].y+30,2,3);
+		enemyBullets[i]=eb;
+		var ettimer=window.setInterval("enemyBullets["+i+"].run()",50);
+		enemyBullets[i].timer=ettimer;
+	}
+	flashTankMap();
+	function flashTankMap(){
+		cxt.clearRect(0,0,400,300); 
+		drawTank(hero);
+		drawHeroBullet();
+		isHitEnemyTank();
+		drawEnemyBomb();
+		drawEnemyBullet();
+		for(var i=0;i<h;i++){
+			drawTank(enemyTanks[i]);
+		}
+	}
+	function getCommand(){
+		var code=event.keyCode;
+		switch(code){
+			case 87:case 38:hero.moveUp();break;
+			case 68:case 39:hero.moveRight();break;
+			case 83:case 40:hero.moveDown();break;
+			case 65:case 37:hero.moveLeft();break;
+			case 74:hero.shotEnemy();break;
+		}
+	}
+	window.setInterval("flashTankMap()",50);
+</script>
+</body>
+</html>

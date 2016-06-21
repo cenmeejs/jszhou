@@ -1,0 +1,62 @@
+﻿body{
+margin:0px;
+padding:0px;
+}
+
+/*顶部*/
+ul,li{
+list-style-type:none;
+}
+.top-div-bgcolor{
+margin:0px auto 0px;
+height:35px;
+background-color:#555555;
+
+}
+a{
+text-decoration:none;
+}
+.top-div-all{
+width:930px;
+height:35px;
+background-color:#555555;
+font-size:15px;
+text-align:center;
+margin:auto;
+
+}
+.top-div-right{
+float:right;
+width:280px;
+height:34px;
+}
+.span1 {
+width:9px;
+height:15px;
+background-image:url(icon-content.png);
+background-position:-38px -46px;
+float:left;
+}
+.top-div-all span a{
+text-decoration:none;
+}
+.top-div-all a:hover{
+color:white;
+}
+.sp1{
+float:left;
+margin:10px;
+}
+.sp2{
+float:left;
+margin:9px 0px 0px 20px;
+}
+.sp3{
+color:#29AADF;
+}
+.sp4{
+color:#92C136;
+}
+.sp5{
+color:#CCCCCC;
+}

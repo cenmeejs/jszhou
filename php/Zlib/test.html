@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>无标题</title>
+		<style type="text/css">
+			.nav{
+				width: 100%;
+				height: 20px;
+				border: 1px solid #00f;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1" style="width:100px;height: 100px;border: 1px solid #0f0;">
+			<div class="nav"></div>
+			<div class="nav"></div>
+			<div class="nav"></div>
+			<div class="nav"></div>
+			<div class="nav"></div>
+		</div>
+		<div id="div2" style="width:100px;height: 100px;border: 1px solid #0f0;">
+			<div class="nav"></div>
+			<div class="nav"></div>
+			<div class="nav"></div>
+			<div class="nav"></div>
+			<div id="div3"></div></div>
+		<script type="text/javascript" src="Z.js"></script>
+		<script type="text/javascript">
+			//alert(Z.isCompatible());
+			/*Z.$("div1").onclick=function(){
+				Z.$("div1").style.background="red";
+			}*/
+			/*if(Z.has(Z.$(div1))){
+				alert(Z.$(div1));
+			}else{
+				alert(Z.$(div1))
+			}
+			Z.addEvent(window,"load",function(){
+				function sayHello(){
+					alert("Hello");
+					Z.removeEvent(Z.$("div1"),"click",sayHello);
+				}
+				function sayOk(){
+					alert("Ok");
+					Z.removeEvent(Z.$("div1"),"click",sayOk);
+				}
+				Z.addEvent(Z.$("div1"),"click",sayHello);
+				Z.addEvent(Z.$("div1"),"click",sayOk);
+			});*/
+			/*var a=Z.getClass("nav","div","div1");
+			for(var i=0;i<a.length;i++){
+				Z.addEvent(a[i],"click",fun);
+			}
+			function fun(e){
+				e.target.style.background="#"+(~~(Math.random()*(1<<24))).toString(16);
+				//setTimeout(function(){Z.toggleDisplay(e.target)},1000);
+				//setTimeout(function(){Z.insertAfter(e.target,"div3")},1000);
+				//setTimeout(function(){Z.removeChildren("div1")},2000);
+				//setTimeout(function(){Z.prependChild("div2",e.target)},1000);
+				setTimeout(function(){alert(Z.getBrowserWindowSize().width+"*"+Z.getBrowserWindowSize().height)},1000);
+				
+				
+			}*/
+			var a=[44,2,3,-1,-9,9];
+			//alert(Z.arrMax(a));
+			//alert(Z.arrMin(a));
+			console.log(Z.indexOf(a,44));
+		</script>
+	</body>
+</html>

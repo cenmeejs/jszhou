@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript" src=""></script>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<script>
+		function outputArr(arr){
+			for(var i=0,max1=arr.length;i<max1;i++){
+				for(var j=0,max2=arr[i].length;j<max2;j++){
+					document.write(arr[i][j]+"&nbsp;");
+				}
+				document.write("<br />");
+			}
+		}
+		var arr1 = [[2,4,6,8],[8,9,0,-1],[9,6,2,1]];
+		outputArr(arr1);
+		//初始化,定下有多少行
+		var arr2 = [];
+		for(var t=0;t<arr1[0].length;t++){
+			arr2[t]=[]
+		}
+		//赋值
+		for(var i=0,max1=arr1.length;i<max1;i++){
+			for(var j=0,max2=arr1[i].length;j<max2;j++){
+				arr2[j][i]=arr1[i][j];
+			}
+		}
+		outputArr(arr2);
+
+	</script>
+</body>
+</html>

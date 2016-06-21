@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>border实现三角形的原理</title>
+		<style type="text/css">
+			div{
+				margin:50px 0 0 300px;
+				position:relative;
+			}
+			.rect_arrow{
+				width:0;
+				height:0;
+				border-top:150px solid #1FDBEA;
+				border-right:150px solid #1C03FF;
+				border-bottom:150px solid #36A8FF;
+				border-left:150px solid #6A1FEA;
+				border-top:150px solid transparent;
+				border-right:150px solid transparent;
+				border-bottom:150px solid transparent;
+				border-left:150px solid #6A1FEA;
+			}
+			.rect_arrow:before{
+				content:'';
+				width:0;
+				width:0;
+				height:0;
+				border:150px solid transparent;
+				border-left:150px solid #fff;
+				position:absolute;
+				top:-150px;
+				left:-223px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>实现三角形的一种方式</h1>
+		<p>1.宽高都设为0</p>
+		<p>2.把边框的大小设为三角形的大小</p>
+		<p>3.上右下左的边框中三条的颜色为透明，还有一条设置为你想要的颜色</p>	
+		<div class="rect_arrow"></div>
+	</body>
+</html>

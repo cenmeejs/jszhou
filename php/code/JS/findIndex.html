@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+	 <head>
+            <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+            <title></title>
+    <script>
+    window.onload = function(){
+		var aLi = document.getElementsByTagName('li');
+		for (var i=0;i<aLi.length;i++){
+			(function(i){
+				aLi[i].onclick = function(){        //当点击时for循环已经结束
+				alert(i);
+				};
+			})(i)
+		}
+		var xPoint=8;
+		function Circle (xPoint, yPoint, radius) {
+			this.x = xPoint;  // 圆心的 x 坐标。
+			this.y = yPoint;  // 圆心的 y 坐标。
+			this.r = radius;  // 圆的半径。
+		}
+		function Person(name){                             //构造函数
+                this.name=name;
+            }
+
+		Person.prototype.printName=function() //原型对象
+		{
+			alert(this.name);
+		}
+
+		var person1=new Person('Byron');//实例化对象
+		console.log(person1.__proto__);//Person
+		console.log(person1.constructor);//自己试试看会是什么吧
+		console.log(Person.prototype);//指向原型对象Person
+		var person2=new Person('Frank');
+		function Thing() {
+		}
+		Thing.prototype.foo = "bar";
+		Thing.prototype.logFoo = function () {
+			console.log(this.foo);
+		}
+		Thing.prototype.setFoo = function (newFoo) {
+			this.foo = newFoo;
+		}
+		var thing1 = new Thing();
+		var thing2 = new Thing();
+		
+		thing1.logFoo(); //logs "bar"
+		thing2.logFoo(); //logs "bar"
+
+		thing1.setFoo("foo");
+		thing1.logFoo(); //logs "foo";
+		thing2.logFoo(); //logs "bar";
+		Thing.prototype.logFoo();
+
+		Thing.prototype.foo = "foobar";
+		thing1.logFoo(); //logs "foo";
+		thing2.logFoo(); //logs "foobar";
+		Thing.prototype.logFoo();
+	}
+    </script>
+
+    </head>
+    <body>
+            <ul>
+                    <li>123</li>
+                    <li>456</li>
+                    <li>789</li>
+                    <li>010</li>
+            </ul>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>allColor</title>
+    <style>
+        .divWrap{
+            width:1200px;
+            margin:0 auto;
+        }
+        .div{
+            position:relative;
+            width:180px;
+            height:80px;
+            float:left;
+            margin:10px;
+        }
+        .divChild{
+            position:absolute;
+            width:180px;
+            height:20px;
+            font-size:20px;
+            text-align:center;
+            line-height:20px;
+            left:0;
+            bottom:-20px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    (function(){
+        var divWrap = document.createElement('div'),
+            div,
+            divChild,
+            hex,
+            text,
+            zeroArr = ['','0'];
+        divWrap.setAttribute('class','divWrap');
+        for(var j = 0; j < 256; j += 51){
+            for(var k = 0; k < 256; k += 51){
+                for(var i = 0; i < 256; i += 51){
+                    hex = zeroArr[2-j.toString(16).length] + j.toString(16) +
+                          zeroArr[2-k.toString(16).length] + k.toString(16) +
+                          zeroArr[2-i.toString(16).length] + i.toString(16);
+                    div = document.createElement('div');
+                    div.setAttribute('class','div');
+                    div.setAttribute('style','background:#' + hex);
+                    divChild = document.createElement('div');
+                    divChild.setAttribute('class','divChild');
+                    text = document.createTextNode('#'+hex);
+                    divChild.appendChild(text);
+                    div.appendChild(divChild);
+                    divWrap.appendChild(div);
+                }
+            }
+        }
+        document.body.appendChild(divWrap);
+    })()
+</script>
+</body>
+</html>

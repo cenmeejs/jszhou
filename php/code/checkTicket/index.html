@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验票</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active{
+            text-decoration:none;
+        }
+        html,
+        body{
+            background-color:#e2e1e1;
+            font-family:'Microsoft YaHei';
+            height:100%;
+            overflow:hidden;
+        }
+        .check_wrap{
+            background-color:#fff;
+            width:1000px;
+            height:100%;
+            margin:0 auto;
+        }
+        .check_title{
+            width:1000px;
+            height:50px;
+            font-size:30px;
+            color:#646464;
+            text-align:center;
+            line-height:50px;
+            padding:20px 0 0;
+            margin:0 0 30px;
+        }
+        .check_info{
+            float:left;
+            width:490px;
+        }
+        .check_result{
+            float:right;
+            width:490px;
+        }
+        .check_info_title{
+            width:100%;
+            height:24px;
+            color:#646464;
+            font-size:24px;
+            text-align:center;
+            line-height:24px;
+            margin:0 0 30px;
+        }
+        .check_info_input{
+            display:block;
+            width:300px;
+            height:50px;
+            color:#646464;
+            font-size:18px;
+            line-height:50px;
+            margin:0 auto 20px;
+            padding:0 0 0 10px;
+            border:2px solid #e2e1e1;
+        }
+        .check_info_input:focus,
+        .check_code_input:focus{
+            border:2px solid #36A8FF;
+            outline:0;
+        }
+        .check_code{
+            width:300px;
+            height:54px;
+            margin:0 auto 20px;
+            padding:0;
+        }
+        .check_code_input{
+            float:left;
+            width:140px;
+            height:50px;
+            color:#646464;
+            font-size:18px;
+            line-height:50px;
+            padding:0 0 0 10px;
+            margin:0 0 0 -7px;
+            border:2px solid #e2e1e1;
+        }
+        .check_code_img{
+            float:right;
+            width:140px;
+            height:54px;
+            margin:0 -7px 0 0;
+        }
+        .check_info_btnWrap{
+            width:304px;
+            height:50px;
+            margin:0 auto 20px;
+            padding:0;
+        }
+        .check_info_btn{
+            display:inline-block;
+            width:120px;
+            height:50px;
+            font-size:20px;
+            color:#fff;
+            margin:0 0 0 20px;
+            text-align:center;
+            line-height:50px;
+            background-color:#36A8FF;
+            border-radius:5px;
+        }
+        .check_result_info{
+            width:260px;
+            height:223px;
+            border:2px solid #36A8FF;
+            color:tomato;
+            font-size:24px;
+            line-height:30px;
+            margin:0 auto;
+            border-radius:10px;
+            padding:50px 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="check_wrap">
+        <h1 class="check_title">验票</h1>
+        <div class="check">
+            <div class="check_info">
+                <h2 class="check_info_title">验票信息</h2>
+                <input type="text" class="check_info_input check_info_name" placeholder="用户名">
+                <input type="password" class="check_info_input check_info_pw" placeholder="密码">
+                <input type="text" class="check_info_input check_info_id" placeholder="id">
+                <div class="check_code">
+                    <input type="text" class="check_code_input" placeholder="验证码">
+                    <img src="check_code_img.png" alt="" class="check_code_img">
+                </div>
+                <div class="check_info_btnWrap">
+                    <a href="javascript:void(0);" class="check_info_btn">验票</a>
+                    <a href="javascript:void(0);" class="check_info_btn">验票过闸</a>
+                </div>
+            </div>
+            <div class="check_result">
+                <h2 class="check_info_title">验票结果</h2>
+                <div class="check_result_info">这里显示验票结果这里显示验票结果这里显示验票结果这里显示验票结果</div>
+            </div>
+        </div>
+
+    </div>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            (function(){
+                //ajax请求函数
+                function check(type){
+                    var dataArr = {};
+                    dataArr.type = type;
+                    dataArr.name = $('.check_info_name').eq(0).val();
+                    dataArr.pw = $('.check_info_pw').eq(0).val();
+                    dataArr.id = $('.check_info_id').eq(0).val();
+                    dataArr.code= $('.check_code_input').eq(0).val();
+
+                    console.log(dataArr);
+
+                    $('.check_result_info').eq(0).html('验票中....');
+
+                    $.ajax({
+                        type:'GET',
+                        url:"/News/newsList",
+                        dataType:'json',
+                        data:dataArr,
+                        success:function(data){
+                            var list = data.list || [];
+                            $('.check_result_info').eq(0).html(data.msg);
+                        },
+                        statusCode: {
+                            404: function() {
+                                $('.check_result_info').eq(0).html('验票失败，请重试！');
+                            }
+                        }
+                    });
+                }
+
+                //点击验票
+                $('.check_info_btn').eq(0).click(function(){
+                    check(1);
+                });
+
+                //点击验票过闸
+                $('.check_info_btn').eq(1).click(function(){
+                    check(2);
+                })
+            })()
+        });
+    </script>
+</body>
+</html>

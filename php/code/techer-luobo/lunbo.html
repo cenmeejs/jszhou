@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.bg{
+				border:1px solid;
+				width:25px;
+				height:10px;
+				float:left;
+				margin-right:2px ;
+			}
+			
+		</style>
+	</head>
+	<body onload="aotuSwitch()">
+		<div id="lunbo" style="width:900px;height:500px;border:1px solid;position:relative;margin:auto;background-image: url(bg1.jpg);" onmouseover="clearLunBo()" onmouseout="aotuSwitch()">
+			<div style="position:absolute;bottom:5px;right:5px;">
+				<div class="bg" id="bg1" onmouseover="changImg(this)" onmouseout="clearBackground()"></div>
+				<div class="bg" id="bg2" onmouseover="changImg(this)" onmouseout="clearBackground()"></div>
+				<div class="bg" id="bg3" onmouseover="changImg(this)" onmouseout="clearBackground()"></div>
+				<div class="bg" id="bg4" onmouseover="changImg(this)" onmouseout="clearBackground()"></div>
+				
+			</div>
+			
+		</div>
+		<script>
+		var t;
+			function clearBackground(aa){
+				
+				var str = document.getElementById("lunbo").style.backgroundImage;
+				
+				aa.style.backgroundColor="white";
+			}
+			
+			
+		   	function changImg(aa){
+		   		
+		   		//alert(aa.getAttribute("id")+".jpg");
+		   		var str = document.getElementById("lunbo").style.backgroundImage;
+		   		str1 = str.replace(/bg\d/,aa.getAttribute("id"));
+				document.getElementById("lunbo").style.backgroundImage = str1;
+				
+				
+				var data = aa.getAttribute("id").match(/\d/)*1;
+				
+				
+				for(var i=1;i<5;i++){
+					if(i==data){
+						aa.style.backgroundColor="cadetblue";
+						continue;
+					}
+					document.getElementById('bg'+i).style.backgroundColor="white";
+				}
+		   	}
+		
+		
+		
+			//自动轮播
+			function aotuSwitch(){
+				
+				var str = document.getElementById("lunbo").style.backgroundImage;
+				var indexStr = str.substr(-6,1);
+				var numStr = indexStr*1;
+				numStr++;
+				for(var i=1;i<numStr;i++){
+					document.getElementById('bg'+i).style.backgroundColor="white";
+					if(i==1){
+						
+						document.getElementById('bg'+4).style.backgroundColor="white";
+					}
+				}
+				if(numStr>4){
+					
+					numStr=1;//当轮播到第4个图时，归零
+				}
+				
+				str = str.replace(/bg\d\.jpg/,"bg"+numStr+".jpg");
+				
+				
+				document.getElementById("lunbo").style.backgroundImage = str;
+				document.getElementById('bg'+numStr).style.backgroundColor="cadetblue";
+				
+				t = setTimeout("aotuSwitch()",1000);
+			}
+			
+			
+			
+			function clearLunBo(){
+				clearTimeout(t);
+			 var str = document.getElementById("lunbo").style.backgroundImage;
+			 var indexStr = str.substr(-6,1);				
+			 var numStr = indexStr*1;
+			}
+		
+		</script>
+	</body>
+</html>

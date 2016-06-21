@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fullpage练习</title>
+	<link rel="stylesheet" href="css/jquery.fullPage.css">
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.fullPage.min.js"></script>
+	<style>
+		.section{
+			font-size:30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="menu">
+		<div class="section">
+			<nav class="nav">
+				<img src="images/logo.png" alt="" class="logo">
+				<ul class="menu">
+					<li><a href="">首页</a></li>
+					<li><a href="">观止</a></li>
+					<li><a href="">KIDS</a></li>
+					<li><a href="">绽放</a></li>
+					<li><a href="">沉睡的深林</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="section">第二页</div>
+		<div class="section">
+			<div class="slide">31</div>
+			<div class="slide">32</div>
+			<div class="slide">33</div>
+			<div class="slide">34</div>
+		</div>
+		<div class="section">第四页</div>
+	</div>
+	<script>
+		$(function(){
+			$('.menu').fullpage({
+				verticalCentered:true,
+				size:true,
+				sectionsColor:['green','red','blue','tomato'],
+				navigation:true,
+				navigationPosition:'left',
+				navigationTooltips:['观止','KIDS','绽放','沉睡的深林'],
+				showActiveTooltip:true,
+				scrollingSpeed:500,
+				slidesNavigation: true,
+        		slidesNavPosition: 'bottom',
+			});
+		})
+	</script>
+</body>
+</html>

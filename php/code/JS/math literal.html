@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+        //一个常见的误解是数字的字面值（literal）不是对象。这是因为 JavaScript 解析器的一个错误， 它试图将点操作符解析为浮点数字面值的一部分。
+        //console.log(2.toString());// 出错：SyntaxError
+        console.log(2..toString());// 第二个点号可以正常解析
+        console.log(2 .toString());// 注意点号前面的空格
+        console.log((2).toString());//2先被计算
+
+
+
+
+        //JavaScript 中所有变量都是对象，除了undefined。
+        console.log(typeof null);//object
+        console.log(typeof undefined);//undefined
+
+        //通过使用 否 操作符两次，可以把一个值转换为布尔型。
+        console.log(!!0);//false
+        console.log(!!"0")//true
+
+        //将一个值加上空字符串可以轻松转换为字符串类型。
+        console.log(typeof(9+""));//string
+
+        //使用一元的加号操作符，可以把字符串转换为数字
+        console.log(typeof(+"10"));//number
+        </script>
+    </body>
+</html>

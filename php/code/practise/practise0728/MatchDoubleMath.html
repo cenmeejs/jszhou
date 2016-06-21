@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	匹配前面两个一样，后面两个一样的数字<br><br>
+	请输入：<input type="text" name="" id="">
+	<input type="button" value="提交">
+	<br><br>
+	匹配结果<br>
+	<textarea name="" id="" cols="30" rows="10"></textarea>
+	<script>
+		document.getElementsByTagName("input")[1].onclick=function(){
+			var valData = document.getElementsByTagName("input")[0].value;
+			var regData = /^(0{2}|1{2}|2{2}|3{2}|4{2}|5{2}|6{2}|7{2}|8{2}|9{2})\d*(0{2}|1{2}|2{2}|3{2}|4{2}|5{2}|6{2}|7{2}|8{2}|9{2})$/g;
+			document.getElementsByTagName("textarea")[0].value=valData.match(regData);
+		}
+		function auto(){
+			document.getElementsByTagName("input")[1].click();
+			setTimeout(auto,200);
+		}
+		auto();
+	</script>
+</body>
+</html>

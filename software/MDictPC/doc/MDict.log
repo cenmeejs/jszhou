@@ -1,0 +1,46 @@
+04-10 09:58:56.855  DEBUG/MDictApp(1636): Home dir:D:/jszhou/software/MDictPC/doc/
+04-10 09:58:56.859  DEBUG/MDictApp(1636): Searching mdx database in dir:D:/jszhou/software/MDictPC/doc/
+04-10 09:58:56.859  DEBUG/MDictApp(1636): Searching mdx database in dir:D:/jszhou/software/MDictPC/doc/
+04-10 09:58:56.859  INFO/MDictApp(1636): Found total 0 dictionaries in device
+04-10 09:58:56.859  DEBUG/MDictApp(1636): Last dictionary id is invalid, try using first dictionary in the list
+04-10 09:58:56.860  INFO/MDictApp(1636): Fail to init localization translation file
+04-10 09:58:56.861  INFO/MDictApp(1636): Found 0 speech databases
+04-10 09:58:56.862  INFO/MDictPCApp(1636): Searching font files...
+04-10 09:58:56.862  INFO/MDictPCApp(1636): Found 0 font files
+04-10 09:58:56.863  DEBUG/MDictPCApp(1636): Load font resource done
+04-10 09:58:56.863  INFO/MDictPCApp(1636): Begin loading html templates
+04-10 09:58:56.864  INFO/MDictPCApp(1636): Html templates loaded
+04-10 09:58:56.864  DEBUG/MDictPCApp(1636): Creating mainframe
+04-10 09:58:56.918  DEBUG/MDictApp(1636): OnCreating MainFrame
+04-10 09:58:56.918  DEBUG/MDictApp(1636): Registering message loop
+04-10 09:58:56.918  DEBUG/MDictApp(1636): Create view client
+04-10 09:58:56.918  DEBUG/CMDictView(1636): Creating input window and splitter
+04-10 09:58:56.926  DEBUG/CMDictView(1636): Creating entry window and mdx view
+04-10 09:58:56.930  DEBUG/CMDXView(1636): Creating mdx view
+04-10 09:58:56.930  DEBUG/CMDXView(1636): Creating html view
+04-10 09:58:57.048  DEBUG/CMDXView(1636): Creating tab ctrl
+04-10 09:58:57.050  DEBUG/CMDXView(1636): Layout mdx view
+04-10 09:58:57.050  DEBUG/CMDictView(1636): Setting up window
+04-10 09:58:57.052  DEBUG/MDictApp(1636): Create command bar
+04-10 09:58:57.061  DEBUG/MDictApp(1636): Create tool bar
+04-10 09:58:57.063  DEBUG/MDictApp(1636): Create re-bar
+04-10 09:58:57.068  DEBUG/MDictPCApp(1636): Init TTS engine
+04-10 09:58:58.092  DEBUG/MDictPCApp(1636): TTS inited
+04-10 09:58:58.092  DEBUG/MDictApp(1636): Fill toolbar combox of TTS engine
+04-10 09:58:58.099  DEBUG/MDictApp(1636): Install task bar icon
+04-10 09:58:58.111  DEBUG/MDictApp(1636): Register hotkey
+04-10 09:58:58.111  DEBUG/MDictApp(1636): Restore last window size and position
+04-10 09:58:58.155  DEBUG/MDictPCApp(1636): Mainframe created
+04-10 09:58:58.155  DEBUG/MDictPCApp(1636): Create and register handler factory
+04-10 09:58:58.155  DEBUG/MDictPCApp(1636): IWebbrowser helper object inited
+04-10 09:58:58.155  DEBUG/MDictPCApp(1636): Open last dict
+04-10 09:58:58.155  DEBUG/MDictPCApp(1636): MDict App init completed
+04-10 09:58:58.155  DEBUG/MDictPCApp(1636): Show welcome page
+04-10 09:59:57.664  DEBUG/MDictApp(1636): Closing CMainFrame
+04-10 09:59:57.664  DEBUG/MDictApp(1636): Release TTS tokens
+04-10 09:59:57.667  DEBUG/CMDictView(1636): Destroying CMDictView
+04-10 09:59:57.667  DEBUG/CMDXView(1636): Destroying CMDXView
+04-10 09:59:57.692  DEBUG/MDictApp(1636): Destructing CMainFrame
+04-10 09:59:57.721  DEBUG/CMDictView(1636): Destructing CMDictView
+04-10 09:59:57.721  DEBUG/CMDXView(1636): Destructing CMDXView
+04-10 09:59:57.721  DEBUG/CMDXView(1636): Htmlview released

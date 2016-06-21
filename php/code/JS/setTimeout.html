@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>无标题</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<script>
+			//当setTimeout被调用时，作为第一个参数的函数将会在全局作用域中执行，因此函数内的this将会指向全局对象（window）
+			function Foo() {
+				this.value = 42;
+				this.method = function() {
+					// this 指向全局对象
+					document.write(this.value+"<br>"); // 输出：undefined
+				};
+				
+				var id1 = setInterval(this.method,2000);
+				//var id2 = setTimeout(this.method, 500);
+				//var id3 = setTimeout(this.method, 500);
+				//var id4 = setInterval(this.method,2000);
+				setTimeout("clearInterval(1)",10004);//用对应数字也可清除定时器
+				
+				//返回的ID标志为一个大于0的数
+				//alert(id1);//1
+				//alert( typeof id1);//number
+				//alert(id2);//2
+				//alert(id3);//3
+				//alert(id4);//4
+				alert("该定时器的ID标志为："+id1);
+			}
+			new Foo();
+		</script>
+	</body>
+</html>

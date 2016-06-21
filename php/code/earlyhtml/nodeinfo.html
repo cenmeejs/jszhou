@@ -1,0 +1,23 @@
+﻿<html>
+<head>
+<title>显示节点信息</title>
+<meta charset="utf-8">
+</head>
+<body>
+<div>两只老虎</div>
+<button onclick="xg(1)">显示节点名称</button>
+<button onclick="xg(2)">显示节点值</button>
+<button onclick="xg(3)">显示节点类型</button>
+<script type="text/javascript">
+function xg(data){
+if(data==1){
+alert(document.getElementsByTagName("div")[0].nodeName);
+}else if(data==2){
+alert(document.getElementsByTagName("div")[0].firstChild.nodeValue);
+}else{
+alert(document.getElementsByTagName("div")[0].firstChild.nodeType);
+}
+}
+</script>
+</body>
+</html>

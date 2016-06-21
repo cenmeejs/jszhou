@@ -1,0 +1,67 @@
+.x-accordion-item .x-accordion-hd {
+    background: rgb(3,124,185);
+    border-width: 0;
+    border-color: #5fa2dd;
+    padding: 12px 10px;
+}
+.x-action-col-icon {
+    color: #919191;
+    font-size: 18px;
+    height: 28px;
+    width: 28px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.x-grid-cell-inner {
+    /*font-size: 12px;*/
+    /*font-family: 微软雅黑;*/
+    /*font-weight: bold;*/
+    position: relative;
+    text-overflow: ellipsis;
+    padding: 7px 10px 6px;
+}
+.x-grid-body {
+    background: #fff;
+    border-width: 1px 1px 1px;
+    border-style: solid;
+    border-color: #d0d0d0;
+}
+.x-grid-cell-inner-row-numberer {
+    padding: 7px 5px 6px 3px;
+    background-color: transparent;
+}
+.x-grid-item-focused .x-grid-cell-inner:before{
+    border: 0px solid #5fa2dd;
+}
+.displayField {
+    height: 20px;
+}
+.no-icon {
+    display:none;
+}
+
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #d52b00;
+    border-radius: 10px;
+}
+.badge:empty {
+    display: none;
+}
+
+.x-panel-body-default {
+    border-width: 0px;
+}
+
+.panel-body {
+    border-width: 1px;
+}

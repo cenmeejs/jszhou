@@ -1,0 +1,16 @@
+﻿#z{
+	width: 700px;
+	min-height: 500px;
+	margin: 50px auto 0;
+	padding: 0 0 50px;
+	outline: none;
+	border: 1px solid #ccc;
+	background: white
+}
+.pline{
+	border-bottom: 1px dotted #0f0;
+	padding:0 20px;
+	word-wrap: break-word;
+	font-size: 20px;
+	margin: 0;
+}

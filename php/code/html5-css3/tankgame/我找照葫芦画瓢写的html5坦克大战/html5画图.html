@@ -1,0 +1,98 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<!--网页的编码-->
+<meta charset="gbk"/>
+</head>
+<body>
+<!--跟老师一起玩-->
+<canvas id="can1" width="500px" height="400px" style="border: 1px solid red">
+</canvas>
+<script type="text/javascript">
+	
+//1.得到画布
+var canvas1=document.getElementById("can1");
+//2. 得到上下文引用，你可以理解成画笔
+var cxt=canvas1.getContext("2d");
+//3.画出直线
+cxt.moveTo(20,20);//设置点的位置
+cxt.lineTo(20,90);//设置第二个点的位置
+cxt.stroke();//画出直线
+//画出一个填充的三角形-->路径
+//开始新路径。
+cxt.beginPath();
+cxt.moveTo(40,20);
+cxt.lineTo(40,90);
+cxt.lineTo(80,90);
+//闭合路径
+cxt.closePath();
+//填充颜色
+cxt.fill();
+//空心图形,stroke就是划线，fill就是填充
+//cxt.stroke();
+
+//画出矩形strokeRect（x,y,width,height）
+cxt.strokeRect(100,20,50,50);
+//填充矩形
+//如果希望改变填充的颜色，修改画笔的fillStyle属性
+cxt.fillStyle="#00FF00";
+cxt.fillRect(190,20,50,50);
+
+
+
+//除画矩形外其他都要开始路径和闭合路径
+cxt.beginPath();
+//设置圆形arc(x,y,radius,startAngle,endAngle,countclockwise)
+cxt.arc(300,50,20,0,360,true);
+//闭合路径
+cxt.closePath();
+//划出圆形cxt.stroke();
+cxt.stroke();
+
+
+//1.创建image对象
+	var img1=new Image();
+	//2.指定是哪个图片
+	img1.src="wanshengjie.jpg";
+	//加载完毕后，在绘制图片
+	img1.onload=function(){
+	cxt.drawImage(img1,20,100,200,200);
+	}
+//在画布上写字(希望大家一起来编程->大战就会使用)
+//var text="传智播客 PHP";
+//设置字体的大小
+//cxt.fillStyle="#0000FF";
+//cxt.font="30px 宋体";
+//cxt.fillText(text,230,200);
+var text="传智播客 PHP";
+cxt.fillText(text,230,200);
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

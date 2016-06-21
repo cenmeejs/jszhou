@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>密码输入完整版</title>
+</head>
+<body>
+<table border="1">
+<tr>
+<td width="50px">密码：</td>
+<td width="150px"><form action="#" method="post"><input type="password" id="pw1" onfocus="checkpw(1)" onblur="checkpw(2)" maxlength="16"/></form></td>
+<td width="300px" id="pw2">&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><span id="ruo">弱&nbsp;&nbsp;</span><span id="zhong">中&nbsp;&nbsp;</span><span id="qiang">强&nbsp;&nbsp;</span></td>
+<td>&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript">
+function checkpw(data){
+var strData = document.getElementById("pw1").value;
+if(data==1){
+document.getElementById("pw2").innerHTML = "请输入密码,长度6-16位";
+document.getElementById("pw2").style.color = "red";
+}else{
+if(strData.length==0){
+document.getElementById("pw2").innerHTML = "密码不能为空";
+document.getElementById("pw2").style.color = "red";
+}else{
+var regObj1 = /^[A-Za-z]{6,16}$|^\d{6,16}$|^[#\?\.\$@%]{6,16}$/;
+var regObj2 = /^[A-Za-z0-9]{6,16}$|^[A-Za-z#\?\.\$@%]{6,16}$|^[0-9#\?\.\$@%]{6,16}$/;
+var regObj3 = /^[A-Za-z0-9#\?\.\$@%]{6,16}$/;
+var ruo = document.getElementById("ruo");
+var zhong = document.getElementById("zhong");
+var qiang = document.getElementById("qiang");
+if(regObj1.test(strData)){
+ruo.style.color = "#ff0000";
+zhong.style.color = "#000000";
+qiang.style.color = "#000000";
+document.getElementById("pw2").innerHTML = "";
+}else if(regObj2.test(strData)){
+ruo.style.color = "#000000";
+zhong.style.color = "#ff0000";
+qiang.style.color = "#000000";
+document.getElementById("pw2").innerHTML = "";
+}else{
+if(regObj3.test(strData)){
+ruo.style.color = "#000000";
+zhong.style.color = "#000000";
+qiang.style.color = "#ff0000";
+document.getElementById("pw2").innerHTML = "";
+}else{
+ruo.style.color = "#000000";
+zhong.style.color = "#000000";
+qiang.style.color = "#000000";
+document.getElementById("pw2").innerHTML = "密码不能小于6位";
+document.getElementById("pw2").style.color = "red";
+}
+}
+}
+}
+}
+</script>
+</body>
+</html>

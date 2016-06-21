@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>无标题</title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding: 0;
+			}
+			html,body{
+				height: 100%;
+			}
+			.pag-wrap{
+				width: 35%;
+				height: 99%;
+				float: left;
+				border: 1px solid #f00;
+				position: relative;
+			}
+			.pag-wrap img{
+				width: 20px;
+				float: right;
+				position: absolute;
+				top:0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				margin: auto;
+				animation:bian 10s  linear 0s infinite;
+			}
+			@keyframes bian{
+				10%{width:50px;}
+				50%{width:500px;}
+				90%{width: 50px;}
+				100%{width: 20px;}
+			}
+			.btn{
+				width: 8%;
+				height: 99%;
+				float: left;
+				border: 1px solid #f00;
+			}
+			.content{
+				width: 55%;
+				height: 99%;
+				float: left;
+				border: 1px solid #f00;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="pag-wrap"><img src="pag.jpg" alt=""></div>
+		<div class="btn"></div>
+		<div class="content"></div>
+		<script>
+			function Pag(){
+				this.name=name;
+				
+			}
+		</script>
+	</body>
+</html>

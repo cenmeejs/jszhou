@@ -1,0 +1,262 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题</title>
+		<script type="text/javascript" src="../jquery-1.8.3.min.js"></script>
+		<style type="text/css">
+			body{
+				overflow:hidden;
+				background-image:url(./css/index_bg.jpg);
+				background-position:50% 50%;
+				margin:0px;
+				padding:0px;
+			}
+			.time-line{
+				width:0px;
+				height:5px;
+				background:#F08300;
+			}
+			.all{
+				margin:20px auto 0px;
+				width:993px;
+				height:445px;
+			}
+			.all-left-but{
+				float:left;
+				margin:auto;
+				width:30px;
+				height:300px;
+				margin-top:72px;
+				background-image:url(./css/next-prev-sprite.png);
+				background-position:0px 0px;
+			}
+			.all-left-but:hover{
+				background-image:url(./css/next-prev-sprite-hover.png);
+				background-position:0px 0px;
+			}
+			.all-med-img{
+				float:left;
+				width:891px;
+				height:441px;
+				margin-left:16px;
+				white-space:nowrap;
+				overflow:hidden;
+				position:relative;
+				padding:0px;
+			}
+			all-med-img img{
+				margin:0px;
+				padding:0px;
+			}
+			.all-med-img ul{
+				padding:0px;
+				width:110px;
+				height:15px;
+				top:385px;
+				left:1291px;
+				position:absolute;
+			}
+			.all-med-img ul li{
+				border:1px solid silver;
+				width:12px;
+				height:12px;
+				float:left;
+				margin-left:10px;
+				list-style-type:none;
+				border-radius:3px;
+			}
+			.all-right-but{
+				float:left;
+				margin:auto;
+				width:30px;
+				height:300px;
+				margin-left:16px;
+				margin-top:72px;
+				background-image:url(./css/next-prev-sprite.png);
+				background-position:-30px 0px;
+			}
+			.all-right-but:hover{
+				background-image:url(./css/next-prev-sprite-hover.png);
+				background-position:-30px 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="all">
+			<div class="all-left-but"></div>
+			<div class="all-med-img">
+				<img src="./images/focus_2.jpg"/>
+				<img src="./images/focus_1.jpg"/>
+				<img src="./images/focus_5.jpg"/>
+				<img src="./images/focus_4.jpg"/>
+				<img src="./images/focus_3.jpg"/>
+				<ul>
+					<li style="margin-left:0px;background:#F87E2B;"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="all-right-but"></div>
+		</div>
+		<div class="time-line"></div>
+		<script>
+			$(function(){
+				var tag;
+				var booldata = true;
+				$(".all-med-img").scrollLeft(896);
+				/*时间条和自动轮播*/
+				tag = setInterval(fun1,5000);
+				function fun1(){
+					booldata=false;
+					$(".time-line").animate({width:"890px"},3000,function(){
+						$(".time-line").css("width","0px");
+						$(".all-med-img").scrollLeft(891);
+						var imgdata = $(".all-med-img>img").eq(1).attr("src").match(/\d/)*1;
+						if(imgdata==5){imgdata=0;};
+						$("ul>li").each(function(){
+							if($(this).index("ul>li")==imgdata){
+								$(this).css("background","#F08300");
+							}else{
+								$(this).css("background","#FFFFFF");
+							}
+						});
+						$(".all-med-img>img").eq(0).animate({marginLeft:"891px"},1500,function(){
+							$(".all-med-img>img").eq(4).prependTo($(".all-med-img"));
+							$(".all-med-img>img").eq(1).css("margin-left","0px");
+							booldata = true
+						})
+					});
+				}
+				/*右边点击轮播*/
+				$(".all-right-but").click(function(){
+					clearInterval(tag);
+					if(booldata){
+						booldata=false;
+						var imgdata = $(".all-med-img>img").eq(1).attr("src").match(/\d/)*1;
+						if(imgdata==5){imgdata=0;};
+						$("ul>li").each(function(){
+							if($(this).index("ul>li")==imgdata){
+								$(this).css("background","#F08300");
+							}else{
+								$(this).css("background","#FFFFFF");
+							}
+						});
+						$(".all-med-img>img").eq(0).animate({marginLeft:"891px"},1500,function(){
+							$(".all-med-img>img").eq(4).prependTo($(".all-med-img"));
+							$(".all-med-img>img").eq(0).css("margin-left","0px");
+							$(".all-med-img>img").eq(1).css("margin-left","0px");
+							$(".all-med-img>img").eq(2).css("margin-left","0px");
+							$(".all-med-img>img").eq(3).css("margin-left","0px");
+							$(".all-med-img>img").eq(4).css("margin-left","0px");
+							booldata=true;
+							tag = setInterval(fun1,5000);
+						})
+						
+					}
+				})
+				/*左边点击轮播*/
+				$(".all-left-but").click(function(){
+					clearInterval(tag);
+					if(booldata){
+						booldata=false;
+						var imgdata = $(".all-med-img>img").eq(1).attr("src").match(/\d/)*1-2;
+						if(imgdata==-1){imgdata=4;};
+						$("ul>li").each(function(){
+							if($(this).index("ul>li")==imgdata){
+								$(this).css("background","#F08300");
+							}else{
+								$(this).css("background","#FFFFFF");
+							}
+						});
+						$(".all-med-img>img").eq(0).animate({marginLeft:"-891px"},1500,function(){
+							$(".all-med-img>img").eq(0).appendTo($(".all-med-img"));
+							$(".all-med-img>img").eq(0).css("margin-left","0px");
+							$(".all-med-img>img").eq(1).css("margin-left","0px");
+							$(".all-med-img>img").eq(2).css("margin-left","0px");
+							$(".all-med-img>img").eq(3).css("margin-left","0px");
+							$(".all-med-img>img").eq(4).css("margin-left","0px");
+							booldata=true;
+							tag = setInterval(fun1,5000);
+						})
+						
+					}
+				})
+				/*下面点击轮播*/
+				$("ul>li").click(function(){
+					clearInterval(tag);
+					var cldata = $(this).index("ul>li");
+					$(".all-med-img>img").each(function(){
+						var climg = $(this).attr("src").match(/\d/)*1-1
+						if(climg==cldata){
+							$(".all-med-img>img").eq(0).appendTo(".all-med-img");
+							$(this).prependTo(".all-med-img");
+							if(booldata){
+								booldata=false;
+								$("ul>li").each(function(){
+									if($(this).index("ul>li")==cldata){
+										$(this).css("background","#F08300");
+									}else{
+										$(this).css("background","#FFFFFF");
+									}
+								});
+								$(".all-med-img>img").eq(0).animate({marginLeft:"891px"},1500,function(){
+									$(".all-med-img>img").eq(4).prependTo($(".all-med-img"));
+									$(".all-med-img>img").eq(0).css("margin-left","0px");
+									$(".all-med-img>img").eq(1).css("margin-left","0px");
+									$(".all-med-img>img").eq(2).css("margin-left","0px");
+									$(".all-med-img>img").eq(3).css("margin-left","0px");
+									$(".all-med-img>img").eq(4).css("margin-left","0px");
+									var inxdata = $(".all-med-img>img").eq(1).attr("src").match(/\d/)*1;
+									if(inxdata==1){
+										$(".all-med-img>img").eq(0).replaceWith("<img src='./images/focus_2.jpg'/>");
+										$(".all-med-img>img").eq(2).replaceWith("<img src='./images/focus_5.jpg'/>");
+										$(".all-med-img>img").eq(3).replaceWith("<img src='./images/focus_4.jpg'/>");
+										$(".all-med-img>img").eq(4).replaceWith("<img src='./images/focus_3.jpg'/>");
+									}
+									if(inxdata==2){
+										$(".all-med-img>img").eq(0).replaceWith("<img src='./images/focus_3.jpg'/>");
+										$(".all-med-img>img").eq(2).replaceWith("<img src='./images/focus_1.jpg'/>");
+										$(".all-med-img>img").eq(3).replaceWith("<img src='./images/focus_5.jpg'/>");
+										$(".all-med-img>img").eq(4).replaceWith("<img src='./images/focus_4.jpg'/>");
+									}
+									if(inxdata==3){
+										$(".all-med-img>img").eq(0).replaceWith("<img src='./images/focus_4.jpg'/>");
+										$(".all-med-img>img").eq(2).replaceWith("<img src='./images/focus_2.jpg'/>");
+										$(".all-med-img>img").eq(3).replaceWith("<img src='./images/focus_1.jpg'/>");
+										$(".all-med-img>img").eq(4).replaceWith("<img src='./images/focus_5.jpg'/>");
+									}
+									if(inxdata==4){
+										$(".all-med-img>img").eq(0).replaceWith("<img src='./images/focus_5.jpg'/>");
+										$(".all-med-img>img").eq(2).replaceWith("<img src='./images/focus_3.jpg'/>");
+										$(".all-med-img>img").eq(3).replaceWith("<img src='./images/focus_2.jpg'/>");
+										$(".all-med-img>img").eq(4).replaceWith("<img src='./images/focus_1.jpg'/>");
+									}
+									if(inxdata==5){
+										$(".all-med-img>img").eq(0).replaceWith("<img src='./images/focus_1.jpg'/>");
+										$(".all-med-img>img").eq(2).replaceWith("<img src='./images/focus_4.jpg'/>");
+										$(".all-med-img>img").eq(3).replaceWith("<img src='./images/focus_3.jpg'/>");
+										$(".all-med-img>img").eq(4).replaceWith("<img src='./images/focus_2.jpg'/>");
+									}
+									tag = setInterval(fun1,5000);
+									booldata=true;
+								})
+							}
+						}
+					})
+				})
+				/*时间条*/
+				var bodywidth = $("body").width();
+				var tml = (bodywidth-895)/2+"px";
+				$(".time-line").css("margin-left",tml);
+				$(window).resize(function(){
+					bodywidth = $("body").width();
+					tml = (bodywidth-895)/2+"px";
+					$(".time-line").css("margin-left",tml);
+				})
+			})
+		</script>
+	</body>
+</html>

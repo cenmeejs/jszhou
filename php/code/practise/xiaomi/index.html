@@ -1,0 +1,1488 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<a name="backtop">
+		<meta charset="utf-8"/>
+		<title>小米网</title>
+		<script type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
+		<!-- <script type="text/javascript" src="./js/index.js"></script> -->
+		<link rel="stylesheet" type="text/css" href="./css/index.css"/>
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<!--[if lte IE 6]>
+			<script type="text/javascript" src="./ie6pngfix/iepngfix_tilebg.js"></script>
+			<style type="text/css">
+				body{behavior:url("./css/csshover3.htc");}
+				div,span{ behavior: url("./ie6pngfix/iepngfix.htc");}
+			</style>
+		 <![endif]-->
+	</head>
+	<body>
+		<a class="backtop" href="#backtop">返回顶部</a>
+		<!--头部-->
+		<div class="bgcolor">
+			<div id="container1">
+				<div class="top">
+					<a href="#" class="top__item" style="padding-left:1px;">小米网</a>
+					<a href="#" class="top__item">MIUI</a>
+					<a href="#" class="top__item">米聊</a>
+					<a href="#" class="top__item">游戏</a>
+					<a href="#" class="top__item">多看阅读</a>
+					<a href="#" class="top__item">云服务</a>
+					<a href="#" class="top__item">小米网移动版</a>
+					<a href="#" class="top__item" style="padding-right:0px;border:0px solid;">Select region</a>
+					<a href="#" class="top__item" style="float:right;padding-right:1px;border:0px solid;">注册</a>
+					<a href="#" class="top__item" style="float:right;padding-left:0px;">登录</a>
+				</div>
+			</div>
+		</div>
+		<div id="container2">
+			<!--小米logo-->
+			<div class="header-main">
+				<a href="#" class="header-main-logo"></a>
+				<a href="#" class="header-main-openbuy">6月30号开放购买</a>
+				<div class="ie6-div">
+					<div class="btn-spcar-container">
+						<div class="btn-all">
+							<div id="sou-list-container">
+								<a href="#" class="sou-droplist">智能硬件</a>
+								<a href="#" class="sou-droplist">wifi</a>
+								<a href="#" class="sou-droplist">自拍杆</a>
+								<a href="#" class="sou-droplist">移动电源</a>
+								<a href="#" class="sou-droplist">随身风扇</a>
+								<a href="#" class="sou-droplist">个性配件</a>
+								<a href="#" class="sou-droplist">充电线材</a>
+								<a href="#" class="sou-droplist">存储卡</a>
+								<a href="#" class="sou-droplist">配件优惠套装</a>
+							</div>
+							<form action="#" method="post">
+							<input type="text" class="btn btn1" placeholder="搜索你需要的商品" onfocus="soux()" onblur="souy()"></input>
+							<a href="#" class="a-btn2"><input type="submit" class="btn btn2 iconfont" value="&#xe60a;"></input></a>
+							</form>
+							<div id="btn-inner">
+								<a href="#" class="btn-inner-a">小米手环</a>
+								<a href="#" class="btn-inner-a">耳机</a>
+								<a href="#" class="btn-inner-a">插线板</a>
+							</div>
+						</div>
+						<div class="spcar-container" onmouseover="droplist()" onmouseout="listshink()">
+							<a href="#" class="header-main-spcar"><i class="iconfont">&#xe654;</i> 购物车</a>
+							<div id="spcar-drop">购物车中还没有商品，赶紧选购吧！</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--导航-->
+			<div class="nav">
+				<!--导航顶部-->
+				<a href="#" class="nav-allcat">全部商品分类</a>
+				<div class="nav-main-container">
+					<ul style="padding:0px;">
+						<li class="nav-main-li"><a href="#" class="nav-main-a">首页</a></li>
+						<li class="nav-main-li">
+							<span class="arrow"></span>
+							<a href="#" class="nav-main-a">小米手机</a>
+							<div id="nav-main-children" style="left:-83px;">
+								<ul>
+									<li id="nav-main-chi-li">
+										<a id="nav-main-chi-a" href="#">
+											<img src="./images/nav-phone-minote.jpg"/>
+											<span class="title">小米Note</span>
+											<span class="disc">大屏旗舰，HiFi双卡双待</span>
+											<span class="price"><b>1999</b>元起</span>
+											<span class="disc">双网通16GB直降300</span>
+										</a>
+									</li>
+									<li id="nav-main-chi-li" style="border-left:1px solid #dfdfdf">
+										<a id="nav-main-chi-a" href="#">
+											<img src="./images/nav-phone-mi4.jpg" style="float:left; border:0px;"/>
+											<span class="title">小米手机4</span>
+											<span class="disc">工艺和手感，超乎想象</span>
+											<span class="price"><b>1499</b>元</span>
+											<span class="disc">旗舰特价直降300</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-main-li">
+							<span class="arrow"></span>
+							<a href="#" class="nav-main-a">红米</a>
+							<div id="nav-main-children" style="left:-201px;">
+								<ul>
+									<li id="nav-main-chi-li">
+										<a id="nav-main-chi-a1" href="#">
+											<img src="./images/nav-phone-hongmi2a-more.jpg"/>
+											<span class="title1">红米手机2A 4G版</span>
+											<span class="disc1">4.7英寸屏 / 联芯四核 / 双卡双待</span>
+											<span class="price1">无敌价：<b>499</b>元</span>
+										</a>
+									</li>
+									<li id="nav-main-chi-li" style="border-left:1px solid #dfdfdf">
+										<a id="nav-main-chi-a1" href="#">
+											<img src="./images/nav-phone-hongmi2-more.jpg"/>
+											<span class="title1">红米手机2 4G版</span>
+											<span class="disc1">4.7英寸屏 / 64位性能 / 双卡双待</span>
+											<span class="price1"><b>699</b>元起</span>
+										</a>
+									</li>
+									<li id="nav-main-chi-li" style="border-left:1px solid #dfdfdf">
+										<a id="nav-main-chi-a1" href="#">
+											<img src="./images/nav-phone-hongminote-more.jpg"/>
+											<span class="title1">红米Note 4G版</span>
+											<span class="disc1">5.5英寸屏 / 64位性能 / 双卡双待</span>
+											<span class="price1">直降100<b>699</b>元起</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-main-li"><a href="#" class="nav-main-a">小米平板</a></li>
+						<li class="nav-main-li">
+							<span class="arrow"></span>
+							<a href="#" class="nav-main-a">小米电视</a>
+							<div id="nav-main-children" style="left:-401px;">
+								<ul>
+									<li id="nav-main-chi-li">
+										<a id="nav-main-chi-a1" href="#">
+											<img src="./images/nav-phone-mitv40-more.jpg"/>
+											<span class="title1">小米电视2 40英寸</span>
+											<span class="disc1">超级性价比智能电视</span>
+											<span class="price1"><b>1999</b>元</span>
+										</a>
+									</li>
+									<li id="nav-main-chi-li" style="border-left:1px solid #dfdfdf">
+										<a id="nav-main-chi-a1" href="#">
+											<img src="./images/nav-phone-mitv49-more.jpg"/>
+											<span class="title1">小米电视2 49英寸</span>
+											<span class="disc1">领先的49英寸4K电视</span>
+											<span class="price1"><b>3399</b>元起</span>
+										</a>
+									</li>
+									<li id="nav-main-chi-li" style="border-left:1px solid #dfdfdf">
+										<a id="nav-main-chi-a1" href="#">
+											<img src="./images/nav-phone-mitv55-more.jpg"/>
+											<span class="title1">小米电视2 55英寸</span>
+											<span class="disc1">旗舰4K电视家庭影院版</span>
+											<span class="price1"><b>4999</b>元</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-main-li">
+							<span class="arrow"></span>
+							<a href="#" class="nav-main-a">盒子</a>
+							<div id="nav-main-children" style="left:-519px;">
+								<ul>
+									<li id="nav-main-chi-li">
+										<a id="nav-main-chi-a" href="#">
+											<img src="./images/nav-phone-hezimini.jpg"/>
+											<span class="title">小米小盒子</span>
+											<span class="disc">全球最小全高清网络机顶盒</span>
+											<span class="price"><b>199</b>元起</span>
+										</a>
+									</li>
+									<li id="nav-main-chi-li" style="border-left:1px solid #dfdfdf">
+										<a id="nav-main-chi-a" href="#">
+											<img src="./images/nav-hezis.jpg" style="float:left; border:0px;"/>
+											<span class="title">小米盒子 增强版</span>
+											<span class="disc">首款4K超高清网络机顶盒</span>
+											<span class="price"><b>299</b>元</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-main-li">
+							<span class="arrow"></span>
+							<a href="#" class="nav-main-a">路由器</a>
+							<div id="nav-main-children" style="left:-601px;">
+								<ul>
+									<li id="nav-main-chi-li">
+										<a id="nav-main-chi-a" href="#">
+											<img src="./images/nav-miwifi-router.jpg"/>
+											<span class="title">全新小米路由器</span>
+											<span class="disc">顶级企业级性能<br>最高内置6TB监控级硬盘</span>
+											<span class="price"><b>699</b>元起</span>
+										</a>
+									</li>
+									<li id="nav-main-chi-li" style="border-left:1px solid #dfdfdf">
+										<a id="nav-main-chi-a" href="#">
+											<img src="./images/T1XsATBCLT1RXrhCrK!160x160.jpg" style="float:left; border:0px;"/>
+											<span class="title">小米路由器 mini</span>
+											<span class="disc">主流双频AC智能路由器<br>性价比之王</span>
+											<span class="price"><b>129</b>元</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-main-li"><a href="#" class="nav-main-a">合约机</a></li>
+						<li class="nav-main-li"><a href="#" class="nav-main-a">服务</a></li>
+						<li class="nav-main-li"><a href="#" class="nav-main-a">社区</a></li>
+					</ul>
+				</div>
+				<!--导航左边-->
+				<div class="nav-leftcat-container">
+					<div class="nav-leftcat">
+						<a href="#" class="nav-leftcat-head">购买手机</a>
+						<div class="nav-leftcat-item">
+							<a href="" class="item">小米Note</a><a href="" class="item">小米4</a><a href="" class="item">红米</a><a href="" class="item">红米Note</a>
+						</div>
+						<div class="nav-leftcat-toggle" style="top:0px;">
+							<a href="#" class="toggle-item"><img src="./images/minote.jpg" class="toggle-img"/><span class="toggle-text">小米Note</span></a>
+							<a href="#" class="toggle-item"><img src="./images/mi4.jpg" class="toggle-img"/><span class="toggle-text">小米手机4</span></a>
+							<a href="#" class="toggle-item"><img src="./images/redmi2.jpg" class="toggle-img"/><span class="toggle-text">红米手机2</span></a>
+							<a href="#" class="toggle-item"><img src="./images/redminote.jpg" class="toggle-img"/><span class="toggle-text">红米Note</span></a>
+							<a href="#" class="toggle-item"><img src="./images/heyue.jpg" class="toggle-img"/><span class="toggle-text">合约机</span></a>
+							<a href="#" class="toggle-item"><img src="./images/typeacc.jpg" class="toggle-img"/><span class="toggle-text">根据机型选配件</span></a>
+							<div class="toggle-star">
+								<h4>明星配件</h4>
+								<ul style="margin-left:20px;">
+									<li style="margin-top:10px;list-style-type:disc;"><a href="#" class="item">小米手环 79元</a></li>
+									<li style="margin-top:5px;list-style-type:disc;"><a href="#" class="item">小米活塞耳机 99元</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="nav-leftcat">
+						<a href="#" class="nav-leftcat-head">购买电视与平板</a>
+						<div class="nav-leftcat-item">
+							<a href="" class="item">小米电视</a><a href="" class="item">小米盒子</a><a href="" class="item">小米平板</a>
+						</div>
+						<div class="nav-leftcat-toggle">
+							<a href="#" class="toggle-item"><img src="./images/mitv.jpg" class="toggle-img"/><span class="toggle-text">小米电视2</span></a>
+							<a href="#" class="toggle-item"><img src="./images/mibox.jpg" class="toggle-img"/><span class="toggle-text">小米盒子</span></a>
+							<a href="#" class="toggle-item"><img src="./images/mipad.jpg" class="toggle-img"/><span class="toggle-text">小米平板</span></a>
+							<div class="toggle-star">
+								<h4>明星配件</h4>
+								<ul style="margin-left:20px;">
+									<li style="margin-top:10px; list-style-type:disc;"><a href="#" class="item">小米电视配件</a></li>
+									<li style="margin-top:5px; list-style-type:disc;"><a href="#" class="item">小米盒子配件</a></li>
+									<li style="margin-top:5px; list-style-type:disc;"><a href="#" class="item">小米平板配件</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="nav-leftcat">
+						<a href="#" class="nav-leftcat-head">路由器与智能硬件</a>
+						<div class="nav-leftcat-item">
+							<a href="" class="item">路由器</a><a href="" class="item">体重秤</a><a href="" class="item">净化器与滤芯</a>
+						</div>
+						<div class="nav-leftcat-toggle" style="width:500px;padding-bottom:10px;top:2px;border-bottom:0px;">
+							<a href="#" class="toggle-item big-left"><img src="./images/T1bjCTBy_v1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">小米路由器</span></a>
+							<a href="#" class="toggle-item big-left"><img src="./images/T1PRJgBmKT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">小米路由器mini</span></a>
+							<a href="#" class="toggle-item big-left"><img src="./images/T1KjZ_B4bT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">小米手环</span></a>
+							<a href="#" class="toggle-item big-left"><img src="./images/T1iIhvB7WT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">净化器与滤芯</span></a>
+							<a href="#" class="toggle-item big-left"><img src="./images/T1tZhQB4KT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">运动相机</span></a>
+							<a href="#" class="toggle-item big-left"><img src="./images/T1t.bgByAT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">摄像机</span></a>
+							<a href="#" class="toggle-item big-left"><img src="./images/T18YL_BmLT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">血压计</span></a>
+							<a href="#" class="toggle-item big-left"><img src="./images/T1XHD_BCxT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">智能插座</span></a>
+							<a href="#" class="toggle-item big-left"><img src="./images/T1Q_KTByEv1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">智能灯泡</span></a>
+							<a href="#" class="toggle-item big-left"><img src="./images/T1NUYvBCEv1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">体重秤</span></a>
+							<a href="#" class="toggle-item big-left"><img src="./images/T1Eth_BQJT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">床头灯</span></a>
+							<a href="#" class="toggle-item big-left"><img src="./images/T1LMZvBCAT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">随身WiFi</span></a>
+							<a href="#" class="toggle-item big-left"><img src="./images/T1s6CvBXKv1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">智能家庭套装</span></a>
+						</div>
+					</div>
+					<div class="nav-leftcat">
+						<a href="#" class="nav-leftcat-head">插线板，移动电源与电池</a>
+						<div class="nav-leftcat-item">
+							<a href="" class="item">小米电源</a><a href="" class="item">电池</a><a href="" class="item">充电器</a>
+						</div>
+						<div class="nav-leftcat-toggle" style="padding-bottom:10px;top:-12px;border-bottom:0px;">
+							<a href="#" class="toggle-item"><img src="./images/T17DxvB4_T1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">小米头移动电源</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T12.CgB4WT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">插线板</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T1OwLvB5AT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">品牌移动电源</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T1QJKvBvJT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">电池</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T1DUEvBKxT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">充电器</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T1dAAvBKLT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">线材</span></a>
+						</div>
+					</div>
+					<div class="nav-leftcat">
+						<a href="#" class="nav-leftcat-head">耳机音箱与存储卡</a>
+						<div class="nav-leftcat-item">
+							<a href="" class="item">小米头戴式耳机</a><a href="" class="item">小米活塞耳机</a>
+						</div>
+						<div class="nav-leftcat-toggle" style="padding-bottom:10px;top:-86px;border-bottom:0px;">
+							<a href="#" class="toggle-item"><img src="./images/T1CfKTBQZT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">小米头戴式耳机</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T1DM__B4dT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">小米活塞耳机</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T1HHVvBKYv1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">小米蓝牙耳机</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T1wwDgB4JT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">品牌耳机</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T1qjYgBXYT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">音箱</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T1dmKgB7JT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">存储卡</span></a>
+						</div>
+					</div>
+					<div class="nav-leftcat">
+						<a href="#" class="nav-leftcat-head">保护套与贴膜</a>
+						<div class="nav-leftcat-item">
+							<a href="" class="item">保护套/保护壳</a><a href="" class="item">贴膜</a><a href="" class="item">防尘塞</a>
+						</div>
+						<div class="nav-leftcat-toggle" style="padding-bottom:10px;">
+							<a href="#" class="toggle-item"><img src="./images/T1.qETBXAv1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">保护套/保护壳</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T1uGJvBCdT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">贴膜</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T1UrhvBjKT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">防尘塞</span></a>
+						</div>
+					</div>
+					<div class="nav-leftcat">
+						<a href="#" class="nav-leftcat-head">后盖与个性化配件</a>
+						<div class="nav-leftcat-item">
+							<a href="" class="item">米健</a><a href="" class="item">后盖</a><a href="" class="item">贴纸</a><a href="" class="item">手机支架</a>
+						</div>
+						<div class="nav-leftcat-toggle" style="padding-bottom:10px;top:-174px;border-bottom:0px;">
+							<a href="#" class="toggle-item"><img src="./images/T1BrhvBbDT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">米健</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T1d3bvBbKT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">后盖</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T14CZgB5hT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">贴纸</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T13rCvBjhT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">手机支架</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T1FvDvB7ET1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">耳机绕线器</span></a>
+						</div>
+					</div>
+					<div class="nav-leftcat" style="border-bottom:0px;">
+						<a href="#" class="nav-leftcat-head">小米生活方式</a>
+						<div class="nav-leftcat-item">
+							<a href="" class="item">服装</a><a href="" class="item">米兔</a><a href="" class="item">背包</a><a href="" class="item">生活周边</a>
+						</div>
+						<div class="nav-leftcat-toggle" style="padding-bottom:10px;top:-248px;border-bottom:0px;">
+							<a href="#" class="toggle-item"><img src="./images/T1OaD_BTET1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">服装</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T14DJvBXK_1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">米兔</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T1hlEvB5AT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">背包</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T173VvB7KT1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">小米鼠标垫</span></a>
+							<a href="#" class="toggle-item"><img src="./images/T15SZvB4Av1RXrhCrK!40x40.jpg" class="toggle-img"/><span class="toggle-text">生活周边</span></a>
+						</div>
+					</div>
+				</div>
+				<!--轮播-->
+				<div class="nav-lunbo">
+					<div class="nav-lunbo-left"></div>
+					<div class="nav-lunbo-right"></div>
+					<div></div>
+					<div class="nav-lunbo-img-container">
+						<img class="nav-lunbo-img" style="display:block" src="./images/T1QJDgBgLT1RXrhCrK.jpg"/>
+						<img class="nav-lunbo-img" src="./images/T11PDgBbVT1RXrhCrK.jpg"/>
+						<img class="nav-lunbo-img" src="./images/T1edV_BTYT1RXrhCrK.jpg"/>
+						<img class="nav-lunbo-img" src="./images/T128b_BvbT1RXrhCrK.jpg"/>
+						<img class="nav-lunbo-img" src="./images/T1y.LgBTET1RXrhCrK.jpg"/>
+					</div>
+					<ul class="nav-lunbo-ul">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+					</ul>
+				</div>
+				<!--导航底部-->
+				<div class="nav-footer">
+					<a class="nav-footer-img" style="background-image:url(./images/T15sAvBbJT1RXrhCrK.jpg)" href="#"></a>
+					<a class="nav-footer-img" style="background-image:url(./images/T1sxVvBQxT1RXrhCrK.jpg)" href="#"></a>
+					<a class="nav-footer-img" style="background-image:url(./images/T1T_KjBgYT1RXrhCrK.jpg);border-right:0px;" href="#"></a>
+				</div>
+			</div>
+			<!--小米明星单品-->
+			<!--小米明星单品标题-->
+			<div class="star-header">
+				<div class="star-header-div1">
+					<h3 class="star-header-title">小米明星单品</h3>
+					<a class="star-header-xuan" href="">根据机型选配件</a>
+				</div >
+				<div class="star-header-div2">
+					<span class="star-header-btn"><</span>
+					<span class="star-header-btn" style="border-left:0px;">></span>
+				</div>
+			</div>
+			<!--小米明星单品内容-->
+			<div class="star-main">
+				<div class="star-main-a-container">
+					<a class="star-main-a" href="#">
+						<img src="./images/T1GqdTByYv1RXrhCrK!220x220.jpg"/>
+						<span class="star-main-a-title">小米电视2 全系列</span>
+						<span class="star-main-a-disc">40/49/55英寸 现货购买</span>
+					</a>
+					<a class="star-main-a" href="#">
+						<img src="./images/T1m1_TBshT1RXrhCrK!220x220.jpg"/>
+						<span class="star-main-a-title">小米平板</span>
+						<span class="star-main-a-disc">全球首款搭载 NVIDIA Tegra K1 处理器平板</span>
+					</a>
+					<a class="star-main-a" href="#">
+						<img src="./images/T1BUKvBjbT1RXrhCrK!220x220.jpg"/>
+						<span class="star-main-a-title">小米盒子增强版 1G</span>
+						<span class="star-main-a-disc">首款4K超高清网络机顶盒</span>
+					</a>
+					<a class="star-main-a" href="#">
+						<img src="./images/T1GQATBQbT1RXrhCrK!220x220.jpg"/>
+						<span class="star-main-a-title">小米头戴式耳机</span>
+						<span class="star-main-a-disc">50mm大尺寸航天金属振膜</span>
+					</a>
+					<a class="star-main-a" href="#">
+						<img src="./images/T12HJvByEv1RXrhCrK!220x220.jpg"/>
+						<span class="star-main-a-title">小米移动电源10000mAh</span>
+						<span class="star-main-a-disc">松下/LG高密度进口电芯</span>
+					</a>
+					<a class="star-main-a" href="#">
+						<img src="./images/T1s1JTB4bT1RXrhCrK!220x220.jpg"/>
+						<span class="star-main-a-title">小米路由器mini</span>
+						<span class="star-main-a-disc">主流双频AC智能路由器，性价比之王</span>
+					</a>
+					<a class="star-main-a" href="#">
+						<img src="./images/T1o3Z_BKET1RXrhCrK!220x220.jpg"/>
+						<span class="star-main-a-title">小米智能摄像机</span>
+						<span class="star-main-a-disc">能看能听能说，手机远程观看</span>
+					</a>
+					<a class="star-main-a" href="#">
+						<img src="./images/T1sWd_B7VT1RXrhCrK!220x220.jpg"/>
+						<span class="star-main-a-title">小米体重秤</span>
+						<span class="star-main-a-disc">高精度压力传感器 ｜ 手机管理全家健康</span>
+					</a>
+				</div>
+			</div>
+			<!--新品上架-->
+			<div class="new-header">
+				<div class="new-header-div1">
+					<h3 class="new-header-title">新品上架</h3>
+				</div>
+				<div class="new-header-div2">
+					<a class="new-header-xuan" href="">更多 ></a>
+				</div >
+			</div>
+			<div class="new-main">
+				<div class="new-main-left">
+					<div class="new-main-left-main">
+							<a href="#"><img  style="border:0px;width:620px;height:310px;display:block;" src="./images/T1xiAvB_LT1RXrhCrK.jpg"></a>
+					</div>
+					<div class="new-main-left-same">
+						<div class="same-inner">
+							<div class="same-top">
+								<a href="" class="same-top-a">小米空气净化器</a>
+								<span class="same-top-a">899元</span>
+							</div>
+							<a href="" class="same-bottom"><img class="same-bottom-img" src="./images/T1XYxTBsAT1RXrhCrK!220x220.jpg"></a>
+						</div>
+					</div>
+					<div class="new-main-left-only">
+						<div class="same-only-container">
+							<div class="same-only">
+								<div class="same-only-top">
+									<a href="" class="same-only-top-a">小米智能插座</a>
+									<span class="same-only-top-a">79元</span>
+								</div>
+								<a href="" class="same-only-bottom"><img class="same-only-img" src="./images/T1PxJvBCAT1RXrhCrK!220x220.jpg"></a>
+							</div>
+						</div>
+						<div class="same-only-container">
+							<div class="same-only">
+								<div class="same-only-top">
+									<a href="" class="same-only-top-a">小米随身WIFI</a>
+									<span class="same-only-top-a">19.9元</span>
+								</div>
+								<a href="" class="same-only-bottom"><img class="same-only-img" src="./images/T1zL_vByCT1RXrhCrK!220x220.jpg"></a>
+							</div>
+						</div>
+					</div>
+					<div class="new-main-left-same">
+						<div class="same-inner">
+							<div class="same-top">
+								<a href="" class="same-top-a">小米活塞耳机 炫彩版</a>
+								<span class="same-top-a">49元</span>
+							</div>
+							<a href="" class="same-bottom"><img class="same-bottom-img" src="./images/T1wjL_BvJT1RXrhCrK!220x220.jpg"></a>
+						</div>
+					</div>
+					<div class="new-main-left-same">
+						<div class="same-inner">
+							<div class="same-top">
+								<a href="" class="same-top-a">iHealth智能血压计</a>
+								<span class="same-top-a">199元</span>
+							</div>
+							<a href="" class="same-bottom"><img class="same-bottom-img" src="./images/T1YI__BCWT1RXrhCrK!220x220.jpg"></a>
+						</div>
+					</div>
+					<div class="new-main-left-same">
+						<div class="same-inner">
+							<div class="same-top">
+								<a href="" class="same-top-a">小米蓝牙手柄</a>
+								<span class="same-top-a">99元</span>
+							</div>
+							<a href="" class="same-bottom"><img class="same-bottom-img" src="./images/T1WTEvBmKT1RXrhCrK!220x220.jpg"></a>
+						</div>
+					</div>
+					<div class="new-main-left-same">
+						<div class="same-inner">
+							<div class="same-top">
+								<a href="" class="same-top-a">小米移动电源16000mAh</a>
+								<span class="same-top-a">129元</span>
+							</div>
+							<a href="" class="same-bottom"><img class="same-bottom-img" src="./images/T1pOWvBKET1RXrhCrK!220x220.jpg"></a>
+						</div>
+					</div>
+					<div class="new-main-left-same">
+						<div class="same-inner">
+							<div class="same-top">
+								<a href="" class="same-top-a">小米千兆网线</a>
+								<span class="same-top-a">19.9元</span>
+							</div>
+							<a href="" class="same-bottom"><img class="same-bottom-img" src="./images/T15vLgBmbT1RXrhCrK!220x220.jpg"></a>
+						</div>
+					</div>
+				</div>
+				<div class="new-main-right">
+					<a href="" class="right-item">
+						<span class="right-item-scon">
+							<span class="scon-title">安卓机皇现货购买</span>
+							<span class="scon-desc">中信白金卡专享<br>2999元</span>
+						</span>
+						<img class="right-item-img" src="./images/T1koxQBCCT1RXrhCrK.jpg"/>
+					</a>
+					<a href="" class="right-item">
+						<span class="right-item-scon">
+							<span class="scon-title">特惠配件套装</span>
+							<span class="scon-desc">手机必备配件组合购买<br>实惠更优惠</span>
+						</span>
+						<img class="right-item-img" src="./images/channel-list-cool.jpg"/>
+					</a>
+					<a href="" class="right-item">
+						<span class="right-item-scon">
+							<span class="scon-title">49元自拍神器</span>
+							<span class="scon-desc">蓝牙无线连接，仅150克<br>雷总同款自拍杆</span>
+						</span>
+						<img class="right-item-img" src="./images/channel-list-new-20150513.jpg"/>
+					</a>
+					<div class="right-list">
+						<a class="right-list-title" href="#"><span>&gt;</span>企业用户采购通道</a>
+						<a class="right-list-desc" href="#"><span>&gt;</span>小米手机防伪查询</a>
+						<a class="right-list-desc" href="#"><span>&gt;</span>小米手机官翻版</a>
+						<a class="right-list-desc" href="#"><span>&gt;</span>小米路由器官翻版</a>
+						<a class="right-list-desc" href="#"><span>&gt;</span>F码购买通道</a>
+					</div>
+					<div class="right-chong">
+						<h3 class="right-chong-title">话费充值<span id="right-chong-chg"></span></h3>
+						<form action="#" method="post">
+							<input id="inputtel" type="text" placeholder="请输入手机号码" name="inputtel"/>
+							<div id="chong-price">
+								<span class="chong-price-text">100元</span>
+								<ul id="chong-price-ul">
+									<li>100元</li>
+									<li>30元</li>
+									<li>50元</li>
+								</ul>
+								<span class="chong-arrow"></span>
+							</div>
+							<div class="sell-price">实付价格：<span class="sell-price-chg">98.4</span>元起</div>
+							<input type="submit" class="chong-submit" value="立即充值" disabled="disabled">
+						</form>
+					</div>
+				</div>
+			</div>
+			<!--大家都喜欢-->
+			<div class="hot-header">
+				<div class="new-header-div1">
+					<h3 class="new-header-title">大家都喜欢</h3>
+				</div>
+			</div>
+			<div class="hot-main">
+				<div class="hot-main-left">
+					<div class="new-main-left-main">
+							<a href="#"><img  style="border:0px;width:620px;height:310px;display:block;" src="./images/T1gOCQB4LT1RXrhCrK.jpg"></a>
+					</div>
+					<div class="new-main-left-same">
+						<div class="same-inner">
+							<div class="same-top">
+								<a href="" class="same-top-a">小蚁运动相机</a>
+								<span class="same-top-a">399元</span>
+							</div>
+							<a href="" class="same-bottom"><img class="same-bottom-img" src="./images/T1l0ZvBydv1RXrhCrK!220x220.jpg"></a>
+						</div>
+					</div>
+					<div class="new-main-left-same">
+						<div class="same-inner">
+							<div class="same-top">
+								<a href="" class="same-top-a">小米移动电源5000mAh</a>
+								<span class="same-top-a">49元</span>
+							</div>
+							<a href="" class="same-bottom"><img class="same-bottom-img" src="./images/T1pZbvBTET1RXrhCrK!220x220.jpg"></a>
+						</div>
+					</div>
+					<div class="new-main-left-same">
+						<div class="same-inner">
+							<div class="same-top">
+								<a href="" class="same-top-a">小米活塞耳机标准版</a>
+								<span class="same-top-a">99元</span>
+							</div>
+							<a href="" class="same-bottom"><img class="same-bottom-img" src="./images/T1o0h_B5VT1RXrhCrK!220x220.jpg"></a>
+						</div>
+					</div>
+					<div class="new-main-left-same">
+						<div class="same-inner" style="position:relative;">
+							<div class="same-top">
+								<a href="" class="same-top-a">小米手机4 实木后盖</a>
+								<span class="same-top-a">69元</span>
+							</div>
+							<a href="" class="same-bottom"><img class="same-bottom-img" src="./images/T1NBJvB7ZT1RXrhCrK!220x220.jpg"></a>
+							<span class="same-flag">买赠</span>
+						</div>
+					</div>
+				</div>
+				<div class="hot-main-right">
+					<div class="hot-main-right-title">
+						<span class="title-hot">HOT</span>热销商品排行
+					</div>
+					<div class="hot-main-right-item">
+						<span class="item-sum">1</span>
+						<span class="item-thumb">
+							<a href="#">小米随身WIFI U盘版</a>
+							<span>49.9元</span>
+						</span>
+						<a href="#"><img class="item-a-img" src="./images/T1RsL_BXdT1RXrhCrK!220x220.jpg"></a>
+					</div>
+					<div class="hot-main-right-item">
+						<span class="item-sum">2</span>
+						<span class="item-thumb">
+							<a href="#">小米LED随身灯</a>
+							<span>19.9元</span>
+						</span>
+						<a href="#"><img class="item-a-img" src="./images/T1mxh_BvxT1RXrhCrK!220x220.jpg"></a>
+					</div>
+					<div class="hot-main-right-item">
+						<span class="item-sum">3</span>
+						<span class="item-thumb">
+							<a href="#">米兔便利贴</a>
+							<span>4.9元</span>
+						</span>
+						<a href="#"><img class="item-a-img" src="./images/T1_B_vB_bT1RXrhCrK.jpg"></a>
+					</div>
+					<div class="hot-main-right-item">
+						<span class="item-sum" style="color:#6D6D6D;">4</span>
+						<span class="item-thumb">
+							<a href="#">米健</a>
+							<span>4.9元</span>
+						</span>
+						<a href="#"><img class="item-a-img" src="./images/T16MZvByWT1RXrhCrK!220x220.jpg"></a>
+					</div>
+					<div class="hot-main-right-item">
+						<span class="item-sum" style="color:#6D6D6D;">5</span>
+						<span class="item-thumb">
+							<a href="#">小米随身风扇</a>
+							<span>19.9元</span>
+						</span>
+						<a href="#"><img class="item-a-img" src="./images/T1omEQB4dT1RXrhCrK!220x220.jpg"></a>
+					</div>
+				</div>
+			</div>
+			<!--热评产品-->
+			<div class="comments-header">
+				<div class="new-header-div1">
+					<h3 class="new-header-title">热评产品</h3>
+				</div>
+			</div>
+			<div class="comments-main">
+				<div class="comments-main-item-container">
+					<div class="comments-main-item">
+						<a class="cm-item-title" href="#">小米商务旅行包</a>
+						<div class="cm-item-star"><span class="cmi-star-sp1"></span><span class="cmi-star-sp2">1182人好评</span></div>
+						<div class="cm-item-price">119元</div>
+						<a href="#"><img class="cm-item-img" src="./images/T1oTWTByxT1RXrhCrK!220x220.jpg"></a>
+						<div class="cm-item-footer"><span class="ci-footer-arrow"></span>非常实用，做工也很不错，外观也很体面</div>
+					</div>
+				</div>
+				<div class="comments-main-item-container">
+					<div class="comments-main-item">
+						<a class="cm-item-title" href="#">米兔手机U盘升级版</a>
+						<div class="cm-item-star"><span class="cmi-star-sp1"></span><span class="cmi-star-sp2">6466人好评</span></div>
+						<div class="cm-item-price">49.9元</div>
+						<a href="#"><img class="cm-item-img" src="./images/T1ehLgBmET1RXrhCrK!220x220.jpg"></a>
+						<div class="cm-item-footer"><span class="ci-footer-arrow"></span>::>_<::太萌了 天蓝色是我的最爱 容量大我超级喜欢哒</div>
+					</div>
+				</div>
+				<div class="comments-main-item-container">
+					<div class="comments-main-item">
+						<a class="cm-item-title" href="#">飞天小猪存钱罐</a>
+						<div class="cm-item-star"><span class="cmi-star-sp1"></span><span class="cmi-star-sp2">654人好评</span></div>
+						<div class="cm-item-price">39元</div>
+						<a href="#"><img class="cm-item-img" src="./images/T1XbJTB_xT1RXrhCrK!220x220.jpg"></a>
+						<div class="cm-item-footer"><span class="ci-footer-arrow"></span>终于有了一个储存罐，妈妈再也不用担心我的零钱乱丢了</div>
+					</div>
+				</div>
+				<div class="comments-main-item-container">
+					<div class="comments-main-item">
+						<a class="cm-item-title" href="#">小米NOTE 多彩半透保护壳</a>
+						<div class="cm-item-star"><span class="cmi-star-sp1"></span><span class="cmi-star-sp2">5158人好评</span></div>
+						<div class="cm-item-price">39元</div>
+						<a href="#"><img class="cm-item-img" src="./images/T14.LvBvET1RXrhCrK!220x220.jpg"></a>
+						<div class="cm-item-footer"><span class="ci-footer-arrow"></span>手感好，半透膜的再配上白色，若隐若现</div>
+					</div>
+				</div>
+			</div>
+			<!--特价产品-->
+			<div class="price-header">
+				<div class="new-header-div1">
+					<h3 class="new-header-title">特价产品</h3>
+				</div>
+			</div>
+			<div class="price-main">
+				<div class="new-main-left-same">
+						<div class="same-inner" style="position:relative;">
+							<div class="same-top">
+								<a href="" class="same-top-a">音乐充电套装</a>
+								<span class="same-top-a">168元</span>
+							</div>
+							<a href="" class="same-bottom"><img class="same-bottom-img" src="./images/T1QELvB7dv1RXrhCrK.jpg"></a>
+							<span class="same-flag">省19.9元</span>
+						</div>
+					</div>
+					<div class="new-main-left-same">
+						<div class="same-inner" style="position:relative;">
+							<div class="same-top">
+								<a href="" class="same-top-a">出行全能套装</a>
+								<span class="same-top-a">108元</span>
+							</div>
+							<a href="" class="same-bottom"><img class="same-bottom-img" src="./images/T1lbxgB7LT1RXrhCrK.jpg"></a>
+							<span class="same-flag">省20.7元</span>
+						</div>
+					</div>
+					<div class="new-main-left-same">
+						<div class="same-inner" style="position:relative;">
+							<div class="same-top">
+								<a href="" class="same-top-a">活力自拍套装</a>
+								<span class="same-top-a">88元</span>
+							</div>
+							<a href="" class="same-bottom"><img class="same-bottom-img" src="./images/T1M8CvByAv1RXrhCrK.jpg"></a>
+							<span class="same-flag">省10元</span>
+						</div>
+					</div>
+					<div class="new-main-left-same">
+						<div class="same-inner" style="position:relative;">
+							<div class="same-top">
+								<a href="" class="same-top-a">小米快充套装</a>
+								<span class="same-top-a">59元</span>
+							</div>
+							<a href="" class="same-bottom"><img class="same-bottom-img" src="./images/T1ipAvB_ZT1RXrhCrK!220x220.jpg"></a>
+							<span class="same-flag">省20元</span>
+						</div>
+					</div>
+			</div>
+			<!--多看图书-->
+			<div class="duokan-header">
+				<div class="new-header-div1">
+					<h3 class="new-header-title">多看图书</h3>
+				</div>
+				<div class="new-header-div2">
+					<a class="new-header-xuan" href="">更多 ></a>
+				</div >
+			</div>
+			<div class="duokan-main comments-main">
+				<div class="comments-main-item-container">
+					<div class="comments-main-item">
+						<a class="cm-item-title" href="#">嗨，有人在吗？（月球车玉兔日记）</a>
+						<div class="cm-item-star" style="padding-left:5px;"><span class="cmi-star-sp2">宗唯伊、蜻蜓队长</span></div>
+						<div class="cm-item-price" style="padding-left:5px;">18元</div>
+						<a href="#"><img class="cm-item-img" src="./images/T1OYVTB4Zv1RXrhCrK.jpg"></a>
+						<div class="cm-item-footer"><span class="ci-footer-arrow"></span>2015最值得读的探月秘密，果壳+新华网+浦睿文化联合打造，韩松力荐！</div>
+					</div>
+				</div>
+				<div class="comments-main-item-container">
+					<div class="comments-main-item">
+						<a class="cm-item-title" href="#">那些年，我们在一起</a>
+						<div class="cm-item-star" style="padding-left:5px;"><span class="cmi-star-sp2">魏雪明</span></div>
+						<div class="cm-item-price" style="padding-left:5px;">4.99元</div>
+						<a href="#"><img class="cm-item-img" src="./images/T1Q3_TB4Ev1RXrhCrK.jpg"></a>
+						<div class="cm-item-footer"><span class="ci-footer-arrow"></span>史上最搞笑、最内涵的大学主题绘本，戴军、赖有贤、慕容嗷嗷力荐！</div>
+					</div>
+				</div>
+				<div class="comments-main-item-container">
+					<div class="comments-main-item">
+						<a class="cm-item-title" href="#">数字营销观察家（第1期）</a>
+						<div class="cm-item-star" style="padding-left:5px;"><span class="cmi-star-sp2">《数字营销观察家》杂志社</span></div>
+						<div class="cm-item-price" style="padding-left:5px;">免费</div>
+						<a href="#"><img class="cm-item-img" src="./images/T1QzZvB5Wv1RXrhCrK.jpg"></a>
+						<div class="cm-item-footer"><span class="ci-footer-arrow"></span>一本有温度的市场营销杂志，本期解读最火的APP营销案例！</div>
+					</div>
+				</div>
+				<div class="comments-main-item-container">
+					<div class="comments-main-item">
+						<a class="cm-item-title" href="#">唯爱与美食不可辜负</a>
+						<div class="cm-item-star" style="padding-left:5px;"><span class="cmi-star-sp2">山亭夜宴</span></div>
+						<div class="cm-item-price" style="padding-left:5px;">4.99元</div>
+						<a href="#"><img class="cm-item-img" src="./images/T1HR_vBXYv1RXrhCrK.jpg"></a>
+						<div class="cm-item-footer"><span class="ci-footer-arrow"></span>25份美食，25段相遇，25种人生……山亭夜宴温暖新著</div>
+					</div>
+				</div>
+			</div>
+			<!--MIUI主题-->
+			<div class="miuitheme-header">
+				<div class="new-header-div1">
+					<h3 class="new-header-title">MIUI主题</h3>
+				</div>
+				<div class="new-header-div2">
+					<a class="new-header-xuan" href="">更多 ></a>
+				</div >
+			</div>
+			<div class="miuitheme-main">
+				<div class="miuitheme-main-left-same">
+					<div class="same-inner">
+						<div class="same-top">
+							<a href="" class="same-top-a">变形金刚未来时空</a>
+							<span class="same-top-a">免费</span>
+						</div>
+						<a href="" class="same-bottom"><img class="same-bottom-img" style="width:250px;" src="./images/T14GWgBCKT1RXrhCrK.jpg"></a>
+					</div>
+				</div>
+				<div class="miuitheme-main-left-same">
+					<div class="same-inner">
+						<div class="same-top">
+							<a href="" class="same-top-a">Lithe OS Pro</a>
+							<span class="same-top-a">6米币</span>
+						</div>
+						<a href="" class="same-bottom"><img class="same-bottom-img" style="width:250px;" src="./images/T1GG__BTxT1RXrhCrK.jpg"></a>
+					</div>
+				</div>
+				<div class="miuitheme-main-left-same">
+					<div class="same-inner">
+						<div class="same-top">
+							<a href="" class="same-top-a">fantasy（动画）</a>
+							<span class="same-top-a">6米币</span>
+						</div>
+						<a href="" class="same-bottom"><img class="same-bottom-img" style="width:250px;" src="./images/T19vJgBKCT1RXrhCrK.jpg"></a>
+					</div>
+				</div>
+				<div class="miuitheme-main-left-same">
+					<div class="same-inner">
+						<div class="same-top">
+							<a href="" class="same-top-a">New iOS</a>
+							<span class="same-top-a">6米币</span>
+						</div>
+						<a href="" class="same-bottom"><img class="same-bottom-img" style="width:250px;" src="./images/T10nCgBKdT1RXrhCrK.jpg"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--底部-->
+		<div class="bgcolor">
+			<div id="container3">
+				<div class="footer">
+					<div class="footer-top">
+						<a class="footer-top-item" href="#">
+							<span class="iconfont ft-item-logo">&#xe603;</span>
+							<span class="ft-item-service">1小时快修服务</span>
+						</a>
+						<a class="footer-top-item" href="#">
+							<span class="iconfont ft-item-logo">&#xe64c;</span>
+							<span class="ft-item-service">7天无理由退货</span>
+						</a>
+						<a class="footer-top-item" href="#">
+							<span class="iconfont ft-item-logo">&#xe790;</span>
+							<span class="ft-item-service">15天免费换货</span>
+						</a>
+						<a class="footer-top-item" href="#">
+							<span class="iconfont ft-item-logo">&#xe623;</span>
+							<span class="ft-item-service">满150元包邮</span>
+						</a>
+						<a class="footer-top-item" href="#">
+							<span class="iconfont ft-item-logo">&#xe63b;</span>
+							<span class="ft-item-service">520余家售后网点</span>
+						</a>
+					</div>
+					<br clear="all">
+					<div class="footer-med">
+						<div class="footer-med-item1">
+							<h3 class="fm-item-title">帮助中心</h3>
+							<a class="fm-item-list" href="#">购物指南</a>
+							<a class="fm-item-list" href="#">支付方式</a>
+							<a class="fm-item-list" href="#">配送方式</a>
+						</div>
+						<div class="footer-med-item">
+							<h3 class="fm-item-title">服务支持</h3>
+							<a class="fm-item-list" href="#">服务支持</a>
+							<a class="fm-item-list" href="#">自助服务</a>
+							<a class="fm-item-list" href="#">相关下载</a>
+						</div>
+						<div class="footer-med-item">
+							<h3 class="fm-item-title">小米之家</h3>
+							<a class="fm-item-list" href="#">小米之家</a>
+							<a class="fm-item-list" href="#">服务网点</a>
+							<a class="fm-item-list" href="#">预约亲临到店服务</a>
+						</div>
+						<div class="footer-med-item">
+							<h3 class="fm-item-title">关于小米</h3>
+							<a class="fm-item-list" href="#">了解小米</a>
+							<a class="fm-item-list" href="#">加入小米</a>
+							<a class="fm-item-list" href="#">联系我们</a>
+						</div>
+						<div class="footer-med-item">
+							<h3 class="fm-item-title">关注我们</h3>
+							<a class="fm-item-list" href="#">新浪微博</a>
+							<a class="fm-item-list" href="#">小米部落</a>
+							<a class="fm-item-list" href="#">官方微信</a>
+						</div>
+						<div class="footer-med-call">
+							<span class="fm-call-num">400-100-5678</span>
+							<span class="fm-call-time">周一至周日 8:00-18:00</span>
+							<span class="fm-call-time">（仅收市话费）</span>
+							<a class="fm-call-online" href="">24小时在线客服</a>
+						</div>
+					</div>
+					<div class="footer-btm">
+						<div class="footer-btm-subsite"><span>小米旗下网站：</span><a href="#">小米网</a><a href="#">MIUI</a><a href="#">米聊</a><a href="#">多看书城</a><a href="#">小米路由器</a><a href="#">繁體香港</a><a href="#">繁體台灣</a><a href="#">English</a><a href="#">小米后院</a><a href="#">小米天猫店</a><a href="#">小米淘宝直营店</a><a href="#" style="border-right:none;">小米网盟</a></div>
+						<div class="footer-btm-copyright"><span>&copy;</span><a href="#">mi.com</a><span>京ICP证110507号 京ICP备10046444号 京公网安备1101080212535号</span><a href="#">京网文[2014]0059-0009号</a></div>
+						<div class="footer-btm-last">
+							<a href="#"><img class="fb-last-img" src="./images/cnnicVerifyseal.png"/></a>
+							<a href="#"><img class="fb-last-img" src="./images/szfwVerifyseal.gif"/></a>
+							<a href="#"><img class="fb-last-img" src="./images/save.jpg"/></a>
+							<div class="fb-last-lang">
+								<a class="fbl-lang-sel" href="#">简体中文</a>
+								<i class="fbl-lang-arrow"></i>
+								<div class="fbl-lang-hid">
+									<a href="#">English</a>
+									<a href="#">繁體台灣</a>
+									<a href="#">繁體香港</a>
+									<a href="#">Singapore</a>
+									<a href="#">Malaysia</a>
+									<a href="#">India</a>
+									<a href="#">Philippines</a>
+									<a href="#">Indonesia</a>
+									<a href="#">Brasil</a>
+									<a href="#">简体中文</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+						var cwdata=990;
+			/*ie6兼容*/
+			if(!window.innerHeight){
+				var iewidth = document.documentElement.clientWidth;
+			}else{
+				var iewidth = window.innerWidth;
+			}
+			if(iewidth<=1240){
+				document.getElementById("container1").style.width = "930px";
+				document.getElementById("container2").style.width = "930px";
+				document.getElementById("container3").style.width = "930px";
+			}
+			
+			
+			/*搜索下拉列表显示/隐藏*/
+			function soux(){
+				document.getElementById("sou-list-container").style.display = "block";
+				document.getElementById("btn-inner").style.display = "none";
+			}
+			function souy(){
+				document.getElementById("sou-list-container").style.display = "none";
+				document.getElementById("btn-inner").style.display = "block";
+			}
+			
+			
+			
+			$(function(){
+				var starbool = true;
+				var csbool= false;
+				
+				
+				/*浏览器初始大小小于1240px时*/
+				var bodywidth = $("body").eq(0).css("width").match(/\d+/)*1;
+				if(bodywidth<=1240){
+					$("#container1").css("width","930px");
+					$("#container2").css("width","930px");
+					$("#container3").css("width","930px");
+					$(".nav-main-container").css("width","680px");
+					$(".nav-main-a").each(function(){
+						$(this).css({"padding":"0px 11px","font-size":"16px"});
+					})
+					$("[id=nav-main-children]").eq(0).css({"left":"-55px","width":"680px"});
+					$("[id=nav-main-children] [id=nav-main-chi-a]").eq(0).css({"padding":"30px 0px 10px 0px ","width":"339px"});
+					$("[id=nav-main-children] [id=nav-main-chi-a]").eq(1).css({"padding":"30px 0px 10px 0px ","width":"339px"});
+					$("[id=nav-main-children]").eq(3).css({"left":"-367px","width":"680px"});
+					$("[id=nav-main-children] [id=nav-main-chi-a]").eq(2).css({"padding":"30px 0px 10px 0px ","width":"339px"});
+					$("[id=nav-main-children] [id=nav-main-chi-a]").eq(3).css({"padding":"30px 0px 10px 0px ","width":"339px"});
+					$("[id=nav-main-children]").eq(4).css({"left":"-421px","width":"680px"});
+					$("[id=nav-main-children] [id=nav-main-chi-a]").eq(4).css({"padding":"30px 0px 10px 0px ","width":"339px"});
+					$("[id=nav-main-children] [id=nav-main-chi-a]").eq(5).css({"padding":"30px 0px 10px 0px ","width":"339px"});
+					$("[id=nav-main-children]").eq(1).css({"left":"-141px","width":"680px"});
+					$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(0).css({"width":"226px"});
+					$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(1).css({"width":"226px"});
+					$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(2).css({"width":"226px"});
+					$("[id=nav-main-children]").eq(2).css({"left":"-281px","width":"680px"});
+					$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(3).css({"width":"226px"});
+					$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(4).css({"width":"226px"});
+					$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(5).css({"width":"226px"});
+					$(".nav-lunbo").css({"width":"680px"});
+					$(".nav-lunbo-img").css({"width":"680px"});
+					$(".nav-lunbo-img").eq(0).attr("src","./images/T1vi_vBbKT1RXrhCrK.jpg");
+					$(".nav-lunbo-img").eq(1).attr("src","./images/T1bwh_BvbT1RXrhCrK.jpg");
+					$(".nav-lunbo-img").eq(2).attr("src","./images/T1IHC_B_ZT1RXrhCrK.jpg");
+					$(".nav-lunbo-img").eq(3).attr("src","./images/T14C_gB7dT1RXrhCrK.jpg");
+					$(".nav-lunbo-img").eq(4).attr("src","./images/T1AiYvBsET1RXrhCrK.jpg");
+					$(".nav-lunbo-ul").css({"left":"470px"});
+					$(".nav-lunbo-right").css({"left":"639px"});
+					cwdata=680;
+					$(".nav-footer").css({"width":"679px"});
+					$(".nav-footer-img").css({"width":"225px"});
+					starbool = false;
+					csbool = true;
+					$(".new-main-left").css({"width":"620px"});
+					$(".hot-main-left").css({"width":"620px"});
+					$(".footer-top-item").css({"width":"182px"});
+					$(".footer-med-item").css({"width":"128px","padding":"0 0 0 20px"});
+					$(".footer-med-item1").css({"width":"128px"});
+					$(".footer-med-call").css({"width":"160px","padding":"0 0 0 15px"});
+				}
+				
+				
+				/*浏览器大小改变时*/
+				$(window).resize(function(){
+					var timewidth = $("body").eq(0).css("width").match(/\d+/)*1;
+					if(timewidth<=1240){
+						$("#container1").css("width","930px");
+						$("#container2").css("width","930px");
+						$("#container3").css("width","930px");
+						$(".nav-main-container").css("width","680px");
+						$(".nav-main-a").each(function(){
+							$(this).css({"padding":"0px 11px","font-size":"16px"});
+						})
+						$("[id=nav-main-children]").eq(0).css({"left":"-55px","width":"680px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a]").eq(0).css({"padding":"30px 0px 10px 0px ","width":"339px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a]").eq(1).css({"padding":"30px 0px 10px 0px ","width":"339px"});
+						$("[id=nav-main-children]").eq(3).css({"left":"-367px","width":"680px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a]").eq(2).css({"padding":"30px 0px 10px 0px ","width":"339px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a]").eq(3).css({"padding":"30px 0px 10px 0px ","width":"339px"});
+						$("[id=nav-main-children]").eq(4).css({"left":"-421px","width":"680px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a]").eq(4).css({"padding":"30px 0px 10px 0px ","width":"339px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a]").eq(5).css({"padding":"30px 0px 10px 0px ","width":"339px"});
+						$("[id=nav-main-children]").eq(1).css({"left":"-141px","width":"680px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(0).css({"width":"226px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(1).css({"width":"226px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(2).css({"width":"226px"});
+						$("[id=nav-main-children]").eq(2).css({"left":"-281px","width":"680px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(3).css({"width":"226px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(4).css({"width":"226px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(5).css({"width":"226px"});
+						$(".nav-lunbo").css({"width":"680px"});
+						$(".nav-lunbo-img").css({"width":"680px"});
+						$(".nav-lunbo-img").eq(0).attr("src","./images/T1vi_vBbKT1RXrhCrK.jpg");
+						$(".nav-lunbo-img").eq(1).attr("src","./images/T1bwh_BvbT1RXrhCrK.jpg");
+						$(".nav-lunbo-img").eq(2).attr("src","./images/T1IHC_B_ZT1RXrhCrK.jpg");
+						$(".nav-lunbo-img").eq(3).attr("src","./images/T14C_gB7dT1RXrhCrK.jpg");
+						$(".nav-lunbo-img").eq(4).attr("src","./images/T1AiYvBsET1RXrhCrK.jpg");
+						$(".nav-lunbo-ul").css({"left":"470px"});
+						$(".nav-lunbo-right").css({"left":"639px"});
+						cwdata=680;
+						$(".nav-footer").css({"width":"679px"});
+						$(".nav-footer-img").css({"width":"225px"});
+						starbool = false;
+						csbool = true;
+						var mleft = $(".star-main-a").eq(0).css("margin-left").match(/\d+/)*1;
+						if(mleft==1240){
+							$(".star-main-a").eq(3).animate({marginLeft:"0px"},250);
+							$(".star-main-a").eq(2).animate({marginLeft:"-310px"},250);
+							$(".star-main-a").eq(1).animate({marginLeft:"-620px"},250);
+							$(".star-main-a").eq(0).animate({marginLeft:"-930px"},250);
+						}
+						$(".new-main-left").css({"width":"620px"});
+						$(".hot-main-left").css({"width":"620px"});
+						$(".footer-top-item").css({"width":"182px"});
+						$(".footer-med-item").css({"width":"128px","padding":"0 0 0 20px"});
+						$(".footer-med-item1").css({"width":"128px"});
+						$(".footer-med-call").css({"width":"160px","padding":"0 0 0 15px"});
+					}else{
+						$("#container1").css("width","1240px");
+						$("#container2").css("width","1240px");
+						$("#container3").css("width","1240px");
+						$(".nav-main-container").css("width","990px");
+						$(".nav-main-a").each(function(){
+							$(this).css({"padding":"0px 23px","font-size":"18px"});
+						})
+						$("[id=nav-main-children]").eq(0).css({"left":"-83px","width":"990px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a]").eq(0).css({"padding":"30px 50px 10px 100px","width":"344px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a]").eq(1).css({"padding":"30px 50px 10px 100px","width":"344px"});
+						$("[id=nav-main-children]").eq(3).css({"left":"-519px","width":"990px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a]").eq(2).css({"padding":"30px 50px 10px 100px","width":"334px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a]").eq(3).css({"padding":"30px 50px 10px 100px","width":"334px"});
+						$("[id=nav-main-children]").eq(4).css({"left":"-601px","width":"990px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a]").eq(4).css({"padding":"30px 50px 10px 100px","width":"334px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a]").eq(5).css({"padding":"30px 50px 10px 100px","width":"334px"});
+						$("[id=nav-main-children]").eq(1).css({"left":"-201px","width":"990px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(0).css({"width":"329px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(1).css({"width":"329px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(2).css({"width":"329px"});
+						$("[id=nav-main-children]").eq(2).css({"left":"-401px","width":"990px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(3).css({"width":"329px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(4).css({"width":"329px"});
+						$("[id=nav-main-children] [id=nav-main-chi-a1]").eq(5).css({"width":"329px"});
+						$(".nav-lunbo").css({"width":"990px"});
+						$(".nav-lunbo-img").css({"width":"990px"});
+						$(".nav-lunbo-img").eq(0).attr("src","./images/T1QJDgBgLT1RXrhCrK.jpg");
+						$(".nav-lunbo-img").eq(1).attr("src","./images/T11PDgBbVT1RXrhCrK.jpg");
+						$(".nav-lunbo-img").eq(2).attr("src","./images/T1edV_BTYT1RXrhCrK.jpg");
+						$(".nav-lunbo-img").eq(3).attr("src","./images/T128b_BvbT1RXrhCrK.jpg");
+						$(".nav-lunbo-img").eq(4).attr("src","./images/T1y.LgBTET1RXrhCrK.jpg");
+						$(".nav-lunbo-ul").css({"left":"780px"});
+						$(".nav-lunbo-right").css({"left":"949px"});
+						cwdata=990;
+						$(".nav-footer").css({"width":"989px"});
+						$(".nav-footer-img").css({"width":"328px"});
+						csbool = false;
+						starbool = true;
+						var mleft = $(".star-main-a").eq(0).css("margin-left").match(/\d+/)*1;
+						if(mleft==930){
+							$(".star-main-a").eq(0).animate({marginLeft:"-1240px"},250);
+							$(".star-main-a").eq(1).animate({marginLeft:"-930px"},250);
+							$(".star-main-a").eq(2).animate({marginLeft:"-620px"},250);
+							$(".star-main-a").eq(3).animate({marginLeft:"-310px"},250);
+						}else if(mleft==1860){
+							$(".star-main-a").eq(5).animate({marginLeft:"0px"},250);
+							$(".star-main-a").eq(4).animate({marginLeft:"0px"},250);
+							$(".star-main-a").eq(3).animate({marginLeft:"-310px"},250);
+							$(".star-main-a").eq(2).animate({marginLeft:"-620px"},250);
+							$(".star-main-a").eq(1).animate({marginLeft:"-930px"},250);
+							$(".star-main-a").eq(0).animate({marginLeft:"-1240px"},250);
+						}
+						$(".new-main-left").css({"width":"930px"});
+						$(".hot-main-left").css({"width":"930px"});
+						$(".footer-top-item").css({"width":"248px"});
+						$(".footer-med-item").css({"width":"165px","padding":"0 0 0 30px"});
+						$(".footer-med-item1").css({"width":"165px"});
+						$(".footer-med-call").css({"width":"275px","padding":"0 0 0 15px"});
+					}
+				})
+				
+				/*导航顶部动画*/
+				$(".nav-main-li").hover(function(){
+					$(this).find("div").slideDown(500);
+				},function(){
+					$(this).find("div").css({"display":"none"})
+				});
+				
+				
+				/*自动轮播*/
+				var i =1;
+				var lock = true;
+				var tag = setInterval(zidonglb,5000)
+				function zidonglb(){
+					lock = false;
+					clearInterval(tag);
+					for(var a=0;a<=4;a++){
+						if(i==a){
+							$(".nav-lunbo-ul>li").eq(a).css({"background":"rgba(0, 0, 0, 0.6) none repeat scroll 0 0","color":"white","border":"1px solid black"})
+							$(".nav-lunbo-img").eq(a).fadeIn(500,function(){lock = true;});
+						}else{
+							$(".nav-lunbo-ul>li").eq(a).css({"background":"#C3C3C3","background":"rgba(0, 0, 0, 0.3) none repeat scroll 0 0","color":"black","border":"1px solid rgba(255, 255, 255, 0.3)"})
+							$(".nav-lunbo-img").eq(a).css({"display":"none"})
+						}
+					}
+					if(i>=4){i=0}else{i++};
+					tag = setInterval(zidonglb,5000)
+				}
+				
+				
+				/*右点击轮播*/
+				$(".nav-lunbo-right").click(function(){
+					if(lock){
+						lock=false;
+						clearInterval(tag);
+						for(var a=0;a<=4;a++){
+							if(i==a){
+								$(".nav-lunbo-ul>li").eq(a).css({"background":"rgba(0, 0, 0, 0.6) none repeat scroll 0 0","color":"white","border":"1px solid black"});
+								$(".nav-lunbo-img").eq(a).fadeIn(500,function(){lock = true;clearInterval(tag);tag = setInterval(zidonglb,5000);});
+							}else{
+								$(".nav-lunbo-ul>li").eq(a).css({"background":"rgba(0, 0, 0, 0.3) none repeat scroll 0 0","color":"black","border":"1px solid rgba(255, 255, 255, 0.3)"})
+								$(".nav-lunbo-img").eq(a).css({"display":"none"})
+							}
+						}
+						if(i>=4){i=0}else{i++};
+						
+					}
+				})
+				
+				
+				/*左点击轮播*/
+				$(".nav-lunbo-left").click(function(){
+					if(lock){
+						lock=false;
+						clearInterval(tag);
+						if(i==0){i=5}else if(i==1)(i=6);
+						i=i-2;
+						for(var a=0;a<=4;a++){
+							if(i==a){
+								$(".nav-lunbo-ul>li").eq(a).css({"background":"rgba(0, 0, 0, 0.6) none repeat scroll 0 0","color":"white","border":"1px solid black"});
+								$(".nav-lunbo-img").eq(a).fadeIn(500,function(){lock = true;clearInterval(tag);tag = setInterval(zidonglb,5000);});
+							}else{
+								$(".nav-lunbo-ul>li").eq(a).css({"background":"rgba(0, 0, 0, 0.3) none repeat scroll 0 0","color":"black","border":"1px solid rgba(255, 255, 255, 0.3)"})
+								$(".nav-lunbo-img").eq(a).css({"display":"none"})
+							}
+						}
+						if(i>=4){i=0}else{i++};
+					}
+				})
+				
+				
+				/*下面点击轮播*/
+				$(".nav-lunbo-ul>li").click(function(){
+					var clidata = $(this).index(".nav-lunbo-ul>li");
+					if(lock){
+						lock=false;
+						clearInterval(tag);
+						var nowdata = $(".nav-lunbo-img:visible").index(".nav-lunbo-img");
+						if(clidata>nowdata){
+							for(var a=0;a<=4;a++){
+								if(clidata==a){
+									$(".nav-lunbo-ul>li").eq(a).css({"background":"rgba(0, 0, 0, 0.6) none repeat scroll 0 0","color":"white","border":"1px solid black"})
+								}else{
+									$(".nav-lunbo-ul>li").eq(a).css({"background":"rgba(0, 0, 0, 0.3) none repeat scroll 0 0","color":"black","border":"1px solid rgba(255, 255, 255, 0.3)"})
+								}
+							}
+							$(".nav-lunbo-img").eq(clidata).css({"display":"block"});
+							$(".nav-lunbo-img").eq(nowdata).animate({marginLeft:"-"+cwdata+"px"},500,function(){
+								$(".nav-lunbo-img").eq(nowdata).css({"margin-left":"0px","display":"none"})
+								lock = true;clearInterval(tag);tag = setInterval(zidonglb,5000);
+							})
+						}else if(clidata<nowdata){
+							for(var a=0;a<=4;a++){
+								if(clidata==a){
+									$(".nav-lunbo-ul>li").eq(a).css({"background":"rgba(0, 0, 0, 0.6) none repeat scroll 0 0","color":"white","border":"1px solid black"})
+								}else{
+									$(".nav-lunbo-ul>li").eq(a).css({"background":"rgba(0, 0, 0, 0.3) none repeat scroll 0 0","color":"black","border":"1px solid rgba(255, 255, 255, 0.3)"})
+								}
+							}
+							$(".nav-lunbo-img").eq(clidata).css({"margin-left":"-"+cwdata+"px","display":"block"});
+							$(".nav-lunbo-img").eq(clidata).animate({marginLeft:"0px"},500,function(){
+								$(".nav-lunbo-img").eq(nowdata).css({"margin-right":"0px","display":"none"})
+								lock = true;clearInterval(tag);tag = setInterval(zidonglb,5000);
+							})
+						}else{
+							lock = true;clearInterval(tag);tag = setInterval(zidonglb,5000);
+						}
+						if(clidata>=4){i=0}else{i=clidata++};
+					}
+				})
+				$(".nav-lunbo").hover(function(){clearInterval(tag)},function(){clearInterval(tag);tag = setInterval(zidonglb,5000)});
+				
+				
+				/*小米明星单品自动轮播*/
+				/*宽度为1240px时*/
+				var s = 0;
+				var c = 0;
+				var sta = setInterval(starzd,5000);
+				function starzd(){
+					if(starbool){
+						if(s==0){
+							$(".star-header-btn").eq(0).css({"color":"#333"});
+							$(".star-header-btn").eq(1).css({"color":"#dfdfdf"});
+							$(".star-main-a").eq(0).animate({marginLeft:"-1240px"},250);
+							$(".star-main-a").eq(1).animate({marginLeft:"-930px"},250);
+							$(".star-main-a").eq(2).animate({marginLeft:"-620px"},250);
+							$(".star-main-a").eq(3).animate({marginLeft:"-310px"},250);
+						}else if(s==1){
+							$(".star-header-btn").eq(0).css({"color":"#dfdfdf"});
+							$(".star-header-btn").eq(1).css({"color":"#333"});
+							$(".star-main-a").eq(3).animate({marginLeft:"0px"},250);
+							$(".star-main-a").eq(2).animate({marginLeft:"0px"},250);
+							$(".star-main-a").eq(1).animate({marginLeft:"0px"},250);
+							$(".star-main-a").eq(0).animate({marginLeft:"0px"},250);
+						}
+						if(s>=1){s=0}else{s++};
+					}
+				}
+				
+				
+				/*宽度为930px时*/
+				var	chg = setInterval(chgszd,5000);
+					function chgszd(){
+						if(csbool){
+							if(c==0){
+								$(".star-header-btn").eq(1).css({"color":"#333"});
+								$(".star-header-btn").eq(0).css({"color":"#333"});
+								$(".star-main-a").eq(0).animate({marginLeft:"-930px"},250);
+								$(".star-main-a").eq(1).animate({marginLeft:"-620px"},250);
+								$(".star-main-a").eq(2).animate({marginLeft:"-310px"},250);
+							}else if(c==1){
+								$(".star-header-btn").eq(1).css({"color":"#dfdfdf"});
+								$(".star-header-btn").eq(0).css({"color":"#333"});
+								$(".star-main-a").eq(0).animate({marginLeft:"-1860px"},250);
+								$(".star-main-a").eq(1).animate({marginLeft:"-1550px"},250);
+								$(".star-main-a").eq(2).animate({marginLeft:"-1240px"},250);
+								$(".star-main-a").eq(3).animate({marginLeft:"-930px"},250);
+								$(".star-main-a").eq(4).animate({marginLeft:"-620px"},250);
+								$(".star-main-a").eq(5).animate({marginLeft:"-310px"},250);
+							}else if(c==2){
+								$(".star-header-btn").eq(1).css({"color":"#333"});
+								$(".star-header-btn").eq(0).css({"color":"#333"});
+								$(".star-main-a").eq(0).animate({marginLeft:"-930px"},250);
+								$(".star-main-a").eq(1).animate({marginLeft:"-620px"},250);
+								$(".star-main-a").eq(2).animate({marginLeft:"-310px"},250);
+								$(".star-main-a").eq(3).animate({marginLeft:"0px"},250);
+								$(".star-main-a").eq(4).animate({marginLeft:"0px"},250);
+								$(".star-main-a").eq(5).animate({marginLeft:"0px"},250);
+							}else if(c==3){
+								$(".star-header-btn").eq(1).css({"color":"#333"});
+								$(".star-header-btn").eq(0).css({"color":"#dfdfdf"});
+								$(".star-main-a").eq(0).animate({marginLeft:"0px"},250);
+								$(".star-main-a").eq(1).animate({marginLeft:"0px"},250);
+								$(".star-main-a").eq(2).animate({marginLeft:"0px"},250);
+							}
+							if(c>=3){c=0}else{c++};
+						}
+					}
+				
+				
+				/*小米明星单品点击轮播*/
+				/*宽度为1240px时*/
+				$(".star-header-btn").eq(0).click(function(){
+					var mleft = $(".star-main-a").eq(0).css("margin-left").match(/\d+/)*1;
+					if(mleft==1240){
+						if(starbool){
+							starbool = false;
+							clearInterval(sta);
+							$(".star-header-btn").eq(1).css({"color":"#dfdfdf"});
+							$(".star-header-btn").eq(0).css({"color":"#333"});
+							$(".star-main-a").eq(3).animate({marginLeft:"0px"},250);
+							$(".star-main-a").eq(2).animate({marginLeft:"0px"},250);
+							$(".star-main-a").eq(1).animate({marginLeft:"0px"},250);
+							$(".star-main-a").eq(0).animate({marginLeft:"0px"},250,function(){
+								starbool=true;
+								sta = setInterval(starzd,5000);
+							});
+						}
+					}
+				})
+				$(".star-header-btn").eq(1).click(function(){
+					var mleft = $(".star-main-a").eq(0).css("margin-left").match(/\d+/)*1;
+					if(mleft==0){
+						if(starbool){
+							starbool = false;
+							clearInterval(sta);
+							$(".star-header-btn").eq(1).css({"color":"#333"});
+							$(".star-header-btn").eq(0).css({"color":"#dfdfdf"});
+							$(".star-main-a").eq(0).animate({marginLeft:"-1240px"},250);
+							$(".star-main-a").eq(1).animate({marginLeft:"-930px"},250);
+							$(".star-main-a").eq(2).animate({marginLeft:"-620px"},250);
+							$(".star-main-a").eq(3).animate({marginLeft:"-310px"},250,function(){
+								starbool=true;
+								sta = setInterval(starzd,5000);
+							});
+						}
+					}
+				})
+				
+				
+				/*宽度为930px时*/
+				$(".star-header-btn").eq(0).click(function(){
+					var mleft = $(".star-main-a").eq(0).css("margin-left").match(/\d+/)*1;
+					if(mleft==930){
+						if(csbool){
+							csbool = false;
+							clearInterval(chg);
+							$(".star-header-btn").eq(0).css({"color":"#dfdfdf"});
+							$(".star-header-btn").eq(1).css({"color":"#333"});
+							$(".star-main-a").eq(2).animate({marginLeft:"0px"},250);
+							$(".star-main-a").eq(1).animate({marginLeft:"0px"},250);
+							$(".star-main-a").eq(0).animate({marginLeft:"0px"},250,function(){
+							csbool=true;
+							chg = setInterval(chgszd,5000);
+							});
+						}
+					}else if(mleft==1860){
+						if(csbool){
+							csbool = false;
+							clearInterval(chg);
+							$(".star-header-btn").eq(0).css({"color":"#333"});
+							$(".star-header-btn").eq(1).css({"color":"#333"});
+							$(".star-main-a").eq(5).animate({marginLeft:"0px"},250);
+							$(".star-main-a").eq(4).animate({marginLeft:"0px"},250);
+							$(".star-main-a").eq(3).animate({marginLeft:"0px"},250);
+							$(".star-main-a").eq(2).animate({marginLeft:"-310px"},250);
+							$(".star-main-a").eq(1).animate({marginLeft:"-620px"},250);
+							$(".star-main-a").eq(0).animate({marginLeft:"-930px"},250,function(){
+							csbool=true;
+							chg = setInterval(chgszd,5000);
+							});
+						}
+					}
+				})
+				$(".star-header-btn").eq(1).click(function(){
+					var mleft = $(".star-main-a").eq(0).css("margin-left").match(/\d+/)*1;
+					if(mleft==0){
+						if(csbool){
+							csbool = false;
+							clearInterval(chg);
+							$(".star-header-btn").eq(1).css({"color":"#333"});
+							$(".star-header-btn").eq(0).css({"color":"#333"});
+							$(".star-main-a").eq(0).animate({marginLeft:"-930px"},250);
+							$(".star-main-a").eq(1).animate({marginLeft:"-620px"},250);
+							$(".star-main-a").eq(2).animate({marginLeft:"-310px"},250,function(){
+							csbool=true;
+							chg = setInterval(chgszd,5000);
+							});
+						}
+					}else if(mleft==930){
+						if(csbool){
+							csbool = false;
+							clearInterval(chg);
+							$(".star-header-btn").eq(0).css({"color":"#333"});
+							$(".star-header-btn").eq(1).css({"color":"#dfdfdf"});
+							$(".star-main-a").eq(0).animate({marginLeft:"-1860px"},250);
+							$(".star-main-a").eq(1).animate({marginLeft:"-1550px"},250);
+							$(".star-main-a").eq(2).animate({marginLeft:"-1240px"},250);
+							$(".star-main-a").eq(3).animate({marginLeft:"-930px"},250);
+							$(".star-main-a").eq(4).animate({marginLeft:"-620px"},250);
+							$(".star-main-a").eq(5).animate({marginLeft:"-310px"},250,function(){csbool=true;chg = setInterval(chgszd,5000);});
+						}
+					}
+				})
+				$(".star-main").hover(function(){clearInterval(sta);clearInterval(chg)},function(){sta = setInterval(starzd,5000);chg = setInterval(chgszd,5000);});
+				
+				
+				/*充值验证*/
+				var tel = setInterval("addtel()",100)
+				function addtel(){
+					var telnum = $("#inputtel").val();
+					var leng = telnum.length;
+					if(leng==3){
+						telnum+="-"	;
+						$("#inputtel").val(telnum);
+					}else if(leng==8){
+						telnum+="-"	;
+						$("#inputtel").val(telnum);
+					}
+				}
+				clearInterval(tel);
+				$("#inputtel").focus(function(){clearInterval(tel);tel = setInterval(addtel,100)});
+				$("#inputtel").blur(function(){clearInterval(tel);})
+				$("#chong-price").hover(function(){
+					$("#chong-price-ul").css({"display":"block"});
+				},function(){
+					$("#chong-price-ul").css({"display":"none"});
+				})
+				
+				$("#chong-price-ul li").click(function(){
+					var telnum = $("#inputtel").val();
+					var regExp = /(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])-[0-9]{4}-[0-9]{4}/g;
+					var blndata = regExp.test(telnum);
+					if(blndata){
+						$("#right-chong-chg").text("");
+						$("form>input.chong-submit").css({"background":"tomato"})
+						$("form>input.chong-submit").removeAttr("disabled");
+					}else{
+						$("#right-chong-chg").text("请输入正确的手机号！");
+						$("form>input.chong-submit").css({"background":"#DCDFE5"})
+						$("form>input.chong-submit").attr("disabled","disabled");
+					}
+					var price = $(this).text().match(/\d+/)*1;
+					if(price==50){
+						$(".chong-price-text").text("50元");
+						$("div.sell-price span.sell-price-chg").text("49.2");
+						$("#chong-price-ul").css({"display":"none"});
+					}else if(price==100){
+						$(".chong-price-text").text("100元")
+						$("div.sell-price span.sell-price-chg").text("98.4");
+						$("#chong-price-ul").css({"display":"none"});
+					}else if(price==30){
+						$(".chong-price-text").text("30元")
+						$("div.sell-price span.sell-price-chg").text("29.55");
+						$("#chong-price-ul").css({"display":"none"});
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

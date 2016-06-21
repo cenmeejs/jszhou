@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>ECMAScript 定义类或对象</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//原始的方式:不能创建多个car的实例
+			var oCar = new Object;
+			oCar.color = "blue";//oCar的属性
+			oCar.doors = 4;
+			oCar.mpg = 25;
+			oCar.showColor = function(){return this.color;};//oCar的方法,指向函数的指针
+			
+			console.log(oCar.showColor());//"blue"
+
+			
+			
+
+
+			
+
+			//工厂方式
+			//工厂函数（factory function）,函数createCar()可用于封装前面列出的创建car对象的操作;
+			function createCar1() {
+				var oTempCar = new Object;
+				oTempCar.color = "tomato";
+				oTempCar.doors = 4;
+				oTempCar.mpg = 25;
+				oTempCar.showColor = function() {return this.color;};
+				return oTempCar;
+			}
+
+			var oCar1 = createCar1();
+			var oCar2 = createCar1();
+
+			console.log(oCar1.showColor());//"tomato"
+			console.log(oCar2.showColor());//"tomato"
+			oCar1.color="red";
+			console.log(oCar1.showColor());//"red"
+			console.log(oCar2.showColor());//"tomato"
+
+			
+			//为函数传递参数
+			function createCar2(sColor,iDoors,iMpg) {
+				var oTempCar = new Object;
+				oTempCar.color = sColor;
+				oTempCar.doors = iDoors;
+				oTempCar.mpg = iMpg;
+				oTempCar.showColor = function() {return this.color;};
+				return oTempCar;
+			}
+
+			var oCar3 = createCar2("black",4,23);
+			var oCar4 = createCar2("white",3,25);
+
+			console.log(oCar3.showColor())//"black"
+			console.log(oCar4.showColor())//"white"
+
+			
+			//在工厂函数外定义对象的方法，然后通过属性指向该方法，从而避免每次调用函数createCar()，都要创建新函数 showColor()
+			function showColor() {return this.color;}
+			function createCar3(sColor,iDoors,iMpg) {
+				var oTempCar = new Object;
+				oTempCar.color = sColor;
+				oTempCar.doors = iDoors;
+				oTempCar.mpg = iMpg;
+				oTempCar.showColor = showColor;
+				return oTempCar;
+			}
+
+			var oCar5 = createCar3("green",4,23);
+			var oCar6 = createCar3("silver",3,25);
+			
+			console.log(oCar5.showColor())//"green"
+			console.log(oCar6.showColor())//"silver"
+
+
+			
+
+
+
+
+			//构造函数方式
+			function Car1(sColor,iDoors,iMpg) {
+				this.color = sColor;
+				this.doors = iDoors;
+				this.mpg = iMpg;
+				//和工厂方式一样，每个对象都创建独立的函数版本
+				this.showColor = function() {return this.color;};
+			}
+
+			var oCar7 = new Car1("gray",4,23);
+			var oCar8 = new Car1("yellow",3,25);
+			
+			console.log(oCar7.showColor())//"gray"
+			console.log(oCar8.showColor())//"yellow"
+
+
+
+
+
+
+
+
+			//原型方式
+			//构造函数没有参数,必须在对象创建后才能改变属性的默认值
+			function Car2() {
+			}
+
+			Car2.prototype.color = "blue";
+			Car2.prototype.doors = 4;
+			Car2.prototype.mpg = 25;
+			Car2.prototype.drivers = new Array("Mike","John");
+			//所有Car实例存放的都是指向showColor()函数的指针
+			Car2.prototype.showColor = function(){return this.color;};
+
+			var oCar9 = new Car2();
+			var oCar10 = new Car2();
+
+			oCar9.drivers.push("Bill");
+
+			//用instanceof运算符检查给定变量指向的对象的类型
+			console.log(oCar9 instanceof Car2);//true
+			console.log(oCar9.drivers instanceof Array);//true
+			console.log(oCar9.drivers);//"Mike","John","Bill"
+			console.log(oCar10.drivers);//"Mike","John","Bill"
+
+
+
+
+
+
+
+
+
+
+
+			//混合的构造函数/原型方式(推荐方法)
+			//用构造函数定义对象的所有非函数属性,每个对象都具有自己的对象属性实例
+			function Car3(sColor,iDoors,iMpg) {
+				this.color = sColor;
+				this.doors = iDoors;
+				this.mpg = iMpg;
+				this.drivers = new Array("Mike","John");
+			}
+
+			//用原型方式定义对象的函数属性（方法）,所有函数都只创建一次
+			Car3.prototype.showColor = function(){return this.color;};
+
+			var oCar11 = new Car3("r",4,23);
+			var oCar12 = new Car3("b",3,25);
+
+			oCar11.drivers.push("Yui");
+
+			console.log(oCar11.drivers);//"Mike","John","Yui"
+			console.log(oCar12.drivers);//"Mike","John"
+			console.log(oCar11.showColor())//"r"
+			console.log(oCar12.showColor())//"b"
+			
+			//hasOwnProperty:是用来判断一个对象是否有你给出名称的属性或对象。不过需要注意的是，此方法无法检查该对象的原型链中是否具有该属性，该属性必须是对象本身的一个成员。
+			console.log(oCar11.hasOwnProperty("color"));//true
+			console.log(oCar11.hasOwnProperty("doors"));//true
+			console.log(oCar11.hasOwnProperty("mpg"));//true
+			console.log(oCar11.hasOwnProperty("drivers"));//true
+			console.log(oCar11.hasOwnProperty("showColor"));//false
+			//console.log(oCar11.prototype.hasOwnProperty("showColor"));//不能这样写
+			console.log(Car3.hasOwnProperty("color"));//false
+			console.log(Car3.prototype.hasOwnProperty("showColor"));//true
+			
+			//isPrototypeOf:是用来判断其原型链的对象是否存在于指定对象实例中，是则返回true，否则返回false。
+			console.log(Car3.prototype.isPrototypeOf(oCar11));//true
+			console.log(Car3.prototype.isPrototypeOf(oCar12));//true
+			console.log(Car3.prototype.isPrototypeOf(oCar13));//false
+
+
+
+
+
+
+
+
+			
+			//动态原型方法(推荐方法)
+			function Car4(sColor,iDoors,iMpg) {
+				this.color = sColor;
+				this.doors = iDoors;
+				this.mpg = iMpg;
+				this.drivers = new Array("Mike","John");
+
+				if(typeof Car4._initialized == "undefined") {
+					Car4.prototype.showColor = function() {return this.color;};
+					Car4._initialized = true;
+				}
+				//alert(Car4._initialized);
+			}
+
+			var oCar13 = new Car4("red",4,23);
+			var oCar14 = new Car4("blue",3,25);
+
+			oCar13.drivers.push("Zhou");
+
+			console.log(oCar13.drivers);//"Mike","John","Zhou"
+			console.log(oCar14.drivers);//"Mike","John"
+			console.log(oCar13.showColor());//"red"
+			console.log(oCar14.showColor());//"blue"
+			//alert(oCar13._initialized)
+
+
+
+
+
+
+		</script>
+	</body>
+</html>

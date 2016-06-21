@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题</title>
+<script type="text/javascript" src="./jquery-1.8.3.min.js"></script>
+<style type="text/css">
+div{
+width:20px;
+height:20px;
+float:left;
+border:1px solid #000;
+}
+.div1{
+background-color:red;
+}
+.div2{
+background-color:green;
+}
+.div3{
+background-color:yellow;
+}
+.bg1{
+background-color:red;
+}
+.bg2{
+background-color:green;
+}
+.bg3{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+<script>
+$(function(){
+	$(".div1").click(function(){
+	$("body").attr("class","bg1")
+	})
+	$(".div2").click(function(){
+	$("body").attr("class","bg2")
+	})
+	$(".div3").click(function(){
+	$("body").attr("class","bg3")
+	})
+})
+</script>
+</body>
+</html>

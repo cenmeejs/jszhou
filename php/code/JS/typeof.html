@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>无标题</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		
+	</body>
+		<script>
+			function Person(){
+				this.name="John"
+				this.age=24;
+				this.show=function(){alert(this.name);}
+			}
+			var p1=new Person();
+			var a=null;
+			var b=undefined;
+			var c;
+			var d=1;
+			var e="abc"
+			var f=true;
+			//instanceof适合对象类型
+			//alert(p1 instanceof Person);//true
+			//alert(Person instanceof Function);//true
+			//alert(Function instanceof Object);//true
+			//alert(Person instanceof Object);//true
+			//alert(Object instanceof Object);//true
+			//alert(p1 instanceof Object);//true
+			//alert(p1 instanceof Function);//false
+
+			//typeof适合基本类型和函数，遇到null失效
+			//alert(typeof p1);//object
+			//alert(typeof Person)//function
+			//alert(typeof Function);//function
+			//alert(typeof Object)//function
+			//alert(typeof a);//object
+			//alert(typeof b);//undefined
+			//alert(typeof c);//undefined
+			//alert(typeof d);//number
+			//alert(typeof e)//string;
+			//alert(typeof f)//boolean
+
+		</script>
+</html>

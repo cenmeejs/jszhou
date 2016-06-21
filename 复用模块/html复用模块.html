@@ -1,0 +1,64 @@
+<!--
+favicon.ico
+-->
+<link rel="icon" href="Images/name.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="Images/name.ico" type="image/x-icon" />
+
+<!--
+绝对定位上下左右居中
+-->
+{
+	position:absolute;
+	margin:auto;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:100;
+}
+<!--
+无图三角形
+-->
+.arrow {
+	display:block;
+	width:0;
+	height:0;
+	font-size:0;
+	border-width:5px;
+	border-style:solid;
+	border-color:#f60 transparent transparent transparent
+}
+<!--
+垂直居中
+-->
+.vc{
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+<!--
+清除浮动
+-->
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1; /* ie 6/7 */
+}
+
+<!--
+剪切：clip属性只能在元素设置了“position:absolute”或者“position:fixed”属性起作用
+-->
+.clip {
+	position: absolute;
+	clip: rect(1px 1px 1px 1px);/*IE<8*/
+	clip: rect(1px,1px,1px,1px);
+}

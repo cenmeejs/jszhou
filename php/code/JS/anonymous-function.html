@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>无标题</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//自运行的匿名函数
+			(function(){
+				var a = 123;
+				var b = "abc";
+				//用!!转布尔型
+				//alert(!!b);//true
+				//alert(!!"");//true
+				
+				//用+转数值型
+				//alert(+true);//1
+				//alert(+"true");//NaN
+
+
+				//用""转字符型
+				//alert(typeof (123+""));//string
+				//alert(typeof (true+""));//string
+			})();
+
+			(function(){
+				var a = 123;
+				var b = "abc";
+				//用!!转布尔型
+				//alert(!!b);//true
+				//alert(!!"");//true
+				
+				//用+转数值型
+				//alert(+true);//1
+				//alert(+"true");//NaN
+
+
+				//用""转字符型
+				//alert(typeof (123+""));//string
+				//alert(typeof (true+""));//string
+			}());
+
+
+
+
+
+
+
+
+			//传参数的自运行匿名函数
+			(function(a,b){
+				//alert(a+b);
+			}(12,9));
+
+			(function(a,b){
+				//alert(a+b);
+			})(12,9);
+
+
+			//An anonymous function used as closure
+			var baz;
+			(function(){
+				var a = 8,
+					b = 12;
+				baz = function(){
+					return a+b;
+				};
+			})();
+			alert(baz());
+			alert(typeof a);
+		</script>
+	</body>
+</html>

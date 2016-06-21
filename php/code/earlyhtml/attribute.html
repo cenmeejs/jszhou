@@ -1,0 +1,27 @@
+﻿<html>
+<head>
+<title>节点属性操作</title>
+<meta charset="utf-8">
+<style type="text/css">
+.bian{
+border-radius:60px;
+}
+</style>
+</head>
+<body>
+<div style="width:100px;height:100px;background-color:#00ff00"></div>
+<button onclick="show(1)">得到节点属性</button>
+<button onclick="show(2)">改变节点属性</button>
+<script type="text/javascript">
+function show(data){
+if(data==1){
+alert(document.getElementsByTagName("div")[0].getAttribute("style"));
+}else{
+document.getElementsByTagName("div")[0].setAttribute("class","bian")
+
+}
+
+}
+</script>
+</body>
+</html>

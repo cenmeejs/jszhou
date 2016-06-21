@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>无标题</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<button onclick="insert(1)">前添加</button>
+		<button onclick="insert(2)">后添加</button>
+		<button onclick="move()">移动</button>
+		<ul id="ul">
+			<li id="li1">coffee</li>
+			<li id="li2">tea</li>
+		</ul>
+		<script type="text/javascript">
+			//node.insertBefore（newNode,existedNode）可在任何地方插入子节点,返回插入的节点对象
+			function insert(b){
+				var li=document.createElement("li");
+				var text=document.createTextNode("water");
+				li.appendChild(text);
+				var list=document.getElementById("ul");
+				var a=~~(Math.random()*parseInt("ffffff",16));
+				var color=a.toString(16);
+				if(b==1){
+					list.insertBefore(li,list.childNodes[0]).style.background="#"+color;
+					//alert(parseInt("ffffff",16));//把字符串当成16进制，然后转换成10进制并输出
+				}else{
+					list.insertBefore(li,null).style.background="#"+color;//报错，说需要两个arguments
+				}
+			}
+			
+			
+			//移动节点（空格也会当成一个childNode）
+			function move(){
+				var last=document.getElementById("ul").lastChild;
+				var list=document.getElementById("ul");
+				
+				/*Internet Explorer5678 会忽略节点间生成的空白文本节点（例如，换行符号），而 Mozilla,chrome ,ie9+不会这样做。因此，在下面的例子中，我们会使用一个循环来检查最后一个子节点的节点类型。元素节点的节点类型是1，因此如果首个子节点不是一个元素节点，它就会移至下一个节点，然后继续检查此节点是否为元素节点。整个过程会一直持续到首个元素子节点被找到为止。通过这个方法，我们就可以在 Internet Explorer 和 Mozilla 得到正确的方法*/
+				while(last.nodeType!=1){
+					last=last.previousSibling;
+				}
+				
+				list.insertBefore(last,list.childNodes[0]);
+			}
+			
+		</script>
+	</body>
+</html>

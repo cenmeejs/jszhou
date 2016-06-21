@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题</title>
+<script type="text/javascript" src="./jquery-1.8.3.min.js"></script>
+<style type="text/css">
+.all{
+width:500px;
+height:200px;
+background:red;
+}
+</style>
+</head>
+<body>
+<div class="all"></div>
+<hr/>
+<button>时间（5）</button>
+<script>
+$(function(){
+	$("div").bind("mouseenter",function(){
+		$("<img src='../image/1.jpg' width='500px' height='200px'/>").appendTo($("div"));
+	})
+	$("div").bind("mouseleave",function(){
+		$("div").empty();
+	})
+})
+var tag;
+function fun1(){
+	var strdata = $("button").text();
+	var numdata = strdata.match(/\d/);
+	numdata--;
+	$("button").text("时间（"+numdata+"）");
+	if(numdata==0){
+		clearInterval(tag);
+		$("div").trigger("mouseenter");
+	};
+};
+tag = setInterval("fun1()",1000);
+</script>
+</body>
+</html>

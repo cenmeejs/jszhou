@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+        <style type="text/css">
+            *{
+                margin:0px;
+                padding:0px;
+            }
+            html{
+                width:100%;
+                height:100%;
+                position:relative;
+                overflow: hidden;
+            }
+            body{
+                width:100%;
+                height:100%;
+                margin:auto;
+            }
+            .inset{
+                position:absolute;
+                width:100%;
+                height:100%;
+                z-index: 1;
+                top:0px;
+                left:0px;
+                background:url(../../image/1.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .outset{
+                position:absolute;
+                width:100%;
+                height:100%;
+                top:0;
+                left:0;
+                z-index:0;
+                background:url(../../image/2.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .outset1{
+                position:absolute;
+                width:100%;
+                height:100%;
+                top:0;
+                left:0;
+                z-index:0;
+                background:url(../../image/3.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .outset2{
+                position:absolute;
+                width:100%;
+                height:100%;
+                top:0;
+                left:0;
+                z-index:0;
+                background:url(../../image/4.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .outset3{
+                position:absolute;
+                width:100%;
+                height:100%;
+                top:0;
+                left:0;
+                z-index:0;
+                background:url(../../image/5.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            ul{
+                position:absolute;
+                width:580px;
+                height:66px;
+                bottom:50px;
+                left:30%;
+                z-index:10;
+                background:rgba(255,255,255,0);
+            }
+            li{
+                position:relative;
+                float:left;
+                width:100px;
+                height:50px;
+                border:8px solid transparent;
+                list-style:none;
+                background:blue;
+            }
+            li:nth-child(1){
+                background:url(../../image/1.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            li:nth-child(2){
+                background:url(../../image/2.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            li:nth-child(3){
+                background:url(../../image/3.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            li:nth-child(4){
+                background:url(../../image/4.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            li:nth-child(5){
+                background:url(../../image/5.jpg) no-repeat 50% 50%;
+                background-size:cover;
+            }
+            .btn1,.btn2{
+                position:absolute;
+                display: block;
+                width:200px;
+                height:200px;
+                font-size:200px;
+                z-index:11;
+                line-height:200px;
+                background:rgba(255, 99, 71, .2);
+                top:50%;
+                cursor:pointer;
+                -webkit-transform: translate(0, -50%);
+                   -moz-transform: translate(0, -50%);
+                    -ms-transform: translate(0, -50%);
+                     -o-transform: translate(0, -50%);
+                        transform: translate(0, -50%);
+            }
+            .btn1{
+                left:-110px;
+            }
+            .btn2{
+                right:-110px;
+            }
+        </style>
+    </head>
+    <body>
+    </body>
+        <div class="inset"></div>
+        <div class="outset"></div>
+        <div class="outset1"></div>
+        <div class="outset2"></div>
+        <div class="outset3"></div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <span class="btn1">〈</span>
+        <span class="btn2">〉</span>
+        <script type="text/javascript">
+            $(function(){
+                var a=1;
+                function clear1(){
+                    $("li").eq(a).css({"border":"8px solid tomato"}).siblings("li").css({"border":"8px solid transparent"}); 
+                    clearInterval(oauto);
+                    $("div").stop(true,true);
+                }
+
+
+                function clear2(){
+                    $("div").eq(a).css({"z-index":"5"}).siblings("div").css({"z-index":"0"});
+                    clearInterval(oauto);
+                    oauto = setInterval(auto,4000);
+                    a==4?a=0:a++;
+                }
+
+
+                $("li:nth-child(1)").click(function(){
+                    a = $(this).index("li");
+                    clear1();
+                    $("div").eq(0).css({"height":"0","top":"400px","z-index":"6"});
+                    $("div").eq(0).animate({height:"100%",top:"0"},2000,clear2());
+                });
+
+
+                $("li:nth-child(2)").click(function(){
+                    a = $(this).index("li");
+                    clear1();
+                    $("div").eq(1).css({"z-index":"6",height:"0",width:"0",top:"400px",left:"700px"});
+                    $("div").eq(1).animate({height:"100%",width:"100%",top:"0",left:"0"},2000,clear2());
+                });
+
+
+                 $("li:nth-child(3)").click(function(){
+                    a = $(this).index("li");
+                    clear1();
+                    $("div").eq(2).css({"left":"-100%","z-index":"6"});
+                    $("div").eq(2).animate({left:"0"},2000,clear2());
+                });
+
+
+                $("li:nth-child(4)").click(function(){
+                    a = $(this).index("li");
+                    clear1();
+                    $("div").eq(3).css({"top":"100%","z-index":"6"});
+                    $("div").eq(3).animate({top:"0"},2000,clear2());
+                });
+
+
+                $("li:nth-child(5)").click(function(){
+                    a = $(this).index("li");
+                    clear1();
+                    $("div").eq(4).css({"z-index":"6","height":"500%","width":"500%","top":"-200%","left":"-200%"});
+                    $("div").eq(4).animate({width:"100%",height:"100%",top:"0",left:"0"},2000,clear2());
+                });
+
+
+                var oauto = setInterval(auto,4000);
+                function auto(){
+                    $("li").eq(a).trigger("click");
+                }
+
+
+                $("span").click(function(){
+                    var index = $(this).index("span");
+                    if(index==1){
+                        $("li").eq(a).trigger("click");
+                    }else if(index==0){
+                        if(a==1){
+                            $("li").eq(4).trigger("click");
+                        }else if(a==0){
+                            $("li").eq(3).trigger("click");
+                        }else{
+                            $("li").eq(a-2).trigger("click");
+                        }
+                    }
+                });
+            })
+        </script>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题</title>
+<script type="text/javascript" src="./jquery-1.8.3.min.js"></script>
+<style type="text/css">
+.all{
+width:250px;
+border:1px solid;
+height:40px;
+overflow:hidden;
+margin:auto;
+}
+.content1,.content2,.content3{
+width:190px;;
+height:40px;
+text-align:center;
+line-height:40px;
+font-size:40px;
+margin:auto;
+}
+</style>
+</head>
+<body>
+<div class="all">
+<div class="content1">我的好友</div>
+<div class="content2">信手拈来</div>
+<div class="content3">精益求精</div>
+</div>
+<script>
+var tag;
+$(function(){
+	tag = setInterval(fun,3000);
+	function fun(){
+		var tdata = $(".all").scrollTop();
+		tdata+=40;
+		if(tdata>=81){
+			$(".all").scrollTop(0);
+		}else{
+			$(".all").scrollTop(tdata);
+		}
+	}
+	$(".all").hover(function(){clearInterval(tag);},function(){tag = setInterval(fun,3000)});
+})
+</script>
+</body>
+</html>

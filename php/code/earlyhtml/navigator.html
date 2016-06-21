@@ -1,0 +1,18 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>返回系统和浏览器信息</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+</head>
+<body>
+<script type="text/javascript">
+<!--alert(navigator.userAgent);-->
+var strData = navigator.userAgent;
+if(strData.indexOf(Android)!=-1){
+document.body.style.background = "green";
+}else if(strData.indexOf(iPhone)!=-1){
+document.body.style.background = "red"
+}
+</script>
+</body>
+</html>

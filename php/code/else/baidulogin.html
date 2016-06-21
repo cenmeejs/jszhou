@@ -1,0 +1,145 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>仿百度登录</title>
+		<meta http-equiv="content-type" content="text/html,charset="utf-8"">
+		<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+			text-decoration:none;
+		}
+		.alla{
+			background:silver;
+			opacity:.5;
+			position:absolute;
+			z-index:1;
+			top:0;
+		}
+		.div2{
+			width:300px;
+			height:400px;
+			display:none;
+			margin:0px auto;
+			background:white;
+			cursor:move;
+		}
+		.div3{
+			width:100%;
+			height:60px;
+			border-bottom:0px solid;
+			float:left;
+		}
+		.div3 span{
+			font-size:36px;
+			float:right;
+		}
+		.span1{
+			width:110px;
+			height:38px;
+			font-size:25px;
+			text-align:center;
+			line-height:38px;
+			border:0px solid red;
+			float:left;
+		}
+		.span2{
+			width:180px;
+			height:25px;
+		}
+		.span3{
+			width:145px;
+			height:50px;
+			text-align:center;
+			line-height:50px;
+			border:0px solid;
+			float:left;
+			font-size:50px;
+		}
+		</style>
+	</head>
+	<body>
+		<a href="#" onclick="deal()">登录</a>
+		<div id="all")>
+			<div id="all_a" class="div2">
+				<div id="all_a_a" class="div3" onmousedown="divBlock_event_mousedown(arguments[0])">
+					<span id="guan" onclick="guan()" style="cursor:pointer">&times;</span>
+				</div>
+				<form action="#" method="post">
+					<br/><br/><br/><br/>
+					<span class="span1">用户名：</span><input type="text" name="uname"/ class="span2"><br/><br/><br/>
+					<span class="span1">密&nbsp;&nbsp;码：</span><input type="password" name="pwname" class="span2"/><br/><br/>
+					<span class="span3"><input type="submit" name="denglu" value="登录"/></span>
+					<span class="span3"><input type="reset" name="quxiao" value="取消" /></span>
+				</form>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var burData;
+			function deal(){
+				burData = true;
+				teal();
+			}
+			function teal(){
+				if(burData){
+					/*if(!window.innerHeight){//ie5,6,7,8拿body的宽高
+						var bodywidth = document.documentElement.clientWidth;
+						var bodyheight = document.documentElement.clientHeight;
+					}else{//非ie拿body的宽高
+						var bodywidth = window.innerWidth;
+						var bodyheight = window.innerHeight;
+					}*/
+					var bodywidth=window.innerWidth||document.body.clientWidth;//拿body的宽
+					var bodyheight=window.innerHeight||document.body.clientHeight;//拿body的高
+					document.getElementById("all").setAttribute("class","alla");
+					document.getElementById("all").style.width = bodywidth+"px";
+					document.getElementById("all").style.height = bodyheight+"px";
+					document.getElementById("all").style.display = "block"
+					document.getElementById("all_a").style.display = "block";
+					var all_aHeight =(bodyheight-400)/2;
+					document.getElementById("all_a").style.marginTop = all_aHeight+"px";
+				}
+			}
+			window.onresize = teal;
+			function guan(){
+				document.getElementById("all_a").style.display = "none";
+				document.getElementById("all").style.display = "none";
+				burData = false;
+			}
+			//实现随意拖动
+			function divBlock_event_mousedown(e){ 
+				var e, obj; 
+				obj=document.getElementById("all_a"); 
+				e=window.event?window.event:e; 
+				obj.startX=e.clientX-obj.offsetLeft; 
+				obj.startY=e.clientY-obj.offsetTop; 
+				document.onmousemove=document_event_mousemove; 
+				if(document.attachEvent){
+					document.attachEvent("onmouseup",document_event_mouseup)
+				}
+				else{
+					document.addEventListener("mouseup",document_event_mouseup,"")
+				}
+			} 
+			function document_event_mousemove(e){ 
+				var e, obj; 
+				obj=document.getElementById("all_a"); 
+				e=window.event?window.event:e; 
+				with(obj.style){ 
+					position="absolute"; 
+					left=e.clientX-obj.startX+"px"; 
+					top=e.clientY-obj.startY+"px"; 
+				} 
+			} 
+			function document_event_mouseup(e){ 
+				document.onmousemove=""; 
+				if(document.attachEvent){
+					document.detachEvent("onmouseup",document_event_mouseup);
+				}
+				else{
+					document.removeEventListener("mouseup",document_event_mouseup,"");
+				} 
+			} 
+		</script>
+	</body>
+</html>

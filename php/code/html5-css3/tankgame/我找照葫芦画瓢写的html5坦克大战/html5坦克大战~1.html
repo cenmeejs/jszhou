@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gbk"/>
+</head>
+<body>
+<h1>hmtl5-经典的坦克大战</h1>
+<!--坦克大战的战场-->
+<canvas id="tankMap" width="400px" height="300px" style="background-color:black"></canvas>
+<script type="text/javascript">
+	
+//得到画布
+var canvas1=document.getElementById("tankMap");
+//得到绘图上下文(你可以理解是画笔)
+var cxt=canvas1.getContext("2d");
+
+//my tank
+var farmerX=130;
+var farmerY=230;
+
+
+
+//设置坦克矩形部分颜色
+cxt.fillStyle="#DED284";
+//画左边矩形
+cxt.fillRect(farmerX,farmerY,5,30);
+//画右边矩形，一定要有个参照点，否则坦克是散的，本程序以坦克左上角为参照点。这样当坦克左上角移动，其他部分会移动。
+cxt.fillRect(farmerX+15,farmerY,5,30);
+//画出中间矩形
+cxt.fillRect(farmerX+6,farmerY+5,8,20);
+//画出坦克的盖子
+cxt.fillStyle="#FFD972";
+cxt.arc(farmerX+10,farmerY+15,4,0,360,true);
+cxt.fill();
+//画出炮筒
+//设置线的颜色用strokeStyle，设置填充颜色用cxt属性fillStyle
+cxt.strokeStyle="#FFD972";
+cxt.lineWidth=2;
+cxt.beginPath();
+cxt.moveTo(farmerX+10,farmerY+15);
+cxt.lineTo(farmerX+10,farmerY);
+cxt.closePath();
+cxt.stroke();
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

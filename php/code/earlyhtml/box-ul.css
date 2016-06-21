@@ -1,0 +1,26 @@
+﻿div{
+width:500px;
+height:500px;
+border:1px solid gray;
+}
+ul{
+width:450px;
+height:400px;
+border:1px solid red;
+margin-top:15px;
+margin-left:15px;
+list-style-type:none;
+}
+li{
+width:50px;
+height:52px;
+margin:5px 0px 0px 5px;
+border:1px solid blue;
+float:left;
+}
+img{
+width:40px;
+height:40px;
+margin-left:5px;
+margin-top:5px;
+}

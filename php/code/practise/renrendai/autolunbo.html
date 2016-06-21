@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题</title>
+<style type="text/css">
+body{
+margin:0px;
+padding:0px;
+}
+#lunbo{
+width:1440px;
+height:356px;
+border:0px solid red;
+display:block;
+margin:0px;
+padding:0px;
+margin-left:-200px;
+}
+</style>
+</head>
+<body>
+<img id="lunbo" src=""/>
+<script>
+var myimg = document.getElementById("lunbo");
+if(!window.innerHeight){
+var bodywidth = document.documentElement.clientWidth;
+}else{
+var bodywidth = window.innerWidth;
+}
+setInterval(firstflow,1000);
+var imgarr = new Array()
+imgarr[0]="e5473661-2982-412b-98e2-38cca387c3d5.jpg";
+imgarr[1]="867052ca-8690-45df-8829-662fd2f126cd.jpg";
+imgarr[2]="d34d7155-8db6-4850-a779-d786933bcc9e.jpg";
+imgarr[3]="db59a809-c86f-42aa-8943-024c69df551b.jpg";
+imgarr[4]="027f7c31-bbf1-4fb2-9b8e-33313ff1c323.jpg";
+imgarr[5]="13dcefb2-cc19-4836-ac4a-f0700696bb7e.jpg";
+var i =0;
+function firstflow(){
+if(i==imgarr.length-1){i=0;}else{i++}
+myimg.src=imgarr[i];
+}
+</script>
+</body>
+</html>

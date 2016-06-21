@@ -1,0 +1,131 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//en" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题</title>
+		<style type="text/css">
+
+		</style>
+	</head>
+	<body id="body">
+		<button id="obj">点击看弹框顺序1</button>
+		<button id="obj1">解绑事件1</button>
+		<button id="btn1">测试attachEvent</button>
+		<button id="btn2">测试detachEvent</button>
+		<ul id="color-list">
+			<li>red</li>
+			<li>yellow</li>
+			<li>blue</li>
+			<li>green</li>
+			<li>black</li>
+			<li>white</li>
+		</ul>
+		<script>
+			if(document.addEventListener){
+				alert("这是非IE浏览器");
+				var obj1 = document.getElementById("obj1"); 
+				alert(obj1.firstChild.nodeValue);
+				var obj=document.getElementById("obj");
+				var bdy=document.getElementById("body");
+				var handlerb=function(){alert("body");}
+				var handler1=function(){alert("1");}
+				var handler2=function(){alert("2");}
+				var handler3=function(){alert("3");}
+				var handler4=function(){alert("4");}
+				var handler5=function(){alert("5");}
+				var handler6=function(){alert("6");}
+				var handler7=function(){alert("7");}
+				var handler8=function(){alert("8");}
+				var handler9=function(){alert("9");}
+				var handler10=function(){alert("10");}
+				var handler11=function(){alert("11");}
+				var handler12=function(){alert("12");}
+				obj.addEventListener("click",handler1,false);
+				obj.addEventListener("click",handler2,false);
+				obj.addEventListener("click",handler3,false);
+				obj.addEventListener("click",handler4,false);
+				obj.addEventListener("click",handler5,false);
+				obj.addEventListener("click",handler6,false);
+				obj.addEventListener("click",handler7,false);
+				obj.addEventListener("click",handler8,false);
+				obj.addEventListener("click",handler9,false);
+				obj.addEventListener("click",handler10,false);
+				obj.addEventListener("click",handler11,false);
+				obj.addEventListener("click",handler12,false);
+				//removeEventListener解绑事件
+				obj.removeEventListener("click",handler1,false);//必须与addEventListener参数相同且第二个参数必须为命名函数（匿名函数及语句无效）
+				
+				//事件代理
+				/*(function(){
+					var color_list = document.getElementById('color-list');
+					var colors = color_list.getElementsByTagName('li');
+					for(var i=0;i<colors.length;i++){                          
+					colors[i].addEventListener('click',showColor,false);
+					};
+					function showColor(e){
+						var x = e.target;
+						alert("The color is " + x.innerHTML);
+					};
+				})();*/
+				(function(){
+					var color_list = document.getElementById('color-list');
+					color_list.addEventListener('click',showColor,false);
+					function showColor(e){
+						var x = e.target;
+						if(x.nodeName.toLowerCase() === 'li'){
+							alert('The color is ' + x.innerHTML);
+						}
+					}
+				})();
+
+				
+				bdy.addEventListener("click",handlerb,true);//事件捕获
+			}else if(document.attachEvent){
+				//attachEvent绑定事件，事件冒泡
+				alert("这是IE浏览器");
+				var btn1 = document.getElementById("btn1");
+				btn1.attachEvent("onclick",test1);
+				btn1.attachEvent("onclick",test2);
+				btn1.attachEvent("onclick",test3);
+				btn1.attachEvent("onclick",test4);
+				btn1.attachEvent("onclick",test5);
+				btn1.attachEvent("onclick",test6);
+				btn1.attachEvent("onclick",test7);
+				btn1.attachEvent("onclick",test8);
+				btn1.attachEvent("onclick",test9);
+				btn1.attachEvent("onclick",test10);
+				btn1.attachEvent("onclick",test11);
+				btn1.attachEvent("onclick",test12);
+				btn1.attachEvent("onclick",test13);
+				btn1.attachEvent("onclick",test14);
+				btn1.attachEvent("onclick",test15);
+				btn1.attachEvent("onclick",test16);
+				btn1.attachEvent("onclick",test17);
+				btn1.attachEvent("onclick",test18);
+				function test1(){alert("1");}
+				function test2(){alert("2");}
+				function test3(){alert("3");}
+				function test4(){alert("4");}
+				function test5(){alert("5");}
+				function test6(){alert("6");}
+				function test7(){alert("7");}
+				function test8(){alert("8");}
+				function test9(){alert("9");}
+				function test10(){alert("10");}
+				function test11(){alert("11");}
+				function test12(){alert("12");}
+				function test13(){alert("13");}
+				function test14(){alert("14");}
+				function test15(){alert("15");}
+				function test16(){alert("16");}
+				function test17(){alert("17");}
+				function test18(){alert("18");}
+				//detachEvent解绑事件
+				var btn2 = document.getElementById("btn2"); 
+				btn2.attachEvent("onclick",function(){
+					btn1.detachEvent("onclick",test1);
+				});
+			}
+		</script>
+	</body>
+</html>

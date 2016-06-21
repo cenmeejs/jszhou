@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>无标题</title>
+		<style type="text/css">
+			*{
+				margin:0px;
+				padding:0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="width:550px;height:700px;margin:auto;">
+			<h3 style="background:url(./topimg.jpg) no-repeat;display:block;height:36px;padding-left:52px;line-height:36px;margin-left:30px;">注册新会员</h3>
+			<form action="#" method="post">
+				<table cellspacing="15px">
+					<tr>
+						<td align="right" style="font-size:20px;">用户名</td>
+						<td>
+							<input type="text">
+						</td>
+						<td style="color:red;width:200px;">*</td>
+					</tr>
+					<tr>
+						<td align="right" style="font-size:20px;">email</td>
+						<td>
+							<input type="email" id="email" onblur="emailreg()">
+						</td>
+						<td style="color:red" id="emailinfo">*</td>
+					</tr>
+					<tr>
+						<td align="right" style="font-size:20px;">密码</td>
+						<td>
+							<input type="password" id="psreg" onfocus="pstip()" onblur="psrzq()">
+						</td>
+						<td style="color:red" id="psinfo">*</td>
+					</tr>
+					<tr>
+						<td align="right" style="font-size:20px;">密码强度</td>
+						<td>
+							<span style="margin-left:15px;" id="psr">弱</span>
+							<span style="margin-left:30px;" id="psz">中</span>
+							<span style="margin-left:30px;" id="psq">强</span>
+						</td>
+						<td style="color:red"></td>
+					</tr>
+					<tr>
+						<td align="right" style="font-size:20px;">确认密码</td>
+						<td>
+							<input type="password">
+						</td>
+						<td style="color:red">*</td>
+					</tr>
+					<tr>
+						<td align="right" style="font-size:20px;">MSN</td>
+						<td>
+							<input type="text">
+						</td>
+						<td style="color:red">*</td>
+					</tr>
+					<tr>
+						<td align="right" style="font-size:20px;">QQ</td>
+						<td>
+							<input type="text">
+						</td>
+						<td style="color:red">*</td>
+					</tr>
+					<tr>
+						<td align="right" style="font-size:20px;">办公电话</td>
+						<td>
+							<input type="text">
+						</td>
+						<td style="color:red">*</td>
+					</tr>
+					<tr>
+						<td align="right" style="font-size:20px;">家庭电话</td>
+						<td>
+							<input type="text">
+						</td>
+						<td style="color:red">*</td>
+					</tr>
+					<tr>
+						<td align="right" style="font-size:20px;">手机</td>
+						<td>
+							<input type="text">
+						</td>
+						<td style="color:red">*</td>
+					</tr>
+					<tr>
+						<td align="right" style="font-size:20px;">密码提示问题</td>
+						<td>
+							<select>
+								<option selected>请选择密码提示问题</option>
+							</select>
+						</td>
+						<td style="color:red"></td>
+					</tr>
+					<tr>
+						<td align="right" style="font-size:20px;">密码问题答案</td>
+						<td>
+							<input type="text">
+						</td>
+						<td style="color:red">*</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td colspan=2>
+							<input type="radio">我已看过并接受《<a href="#">用户协议</a>》</input>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="image" src="./zhuce.jpg"></input></td>
+						<td></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<script>
+			function emailreg(){
+				var sdata = Boolean(document.getElementById("email").value.match(/@/));
+				if(sdata){
+					document.getElementById("emailinfo").innerHTML= "*";
+				}else{
+					document.getElementById("emailinfo").innerHTML= "请输入正确的邮箱地址";
+				}
+			}
+			function pstip(){
+				document.getElementById("psinfo").innerHTML= "请输入密码";
+			}
+			function psrzq(){
+				var psdata = document.getElementById("psreg").value
+				var reg1 = /\d+/;
+				var reg2 = /[a-zA-z]+/;
+				var reg3 = /[!-\/:-@\-'{-~`\[\] ]+/;
+				var test1 = reg1.test(psdata);
+				var test2 = reg2.test(psdata);
+				var test3 = reg3.test(psdata);
+				var sum = test1*1+test2*1+test3*1;
+				switch(sum){
+					case 1 :document.getElementById("psr").style.color = "red"
+							document.getElementById("psz").style.color = "black"
+							document.getElementById("psq").style.color = "black"
+					;break;
+					case 2 :document.getElementById("psr").style.color = "black"
+							document.getElementById("psz").style.color = "red"
+							document.getElementById("psq").style.color = "black"
+					;break;
+					case 3 :document.getElementById("psr").style.color = "black"
+							document.getElementById("psz").style.color = "black"
+							document.getElementById("psq").style.color = "red"
+					;break;
+					
+				}
+				document.getElementById("psinfo").innerHTML= "*";
+			}
+		</script>
+	</body>
+
+</html>
